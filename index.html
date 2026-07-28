@@ -829,10 +829,10 @@ const CONFIG = {
   // Donors type their own amount on the Nedarim Plus form, so there are no
   // suggested amounts here on purpose.
 
-  // The public address of this page. This MUST be set by hand: the page runs
-  // inside a frame, so location.href is the frame's internal address, not the
-  // link you'd send someone. Sharing was broken until this existed.
-  shareUrl: "https://claude.ai/code/artifact/92e2b91a-4eca-421b-9299-392383016b86",
+  // The public address of this page — this is what the share buttons send.
+  // Set by hand on purpose: when the page is previewed inside a frame,
+  // location.href is the frame's internal address, not a link anyone can open.
+  shareUrl: "https://shul-funding.vercel.app/",
 
   // The rabbi's number. Leave "" and the footer just says to speak to him.
   // Written the way you'd dial it; the tel: link strips the dashes itself.
