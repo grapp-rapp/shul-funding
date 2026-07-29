@@ -299,19 +299,23 @@ a  { color: var(--accent); }
 .btn-sm { padding: 0.5rem 0.9rem; font-size: 0.875rem; }
 
 .helpbtn {
-  width: 40px;
-  min-width: 40px;
-  height: 40px;
-  padding: 0;
-  border-radius: 99px;
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1;
+  gap: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  min-height: 40px;
+  white-space: nowrap;
 }
-/* The controls (? / language / donate) come to ~201px, so on a phone the
-   wordmark shrinks to keep room, and only disappears on the smallest screens. */
-@media (max-width: 30rem) { .brand { font-size: 0.9375rem; } }
-@media (max-width: 22rem) { .brand { display: none; } }
+.helpbtn svg { flex: none; }
+
+/* A bare "?" told nobody there was a video behind it, so the button now carries
+   a play icon and words. That costs width, and the wordmark is the cheapest
+   thing to give up - the logo directly below already carries the branding. */
+@media (max-width: 34rem) { .brand { display: none; } }
+/* On the narrowest phones even the label will not fit, so it drops back to the
+   play icon alone. The button keeps its accessible name via aria-label. */
+@media (max-width: 23rem) {
+  .helpbtn span { display: none; }
+  .helpbtn { padding: 0.5rem 0.6rem; }
+}
 
 /* ---------- hero ---------- */
 .hero { padding-block: clamp(2.5rem, 7vw, 4.5rem) clamp(2rem, 5vw, 3rem); }
@@ -654,7 +658,13 @@ a  { color: var(--accent); }
       <span class="brand" data-t="brand">Torah B'Ahava</span>
     </div>
     <div class="topbar-actions">
-      <button class="btn btn-quiet helpbtn" id="help" type="button" aria-label="How to donate">?</button>
+      <button class="btn btn-quiet helpbtn" id="help" type="button">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
+          <circle cx="8" cy="8" r="7.1" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M6.5 5.1 L11 8 L6.5 10.9 Z" fill="currentColor"/>
+        </svg>
+        <span data-t="help_label">How to donate</span>
+      </button>
       <button class="btn btn-quiet" id="lang" type="button">עברית</button>
       <a class="btn btn-solid btn-sm donate" href="#" data-t="nav_give">Donate</a>
     </div>
@@ -1025,6 +1035,7 @@ const T = {
     mini_b: "(Bnei Aliyah) — the row marked “Teen Programing”.",
     bar_a: "When you donate, please select",
     bar_b: "(Bnei Aliyah)",
+    help_label: "How to donate",
     demo_open: "Show me how — 18 second walkthrough",
     demo_big: "View full screen",
     t_pick: "Pick בני עלייה — the “Teen Programing” row — on the page that just opened.",
@@ -1091,6 +1102,7 @@ const T = {
     mini_b: "— השורה שכתוב בה ״תכניות לנוער״.",
     bar_a: "בתרומה, אנא בחרו",
     bar_b: "— תכניות לנוער",
+    help_label: "איך תורמים",
     demo_open: "רוצים לראות איך? — סרטון של 18 שניות",
     demo_big: "צפייה במסך מלא",
     t_pick: "בחרו בני עלייה — השורה של ״תכניות לנוער״ — בדף שנפתח.",
@@ -1142,6 +1154,8 @@ function paint() {
   root.dir  = lang === "he" ? "rtl" : "ltr";
   document.body.dir = root.dir;
   document.getElementById("lang").textContent = lang === "he" ? "English" : "עברית";
+  // The label is hidden on the narrowest phones, so the name lives here too.
+  document.getElementById("help").setAttribute("aria-label", d.help_label);
 
   document.getElementById("raised").textContent = shek(CONFIG.raised);
   if (CONFIG.goal) document.getElementById("goal").textContent = shek(CONFIG.goal);
