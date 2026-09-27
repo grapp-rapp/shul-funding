@@ -33,7 +33,7 @@
   --on-deep-mut: #9BB0B4;
   --ink:         #10262E;
   --ink-mut:     #4C6068;
-  --ink-faint:   #7C8D93;
+  --ink-faint:   #586C73;
   --line:        #D6DDD8;
   --line-strong: #B9C4BE;
   --accent:      #8C5F13;
@@ -149,12 +149,12 @@ a  { color: var(--accent); }
 /* The logo carries the top of the page, so the sticky bar keeps only the
    wordmark - showing the same mark twice within 60px reads as a mistake. */
 .hero-logo {
-  width: clamp(9rem, 23vw, 13rem);
+  width: clamp(4.5rem, 7vw, 5.5rem);
   /* Without this the height="" attribute on the <img> stays in force, pinning
      the logo to 208px tall while CSS shrinks the width - which stretched it to
      144x208 on a phone. Height must follow the width. */
   height: auto;
-  border-radius: 20px;
+  border-radius: 12px;
   display: block;
   box-shadow: 0 2px 8px rgba(16, 38, 46, .10),
               0 14px 34px -14px rgba(16, 38, 46, .28);
@@ -284,13 +284,51 @@ a  { color: var(--accent); }
 .btn-quiet:hover { color: var(--ink); border-color: var(--ink-faint); background: var(--surface); }
 
 .btn-sm { padding: 0.5rem 0.9rem; font-size: 0.875rem; }
+.btn-text { background: none; color: var(--ink-mut); padding: .5rem .25rem;
+  font-size: .8125rem; text-decoration: underline; text-underline-offset: 4px; }
+.btn-text:hover { color: var(--accent); }
 
 @media (max-width: 34rem) { .brand { display: none; } }
 
 
 /* ---------- hero ---------- */
-.hero { padding-block: clamp(1.75rem, 5vw, 3rem) clamp(2rem, 5vw, 3rem); }
-.hero-stack { display: flex; flex-direction: column; gap: 1.25rem; }
+.hero {
+  max-width: 76rem;
+  padding-block: clamp(1.5rem, 4vw, 3.5rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  grid-template-areas: "intro film" "share film";
+  gap: 1rem clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+.hero-stack { grid-area: intro; display: flex; flex-direction: column; gap: 1rem; }
+.hero-lockup { display: flex; gap: 1rem; align-items: center; }
+.hero h1 { max-width: 14ch; font-size: clamp(2.25rem, 4vw, 3.5rem); }
+.hero-media { grid-area: film; margin: 0; min-width: 0; }
+.hero-media .filmwrap { overflow: hidden; border-radius: 16px; background: var(--deep); }
+.hero-media .film { height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.hero-media figcaption { color: var(--ink-mut); font-size: .8125rem; margin-block-start: .65rem; }
+.hero-share { grid-area: share; display: flex; align-items: center; flex-wrap: wrap; gap: .85rem; }
+.hero-stack .btn-solid { min-height: 48px; padding-inline: 1.5rem; }
+@media (max-width: 52rem) {
+  .hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "film" "share"; gap: 1.25rem; }
+  .hero h1 { max-width: 18ch; }
+  .hero-media .film { aspect-ratio: 16 / 9; }
+}
+.gallery-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-block-end: 1.25rem; }
+.gallery-hint { display: none; font-size: .8125rem; color: var(--ink-mut); }
+@media (max-width: 52rem) {
+  .gallery-heading { display: block; }
+  .gallery-hint { display: block; margin-block-start: .5rem; }
+}
+.closing-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.closing-give { border-inline-start: 1px solid #46606A; padding-inline-start: clamp(2rem, 4vw, 3rem); }
+.closing-give .section-head { margin-block-end: 1.25rem; }
+.closing-give .cta-note { display: block; margin-block-start: .85rem; }
+@media (max-width: 44rem) {
+  .closing-grid { grid-template-columns: minmax(0, 1fr); }
+  .closing-give { border-inline-start: 0; border-block-start: 1px solid #46606A; padding-inline-start: 0; padding-block-start: 1.75rem; }
+}
 .hero-lede {
   font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem);
   color: var(--ink-mut);
@@ -668,9 +706,11 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
   <!-- HERO -->
   <section class="hero wrap">
     <div class="hero-stack">
+      <div class="hero-lockup">
       <img class="hero-logo" src="__IMG_LOGO__" alt="Torah B'Ahava — תורה באהבה" width="440" height="441">
       <p class="eyebrow" data-t="hero_eyebrow">Bein Hazmanim · Every morning</p>
-      <h1 data-t="hero_h1">Every morning of bein hazmanim, a room full of children comes together to learn.</h1>
+      </div>
+      <h1 data-t="hero_h1">Their morning. Their learning. Your support.</h1>
       <p class="hero-lede" data-t="hero_lede">Davening, learning, and time together for boys in first through eighth grade, with a program for girls too. Your donation helps support it all.</p>
 
       <div class="raise" id="raise" hidden>
@@ -686,19 +726,23 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
 
       <div class="cta-row">
         <a class="btn btn-solid donate" href="#" data-t="cta_give">Donate now</a>
-        <button class="btn btn-quiet" type="button" id="wa" data-t="cta_wa">Send on WhatsApp</button>
-        <button class="btn btn-quiet" type="button" id="share" data-t="cta_share">Copy link</button>
       </div>
 
     </div>
+    <figure class="hero-media">
+      <div class="filmwrap">
+        <video id="clip" class="film" src="__VID_CLIP__" poster="__IMG_POST__"
+               autoplay muted loop playsinline preload="auto"
+               aria-label="A walk through the beis medrash while the boys are learning."></video>
+        <button class="sound" id="sound" type="button" aria-pressed="false">Turn on sound</button>
+      </div>
+      <figcaption data-t="film_caption">A morning of learning at Torah B'Ahava · Tap to enlarge</figcaption>
+    </figure>
+    <div class="hero-share">
+      <button class="btn btn-quiet" type="button" id="wa" data-t="cta_wa">Send on WhatsApp</button>
+      <button class="btn btn-text" type="button" id="share" data-t="cta_share">Copy link</button>
+    </div>
   </section>
-
-  <figure class="bleed filmwrap">
-    <video id="clip" class="film" src="__VID_CLIP__" poster="__IMG_POST__"
-           autoplay muted loop playsinline preload="auto"
-           aria-label="A walk through the beis medrash while the boys are learning."></video>
-    <button class="sound" id="sound" type="button" aria-pressed="false">Turn on sound</button>
-  </figure>
 
   <!-- THE SEDER -->
   <section class="section wrap">
@@ -793,7 +837,11 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
   </section>
 
   <!-- PHOTOS -->
-  <section class="section wrap">
+  <section class="section wrap" aria-labelledby="gallery-title">
+    <div class="gallery-heading">
+      <h2 id="gallery-title" data-t="gallery_title">A morning at Torah B'Ahava</h2>
+      <p class="gallery-hint" data-t="gallery_hint">Swipe to see more · Tap to enlarge</p>
+    </div>
     <div class="gallery">
       <figure class="shot">
         <img src="__IMG_ROOM__" alt="A full beis medrash, boys learning at long tables during bein hazmanim." loading="lazy" decoding="async">
@@ -846,46 +894,25 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
     </div>
   </section>
 
-  <!-- THE ASK -->
-  <section class="section section-deep">
-    <div class="wrap">
-      <div class="section-head">
+  <!-- ONE CLOSING APPEAL -->
+  <section class="section section-deep" id="give">
+    <div class="wrap closing-grid">
+      <div class="close-cta">
         <p class="eyebrow" data-t="debt_eyebrow">Why we're asking</p>
-        <h2 data-t="debt_h2">None of this appears on its own</h2>
+        <h2 class="tagline" data-t="tagline">Be Part of their Torah</h2>
+        <p class="close-sub" data-t="close_h2">A room full of kids picked learning over a morning off. The rest is on us.</p>
       </div>
-      <div class="prose" style="display:flex; flex-direction:column; gap:1rem;">
-        <p data-t="debt_p1">Breakfast every morning. Snacks at both recesses. Prizes worth winning. Enough sefarim for everyone. Rebbeim who give up their own bein hazmanim to teach. Every one of those things is there because somebody paid for it.</p>
-        <p data-t="debt_p2">The learning happens either way — these boys keep showing up. The only question is whether the people running it are doing it with support behind them, or without.</p>
-        <p data-t="debt_p3">That's the whole ask.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- GIVE -->
-  <section class="section wrap" id="give">
-    <div class="section-head">
-      <p class="eyebrow" data-t="give_eyebrow">How to give</p>
-      <h2 data-t="give_h2">Give whatever you can</h2>
-      <p data-t="give_intro">Choose your amount on the donation page — every donation helps support the program.</p>
-    </div>
-
+      <div class="closing-give">
+        <div class="section-head">
+          <h3 data-t="give_h2">Give whatever you can</h3>
+          <p data-t="give_intro">Choose your amount on the donation page — every donation helps support the program.</p>
+        </div>
         <div class="cta-row">
-      <a class="btn btn-solid donate" href="#" data-t="give_btn">Donate</a>
-      <span class="cta-note" data-t="give_note">It's a non-profit, so you'll get a receipt.</span>
-    </div>
-
-  </section>
-
-  <!-- CLOSE -->
-  <section class="section section-deep">
-    <div class="wrap close-cta">
-      <h2 class="tagline" data-t="tagline">Be Part of their Torah</h2>
-      <p class="close-sub" data-t="close_h2">A room full of kids picked learning over a morning off. The rest is on us.</p>
-      <div class="cta-row">
-        <a class="btn btn-solid donate" href="#" data-t="close_btn">Donate now</a>
-        <button class="btn btn-quiet" type="button" id="wa2" data-t="close_share">Send this to someone</button>
+          <a class="btn btn-solid donate" href="#" data-t="close_btn">Donate now</a>
+          <button class="btn btn-quiet" type="button" id="wa2" data-t="close_share">Send this to someone</button>
+        </div>
+        <p class="cta-note" data-t="give_note">It's a non-profit, so you'll get a receipt.</p>
       </div>
-
     </div>
   </section>
 
@@ -1072,7 +1099,7 @@ const T = {
     tagline: "Be Part of their Torah",
     nav_give: "Donate",
     hero_eyebrow: "Bein Hazmanim · Every morning",
-    hero_h1: "Every morning of bein hazmanim, a room full of children comes together to learn.",
+    hero_h1: "Their morning. Their learning. Your support.",
     hero_lede: "Davening, learning, and time together for boys in first through eighth grade, with a program for girls too. Your donation helps support it all.",
     raise_label: "Raised so far",
     raise_of: "of",
@@ -1080,6 +1107,9 @@ const T = {
     cta_wa: "Send on WhatsApp",
     cta_share: "Copy link",
     foot_phone: "Questions, or want to sponsor something specific? Call Rav Frankenthal:",
+    film_caption: "A morning of learning at Torah B'Ahava · Tap to enlarge",
+    gallery_title: "A morning at Torah B'Ahava",
+    gallery_hint: "Swipe to see more · Tap to enlarge",
     sound_on: "Turn on sound",
     sound_off: "Turn off sound",
     seder_eyebrow: "The daily seder",
@@ -1155,7 +1185,7 @@ const T = {
     tagline: "קחו חלק בתורה שלהם",
     nav_give: "לתרומה",
     hero_eyebrow: "בין הזמנים · כל בוקר",
-    hero_h1: "בכל בוקר בבין הזמנים, חדר מלא ילדים נפגש כדי ללמוד יחד.",
+    hero_h1: "הבוקר שלהם. הלימוד שלהם. התמיכה שלכם.",
     hero_lede: "תפילה, לימוד וזמן יחד לילדים מכיתה א' ועד ח', לצד תוכנית לבנות. התרומה שלכם עוזרת לקיים את כל זה.",
     raise_label: "נאסף עד כה",
     raise_of: "מתוך",
@@ -1163,6 +1193,9 @@ const T = {
     cta_wa: "שליחה בוואטסאפ",
     cta_share: "העתקת קישור",
     foot_phone: "שאלות, או רוצים לתת חסות למשהו מסוים? התקשרו לרב פרנקנטל:",
+    film_caption: "בוקר של לימוד בתורה באהבה · לחצו להגדלה",
+    gallery_title: "בוקר בתורה באהבה",
+    gallery_hint: "החליקו לתמונות נוספות · לחצו להגדלה",
     sound_on: "הפעילו קול",
     sound_off: "כבו את הקול",
     seder_eyebrow: "סדר היום",
@@ -1493,16 +1526,6 @@ async function copyText(txt) {
 
 async function shareIt() {
   const url = shareUrl();
-  // navigator.share is blocked in most embedded frames and rejects silently,
-  // so it is a bonus path, never the only one.
-  if (navigator.share) {
-    try {
-      await navigator.share({ title: T[lang].brand, text: T[lang].share_text, url });
-      return;
-    } catch (e) {
-      if (e && e.name === "AbortError") return;   // user closed the sheet on purpose
-    }
-  }
   if (await copyText(url)) { say(T[lang].t_copied); return; }
   window.prompt(T[lang].t_manual, url);           // last resort: let them copy it
 }
