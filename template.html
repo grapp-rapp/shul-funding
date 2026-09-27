@@ -1,0 +1,1707 @@
+<title>Torah B'Ahava — Be Part of their Torah</title>
+<link rel="icon" href="__IMG_ICON__">
+
+<!-- ============================================================
+     EDIT THESE FOUR THINGS AND THE PAGE IS LIVE.
+     Scroll to the CONFIG block in the script at the bottom.
+     ============================================================ -->
+
+<style>
+/* ---------- tokens: light (early morning) ---------- */
+:root {
+  /* Tells the browser to keep scrollbars, form controls and the video player
+     chrome light too, even when the device is set to dark mode. */
+  color-scheme: light;
+
+  --ground:      #F1F3F0;
+  --surface:     #FBFCFA;
+  --surface-2:   #E9EDE9;
+  --deep:        #10262E;
+  --on-deep:     #E6EDEA;
+  --on-deep-mut: #9BB0B4;
+  --ink:         #10262E;
+  --ink-mut:     #4C6068;
+  --ink-faint:   #7C8D93;
+  --line:        #D6DDD8;
+  --line-strong: #B9C4BE;
+  --accent:      #8C5F13;
+  --accent-brt:  #C08A28;
+  --on-accent:   #FFFFFF;
+  --accent-wash: #F3EADA;
+
+  --f-display: 'Palatino Linotype', Palatino, 'Iowan Old Style', 'Book Antiqua', Georgia, serif;
+  --f-body:    'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --f-data:    ui-monospace, 'Cascadia Mono', Consolas, 'SF Mono', Menlo, monospace;
+
+  --measure: 64ch;
+  --pad: clamp(1.25rem, 5vw, 3rem);
+}
+
+/* This page is deliberately light in every context. It used to follow the
+   viewer's dark-mode setting, which turned the whole thing near-black on any
+   phone or laptop set to dark. The dark band mid-page (.section-deep) is a
+   design element, not a theme, and stays either way. */
+
+/* ---------- base ---------- */
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }   /* beats the flex/grid display rules below */
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  /* iOS Safari otherwise inflates text on rotation, breaking the layout */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Hebrew faces swap in with direction */
+[dir="rtl"] body,
+body[dir="rtl"] { font-family: 'Arial Hebrew', 'Alef', 'Segoe UI', Arial, sans-serif; }
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] .display {
+  font-family: 'Narkisim', 'Frank Ruehl CLM', David, 'Times New Roman', serif;
+  letter-spacing: 0;
+}
+
+h1, h2, h3 {
+  font-family: var(--f-display);
+  font-weight: 600;
+  line-height: 1.12;
+  text-wrap: balance;
+  margin: 0;
+}
+h1 { font-size: clamp(2rem, 1.35rem + 2.9vw, 3.5rem); letter-spacing: -0.015em; }
+h2 { font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.125rem); letter-spacing: -0.01em; }
+h3 { font-size: 1.0625rem; font-family: var(--f-body); font-weight: 650; letter-spacing: 0; }
+p  { margin: 0; }
+a  { color: var(--accent); }
+
+:focus-visible {
+  outline: 2.5px solid var(--accent-brt);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap {
+  max-width: 62rem;
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+.prose { max-width: var(--measure); }
+
+.eyebrow {
+  font-family: var(--f-data);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0;
+}
+[dir="rtl"] .eyebrow { letter-spacing: 0.06em; }
+
+.num { font-variant-numeric: tabular-nums; unicode-bidi: isolate; }
+/* money reads left-to-right even inside Hebrew, so ₪ stays glued to the digits */
+.money { direction: ltr; unicode-bidi: isolate; }
+
+/* ---------- top bar ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--ground) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-block-end: 1px solid var(--line);
+}
+.topbar-in {
+  max-width: 62rem;
+  margin-inline: auto;
+  padding: 0.7rem var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.brandbox { display: flex; align-items: center; gap: 0.6rem; min-width: 0; }
+.brand {
+  font-family: var(--f-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+/* The logo carries the top of the page, so the sticky bar keeps only the
+   wordmark - showing the same mark twice within 60px reads as a mistake. */
+.hero-logo {
+  width: clamp(9rem, 23vw, 13rem);
+  /* Without this the height="" attribute on the <img> stays in force, pinning
+     the logo to 208px tall while CSS shrinks the width - which stretched it to
+     144x208 on a phone. Height must follow the width. */
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 2px 8px rgba(16, 38, 46, .10),
+              0 14px 34px -14px rgba(16, 38, 46, .28);
+}
+
+/* ---------- photography ---------- */
+.bleed {
+  width: 100%;
+  margin: 0;
+  display: block;
+  background: var(--surface-2);
+}
+.bleed img {
+  width: 100%;
+  height: clamp(15rem, 42vw, 30rem);
+  object-fit: cover;
+  object-position: center 42%;
+  display: block;
+}
+
+/* ---------- the clip ---------- */
+.filmwrap { position: relative; }
+.film {
+  width: 100%;
+  height: clamp(15rem, 42vw, 30rem);
+  object-fit: cover;
+  display: block;
+  background: var(--deep);
+}
+.sound {
+  position: absolute;
+  inset-block-end: 0.9rem;
+  inset-inline-end: 0.9rem;
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(8, 20, 25, .62);
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 99px;
+  padding: 0.6rem 1.1rem;
+  min-height: 44px;          /* thumbs are not mouse pointers */
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background-color .15s, border-color .15s;
+}
+.sound:hover { background: rgba(8, 20, 25, .82); border-color: rgba(255,255,255,.5); }
+.sound:focus-visible { outline: 2.5px solid #fff; outline-offset: 2px; }
+
+/* One row, always. On a phone four equal columns would be thumbnails, so the
+   row turns into a swipeable strip instead of shrinking. */
+.gallery {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+}
+@media (max-width: 52rem) {
+  .gallery {
+    grid-auto-columns: 66%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    padding-block-end: 0.6rem;
+  }
+  .shot { scroll-snap-align: start; }
+}
+.shot {
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+}
+.shot img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- the tagline ---------- */
+.tagline {
+  font-family: var(--f-display);
+  font-size: clamp(2.25rem, 1.3rem + 4.2vw, 4.25rem);
+  font-weight: 600;
+  line-height: 1.03;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  margin: 0;
+  max-width: 18ch;
+}
+[dir="rtl"] .tagline {
+  font-family: 'Narkisim', 'Frank Ruehl CLM', David, 'Times New Roman', serif;
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+.topbar-actions { display: flex; align-items: center; gap: 0.5rem; }
+
+/* The header Donate button is reachable from anywhere on the page, and a
+   compact sticky bar has no room for a note underneath it - so the note
+   becomes part of the bar and travels with it. */
+.barnote {
+  margin: 0;
+  padding: 0.35rem var(--pad) 0.4rem;
+  background: var(--accent-wash);
+  border-block-start: 1px solid var(--line);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-wrap: balance;
+}
+/* The notice now carries the full bilingual row label, which must be allowed to
+   wrap - .he-term is nowrap by default and would run off a phone screen. */
+.barnote .he-term { font-size: 1em; white-space: normal; }
+
+.btn {
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  transition: background-color .15s, border-color .15s, color .15s, transform .1s;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-solid { background: var(--accent); color: var(--on-accent); }
+.btn-solid:hover { background: color-mix(in srgb, var(--accent) 86%, var(--ink)); }
+
+.btn-quiet {
+  background: transparent;
+  color: var(--ink-mut);
+  border-color: var(--line-strong);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.875rem;
+}
+.btn-quiet:hover { color: var(--ink); border-color: var(--ink-faint); background: var(--surface); }
+
+.btn-sm { padding: 0.5rem 0.9rem; font-size: 0.875rem; }
+
+.helpbtn {
+  gap: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  min-height: 40px;
+  white-space: nowrap;
+}
+.helpbtn svg { flex: none; }
+
+/* A bare "?" told nobody there was a video behind it, so the button now carries
+   a play icon and words. That costs width, and the wordmark is the cheapest
+   thing to give up - the logo directly below already carries the branding. */
+@media (max-width: 34rem) { .brand { display: none; } }
+/* On the narrowest phones even the label will not fit, so it drops back to the
+   play icon alone. The button keeps its accessible name via aria-label. */
+@media (max-width: 23rem) {
+  .helpbtn span { display: none; }
+  .helpbtn { padding: 0.5rem 0.6rem; }
+}
+
+/* ---------- hero ---------- */
+.hero { padding-block: clamp(2.5rem, 7vw, 4.5rem) clamp(2rem, 5vw, 3rem); }
+.hero-stack { display: flex; flex-direction: column; gap: 1.5rem; }
+.hero-lede {
+  font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem);
+  color: var(--ink-mut);
+  max-width: var(--measure);
+}
+
+/* ---------- progress ---------- */
+.raise {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: clamp(1.1rem, 3vw, 1.6rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 34rem;
+}
+.raise-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.raise-amt {
+  font-family: var(--f-display);
+  font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.4rem);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.raise-goal { font-family: var(--f-data); font-size: 0.8125rem; color: var(--ink-faint); }
+.raise-label { font-size: 0.8125rem; color: var(--ink-mut); }
+
+.track {
+  height: 12px;
+  border-radius: 99px;
+  background: var(--surface-2);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.fill {
+  height: 100%;
+  width: 0;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-brt) 100%);
+  transition: width 1.4s cubic-bezier(.22,.75,.3,1);
+}
+[dir="rtl"] .fill { background: linear-gradient(270deg, var(--accent) 0%, var(--accent-brt) 100%); }
+
+.cta-row { display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: center; }
+.cta-note { font-size: 0.8125rem; color: var(--ink-faint); }
+
+/* ---------- section rhythm ---------- */
+.section { padding-block: clamp(2.5rem, 6vw, 4rem); border-block-start: 1px solid var(--line); }
+.section-head { display: flex; flex-direction: column; gap: 0.55rem; margin-block-end: 2rem; }
+.section-head p { color: var(--ink-mut); max-width: var(--measure); }
+
+.section-deep {
+  background: var(--deep);
+  color: var(--on-deep);
+  border-block-start: none;
+}
+.section-deep h2 { color: var(--on-deep); }
+.section-deep .section-head p,
+.section-deep .prose p { color: var(--on-deep-mut); }
+.section-deep .eyebrow { color: var(--on-deep-mut); }
+/* The dark brass used on paper is close to unreadable on the deep band, so the
+   note and the Hebrew term switch to the brighter tone here. */
+.section-deep .cta-note { color: var(--on-deep-mut); }
+.section-deep .he-term  { color: var(--accent-brt); }
+
+/* ---------- the seder: a timetable ---------- */
+.seder { display: grid; gap: 0; }
+.slot {
+  display: grid;
+  grid-template-columns: 4.25rem 1.5rem 1fr;
+  align-items: start;
+  gap: 0 0.75rem;
+  padding-block: 0.9rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.slot.in { opacity: 1; transform: none; }
+.slot-time {
+  font-family: var(--f-data);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  padding-block-start: 0.2rem;
+  text-align: end;
+  white-space: nowrap;
+}
+[dir="rtl"] .slot-time { text-align: start; }
+.slot-rail { position: relative; justify-self: center; align-self: stretch; width: 1px; background: var(--line-strong); }
+.slot:first-child .slot-rail { margin-block-start: 0.6rem; }
+.slot:last-child  .slot-rail { height: 0.6rem; align-self: start; }
+.slot-dot {
+  position: absolute;
+  inset-block-start: 0.5rem;
+  inset-inline-start: 50%;
+  translate: -50% 0;
+  width: 7px; height: 7px;
+  border-radius: 99px;
+  background: var(--ground);
+  border: 1.5px solid var(--accent);
+}
+.slot-key .slot-dot { background: var(--accent); }
+.slot-body { display: flex; flex-direction: column; gap: 0.2rem; padding-block-start: 0.05rem; }
+.slot-body p { color: var(--ink-mut); font-size: 0.9375rem; max-width: 46ch; }
+
+/* ---------- cost cards ---------- */
+.costs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.cost {
+  background: var(--surface);
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.cost p { font-size: 0.9375rem; color: var(--ink-mut); }
+
+/* ---------- the "choose בני עלייה" callout ---------- */
+.note {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  max-width: 42rem;
+  margin-block-end: 1.5rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  background: var(--accent-wash);
+}
+.note-mark {
+  color: var(--accent);
+  font-weight: 700;
+  line-height: 1.5;
+  flex: none;
+}
+.note p { font-size: 0.9375rem; line-height: 1.55; }
+.he-term {
+  font-family: 'Narkisim', 'Frank Ruehl CLM', David, 'Arial Hebrew', serif;
+  font-weight: 700;
+  font-size: 1.05em;
+  color: var(--accent);
+  unicode-bidi: isolate;
+  white-space: nowrap;
+}
+
+/* ---------- closing ---------- */
+.close-cta { display: flex; flex-direction: column; gap: 1.25rem; align-items: flex-start; }
+.close-sub {
+  font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem);
+  color: var(--on-deep-mut);
+  max-width: 46ch;
+  margin-block-start: -0.35rem;
+}
+.section-deep .btn-solid { background: var(--accent-brt); color: #10262E; }
+.section-deep .btn-quiet { color: var(--on-deep-mut); border-color: #2C4750; }
+.section-deep .btn-quiet:hover { color: var(--on-deep); border-color: var(--on-deep-mut); background: rgba(255,255,255,.05); }
+
+.foot {
+  padding-block: 2.5rem 3rem;
+  border-block-start: 1px solid var(--line);
+  color: var(--ink-faint);
+  font-size: 0.8125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.foot-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-block-end: 1.1rem;
+}
+.foot-lockup img {
+  width: 62px; height: 62px;
+  border-radius: 12px;
+  flex: none;
+  display: block;
+}
+/* Calling the rabbi is a real action on this page, and a 17px-tall link is not
+   something anyone can reliably hit with a thumb. */
+#phoneline { font-size: 0.9375rem; color: var(--ink-mut); }
+#phoneline a {
+  display: inline-block;
+  padding: 0.5rem 0.15rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.foot-name {
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+[dir="rtl"] .foot-name { font-family: 'Narkisim', 'Frank Ruehl CLM', David, serif; }
+
+/* ---------- the how-to walkthrough ---------- */
+/* Collapsed by default: it should be there for anyone unsure, and invisible to
+   everyone else. <details> gives that for free, with no JavaScript. */
+/* It is a screen recording of small UI text, so it gets the full content
+   width rather than being boxed in. */
+.demo { margin-block: 0 1.5rem; }
+.bigbtn { margin-block-start: 0.75rem; }
+.demo summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 0.55rem 0.15rem;
+  list-style: none;
+  min-height: 44px;
+}
+.demo summary::-webkit-details-marker { display: none; }
+.demo summary::before {
+  content: "▸";
+  font-size: 0.8em;
+  transition: transform .15s;
+}
+.demo[open] summary::before { transform: rotate(90deg); }
+.demo summary:hover { text-decoration: underline; }
+.demo summary:focus-visible { outline: 2.5px solid var(--accent-brt); outline-offset: 3px; border-radius: 3px; }
+.demo-vid {
+  width: 100%;
+  aspect-ratio: 1918 / 916;
+  margin-block-start: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+  display: block;
+}
+
+/* ---------- pay-on-this-page form ---------- */
+.payform {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 34rem;
+}
+.field { display: flex; flex-direction: column; gap: 0.35rem; border: 0; padding: 0; margin: 0; }
+.field label, .field legend {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 0;
+}
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field input[type="number"] {
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  padding: 0.7rem 0.8rem;
+  min-height: 46px;          /* comfortable to tap, and stops iOS zooming in */
+  width: 100%;
+}
+.field input:focus-visible { outline: 2.5px solid var(--accent-brt); outline-offset: 1px; }
+.field input[aria-invalid="true"] { border-color: #A3341F; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 30rem) { .field-row { grid-template-columns: 1fr; } }
+
+.radio { display: inline-flex; align-items: center; gap: 0.45rem; font-weight: 500; font-size: 0.9375rem; min-height: 44px; }
+fieldset.field { display: flex; flex-direction: row; flex-wrap: wrap; gap: 0 1.25rem; align-items: center; }
+fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
+
+.cardframe {
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.cardframe iframe { width: 100%; border: 0; display: block; min-height: 190px; }
+
+.paystatus { font-size: 0.9375rem; margin: 0; min-height: 1.4em; }
+.paystatus.err { color: #A3341F; font-weight: 600; }
+.paystatus.ok  { color: var(--accent); font-weight: 700; }
+
+/* ---------- tap to enlarge ---------- */
+.zoomable { cursor: zoom-in; }
+.zoomable:focus-visible { outline: 3px solid var(--accent-brt); outline-offset: 3px; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(5, 13, 17, .93);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.75rem, 4vw, 3rem);
+}
+.lightbox.open { display: flex; }
+.lightbox img,
+.lightbox video {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 6px;
+  display: block;
+  box-shadow: 0 24px 70px -20px rgba(0,0,0,.8);
+}
+.lightbox img { width: auto; height: auto; }
+/* A <video> whose metadata has not loaded yet has no intrinsic size and falls
+   back to 300x150, so it has to be told to fill the overlay. The aspect-ratio
+   is set from the source element in openLightbox so it never letterboxes. */
+.lightbox video { width: 100%; height: auto; }
+#lbstage { width: 100%; display: flex; align-items: center; justify-content: center; }
+.lb-close {
+  position: absolute;
+  inset-block-start: clamp(0.75rem, 2vw, 1.5rem);
+  inset-inline-end: clamp(0.75rem, 2vw, 1.5rem);
+  width: 44px; height: 44px;
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 99px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lb-close:hover { background: rgba(255,255,255,.26); }
+.lb-close:focus-visible { outline: 2.5px solid #fff; outline-offset: 2px; }
+
+.toast {
+  position: fixed;
+  inset-block-end: 1.25rem;
+  inset-inline-start: 50%;
+  translate: -50% 0;
+  background: var(--deep);
+  color: var(--on-deep);
+  padding: 0.65rem 1.1rem;
+  border-radius: 7px;
+  font-size: 0.875rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s, translate .25s;
+  z-index: 50;
+}
+.toast.show { opacity: 1; translate: -50% -6px; }
+
+@media (max-width: 34rem) {
+  .slot { grid-template-columns: 3.5rem 1.25rem 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+  .slot { opacity: 1; transform: none; }
+}
+</style>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="brandbox">
+      <span class="brand" data-t="brand">Torah B'Ahava</span>
+    </div>
+    <div class="topbar-actions">
+      <button class="btn btn-quiet helpbtn" id="help" type="button">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
+          <circle cx="8" cy="8" r="7.1" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M6.5 5.1 L11 8 L6.5 10.9 Z" fill="currentColor"/>
+        </svg>
+        <span data-t="help_label">How to donate</span>
+      </button>
+      <button class="btn btn-quiet" id="lang" type="button">עברית</button>
+      <a class="btn btn-solid btn-sm donate" href="#" data-t="nav_give">Donate</a>
+    </div>
+  </div>
+  <p class="barnote" id="barnote"></p>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero-stack">
+      <img class="hero-logo" src="__IMG_LOGO__" alt="Torah B'Ahava — תורה באהבה" width="440" height="441">
+      <p class="eyebrow" data-t="hero_eyebrow">Bein Hazmanim · Every morning</p>
+      <h1 data-t="hero_h1">It's vacation. At 8:30 this morning, the beis medrash was full.</h1>
+      <p class="hero-lede" data-t="hero_lede">Boys from first grade through eighth pack the room every single day of bein hazmanim — to daven, eat breakfast, and learn. There's a program for girls too. It runs on breakfast, snacks, and a raffle table, and every bit of that is paid for by people who donate.</p>
+
+      <div class="raise" id="raise" hidden>
+        <div class="raise-head">
+          <span class="raise-amt num money" id="raised">₪0</span>
+          <span class="raise-goal" id="goalwrap"><span data-t="raise_of">of</span> <span class="num money" id="goal"></span></span>
+        </div>
+        <div class="track" role="progressbar" id="bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="fill" id="fill"></div>
+        </div>
+        <span class="raise-label" data-t="raise_label">Raised so far</span>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-solid donate" href="#" data-t="cta_give">Donate now</a>
+        <button class="btn btn-quiet" type="button" id="wa" data-t="cta_wa">Send on WhatsApp</button>
+        <button class="btn btn-quiet" type="button" id="share" data-t="cta_share">Copy link</button>
+      </div>
+
+      <p class="cta-note">
+        <span data-t="mini_a">Please select</span>
+        <span class="he-term" dir="rtl" lang="he">בני עלייה</span>
+        <span data-t="mini_b">(Bnei Aliyah) — the row marked “Teen Programing”.</span>
+      </p>
+    </div>
+  </section>
+
+  <figure class="bleed filmwrap">
+    <video id="clip" class="film" src="__VID_CLIP__" poster="__IMG_POST__"
+           autoplay muted loop playsinline preload="auto"
+           aria-label="A walk through the beis medrash while the boys are learning."></video>
+    <button class="sound" id="sound" type="button" aria-pressed="false">Turn on sound</button>
+  </figure>
+
+  <!-- THE SEDER -->
+  <section class="section wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-t="seder_eyebrow">The daily seder</p>
+      <h2 data-t="seder_h2">One day, start to finish</h2>
+      <p data-t="seder_intro">This is what a boy's morning looks like — the same shape every day, the topics changing as the zman goes on.</p>
+    </div>
+
+    <div class="seder" id="seder">
+      <div class="slot slot-key">
+        <span class="slot-time">8:30</span>
+        <span class="slot-rail"><span class="slot-dot"></span></span>
+        <div class="slot-body">
+          <h3 data-t="s1_t">Shacharis with a minyan</h3>
+          <p data-t="s1_d">Before most of the neighborhood is awake, on a day off school.</p>
+        </div>
+      </div>
+
+      <div class="slot slot-key">
+        <span class="slot-time" data-t="s2_time">after</span>
+        <span class="slot-rail"><span class="slot-dot"></span></span>
+        <div class="slot-body">
+          <h3 data-t="s2_t">Breakfast</h3>
+          <p data-t="s2_d">Every boy eats. Every single morning.</p>
+        </div>
+      </div>
+
+      <div class="slot">
+        <span class="slot-time" data-t="s3_time">then</span>
+        <span class="slot-rail"><span class="slot-dot"></span></span>
+        <div class="slot-body">
+          <h3 data-t="s3_t">Shiur in Navi</h3>
+          <p data-t="s3_d">A different sugya and a different sefer as the days go on.</p>
+        </div>
+      </div>
+
+      <div class="slot">
+        <span class="slot-time" data-t="s4_time">break</span>
+        <span class="slot-rail"><span class="slot-dot"></span></span>
+        <div class="slot-body">
+          <h3 data-t="s4_t">Recess</h3>
+          <p data-t="s4_d">They're kids. They run around.</p>
+        </div>
+      </div>
+
+      <div class="slot slot-key">
+        <span class="slot-time" data-t="s5_time">seder</span>
+        <span class="slot-rail"><span class="slot-dot"></span></span>
+        <div class="slot-body">
+          <h3 data-t="s5_t">Mishnayos and Gemara</h3>
+          <p data-t="s5_d">The younger boys learn Mishnayos. The older ones are in Gemara. The topic changes; the seder doesn't.</p>
+        </div>
+      </div>
+
+      <div class="slot">
+        <span class="slot-time" data-t="s6_time">break</span>
+        <span class="slot-rail"><span class="slot-dot"></span></span>
+        <div class="slot-body">
+          <h3 data-t="s6_t">Second recess, with snacks</h3>
+          <p data-t="s6_d">A whole room of kids, twice a day, every day of the zman.</p>
+        </div>
+      </div>
+
+      <div class="slot">
+        <span class="slot-time" data-t="s7_time">seder</span>
+        <span class="slot-rail"><span class="slot-dot"></span></span>
+        <div class="slot-body">
+          <h3 data-t="s7_t">Second learning seder</h3>
+          <p data-t="s7_d">Back to the sefarim.</p>
+        </div>
+      </div>
+
+      <div class="slot slot-key">
+        <span class="slot-time" data-t="s8_time">prizes</span>
+        <span class="slot-rail"><span class="slot-dot"></span></span>
+        <div class="slot-body">
+          <h3 data-t="s8_t">The raffle</h3>
+          <p data-t="s8_d">This is the part they talk about at home.</p>
+        </div>
+      </div>
+
+      <div class="slot">
+        <span class="slot-time" data-t="s9_time">end</span>
+        <span class="slot-rail"><span class="slot-dot"></span></span>
+        <div class="slot-body">
+          <h3 data-t="s9_t">Mincha</h3>
+          <p data-t="s9_d">And then home — and back again tomorrow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section class="section wrap">
+    <div class="gallery">
+      <figure class="shot">
+        <img src="__IMG_ROOM__" alt="A full beis medrash, boys learning at long tables during bein hazmanim." loading="lazy" decoding="async">
+      </figure>
+      <figure class="shot">
+        <img src="__IMG_WALL__" alt="Boys and rebbeim learning at tables in front of a wall of sefarim." loading="lazy" decoding="async">
+      </figure>
+      <figure class="shot">
+        <img src="__IMG_CHAV__" alt="Younger and older boys learning together over printed sheets." loading="lazy" decoding="async">
+      </figure>
+      <figure class="shot">
+        <img src="__IMG_DEDI__" alt="A shiur in progress beneath the daily dedication sign." loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <!-- COSTS -->
+  <section class="section wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-t="cost_eyebrow">Where the money goes</p>
+      <h2 data-t="cost_h2">Nothing here is optional</h2>
+      <p data-t="cost_intro">Take any one of these away and the program stops working the way it works.</p>
+    </div>
+
+    <div class="costs">
+      <div class="cost">
+        <h3 data-t="c1_t">Breakfast, every morning</h3>
+        <p data-t="c1_d">A room full of kids, every morning of bein hazmanim. It's the first thing after davening, and the last thing anyone would give up.</p>
+      </div>
+      <div class="cost">
+        <h3 data-t="c2_t">Snacks at both recesses</h3>
+        <p data-t="c2_d">Two recesses a day, every day of the zman. It adds up quietly.</p>
+      </div>
+      <div class="cost">
+        <h3 data-t="c3_t">Prizes for the raffle</h3>
+        <p data-t="c3_d">Real prizes, every day, or the raffle stops meaning anything. This is what keeps attendance high.</p>
+      </div>
+      <div class="cost">
+        <h3 data-t="c4_t">Sefarim and supplies</h3>
+        <p data-t="c4_d">Enough copies that no boy is sharing or sitting out.</p>
+      </div>
+      <div class="cost">
+        <h3 data-t="c5_t">Rebbeim to give the shiurim</h3>
+        <p data-t="c5_d">Someone has to teach Navi at nine in the morning during their own bein hazmanim.</p>
+      </div>
+      <div class="cost">
+        <h3 data-t="c6_t">The girls' program</h3>
+        <p data-t="c6_d">Smaller, and running on the same shoestring.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE ASK -->
+  <section class="section section-deep">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-t="debt_eyebrow">Why we're asking</p>
+        <h2 data-t="debt_h2">None of this appears on its own</h2>
+      </div>
+      <div class="prose" style="display:flex; flex-direction:column; gap:1rem;">
+        <p data-t="debt_p1">Breakfast every morning. Snacks at both recesses. Prizes worth winning. Enough sefarim for everyone. Rebbeim who give up their own bein hazmanim to teach. Every one of those things is there because somebody paid for it.</p>
+        <p data-t="debt_p2">The learning happens either way — these boys keep showing up. The only question is whether the people running it are doing it with support behind them, or without.</p>
+        <p data-t="debt_p3">That's the whole ask.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIVE -->
+  <section class="section wrap" id="give">
+    <div class="section-head">
+      <p class="eyebrow" data-t="give_eyebrow">How to give</p>
+      <h2 data-t="give_h2">Give whatever you can</h2>
+      <p data-t="give_intro">You'll enter your own amount on the donation page — anything helps.</p>
+    </div>
+
+    <div class="note">
+      <span class="note-mark" aria-hidden="true">!</span>
+      <p>
+        <span data-t="note_a">On the donation page, please select</span>
+        <span class="he-term" dir="rtl" lang="he">בני עלייה</span>
+        <span data-t="note_b">(Bnei Aliyah) — the row marked “Teen Programing”. That's what makes sure your donation reaches this program.</span>
+      </p>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-solid donate" href="#" data-t="give_btn">Donate</a>
+      <span class="cta-note" data-t="give_note">Opens the program's donation page on Nedarim Plus. It's a non-profit, so you'll get a receipt.</span>
+    </div>
+  </section>
+
+  <!-- CLOSE -->
+  <section class="section section-deep">
+    <div class="wrap close-cta">
+      <h2 class="tagline" data-t="tagline">Be Part of their Torah</h2>
+      <p class="close-sub" data-t="close_h2">A room full of kids picked learning over a morning off. The rest is on us.</p>
+      <div class="cta-row">
+        <a class="btn btn-solid donate" href="#" data-t="close_btn">Donate now</a>
+        <button class="btn btn-quiet" type="button" id="wa2" data-t="close_share">Send this to someone</button>
+      </div>
+
+      <p class="cta-note">
+        <span data-t="mini_a">Please select</span>
+        <span class="he-term" dir="rtl" lang="he">בני עלייה</span>
+        <span data-t="mini_b">(Bnei Aliyah) — the row marked “Teen Programing”.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- WALKTHROUGH — parked at the bottom on purpose; the ? button jumps here -->
+  <section class="section wrap" id="howto">
+    <details class="demo" id="demo">
+      <summary data-t="demo_open">Show me how — 18 second walkthrough</summary>
+      <video class="demo-vid" id="howtovid" src="__VID_HOWTO__" controls playsinline preload="metadata"
+             aria-label="A walkthrough of the donation page, showing which option to pick."></video>
+      <button class="btn btn-quiet bigbtn" type="button" id="bigger" data-t="demo_big">View full screen</button>
+    </details>
+  </section>
+
+    <!-- Pay-on-this-page panel. Shared by all eleven pages; stays hidden while
+       CONFIG.apiValid is empty, and the iframe is only ever loaded once the
+       feature is actually switched on. -->
+  <section class="section wrap" id="paysec" hidden>
+    <div class="section-head">
+      <p class="eyebrow" data-t="pay_eyebrow">Donate</p>
+      <h2 id="pay-h2"></h2>
+      <p data-t="pay_intro">Your card details go straight to Nedarim Plus — they never pass through this website.</p>
+    </div>
+
+    <form class="payform" id="payform" novalidate>
+      <div class="field">
+        <label for="pf-amount" data-t="pay_amount">Amount in shekels</label>
+        <input id="pf-amount" name="amount" type="number" min="1" step="1" inputmode="numeric" required>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="pf-first" data-t="pay_first">First name</label>
+          <input id="pf-first" name="first" type="text" autocomplete="given-name" required>
+        </div>
+        <div class="field">
+          <label for="pf-last" data-t="pay_last">Last name</label>
+          <input id="pf-last" name="last" type="text" autocomplete="family-name" required>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="pf-mail" data-t="pay_mail">Email, for the receipt</label>
+          <input id="pf-mail" name="mail" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="pf-phone" data-t="pay_phone">Phone</label>
+          <input id="pf-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+      </div>
+      <div class="field">
+        <label for="pf-comment" data-t="pay_dedication">Dedication, if you'd like one (optional)</label>
+        <input id="pf-comment" name="comment" type="text" maxlength="120">
+      </div>
+
+      <fieldset class="field">
+        <legend data-t="pay_how">How often</legend>
+        <label class="radio"><input type="radio" name="freq" value="once" checked>
+          <span data-t="pay_once">One time</span></label>
+        <label class="radio"><input type="radio" name="freq" value="monthly">
+          <span data-t="pay_monthly">Every month</span></label>
+      </fieldset>
+
+      <div class="field">
+        <label data-t="pay_card">Card details</label>
+        <div class="cardframe">
+          <iframe id="nedarim" title="Secure card details, provided by Nedarim Plus"></iframe>
+        </div>
+      </div>
+
+      <button class="btn btn-solid" type="submit" id="pf-pay" data-t="pay_btn">Donate</button>
+      <p class="paystatus" id="pf-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+    <footer class="foot wrap">
+    <div class="foot-lockup">
+      <img src="__IMG_LOGO__" alt="" width="62" height="62" loading="lazy">
+      <span class="foot-name" data-t="brand">Torah B'Ahava</span>
+    </div>
+    <span data-t="foot_1">A bein hazmanim learning program for boys and girls.</span>
+    <span data-t="foot_2">Questions, or want to sponsor something specific? Speak to the program's rabbi directly.</span>
+    <span id="phoneline" hidden></span>
+    <span data-t="foot_3">This page uses no cookies and collects nothing about you. Donations are handled by Nedarim Plus.</span>
+  </footer>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged view">
+  <button class="lb-close" id="lbclose" type="button" aria-label="Close">&times;</button>
+  <div id="lbstage"></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================
+   CONFIG — the only part you need to edit
+   ============================================================ */
+const CONFIG = {
+  // The program's Nedarim Plus donation page (mosad 7006016).
+  // Leave as "" and the buttons will politely say "coming soon".
+  donateUrl: "https://www.matara.pro/nedarimplus/online/?mosad=7006016",
+
+  // How much has been raised so far, in shekels. Leave 0 until you know.
+  raised: 0,
+
+  // A fundraising target, if the rabbi gives you one. Leave null for none.
+  //   null  -> no bar, no target shown
+  //   number-> progress bar appears and fills toward it
+  // The whole raised/target card stays hidden while raised is 0 and goal is null.
+  goal: null,
+
+  // Donors type their own amount on the Nedarim Plus form, so there are no
+  // suggested amounts here on purpose.
+
+  // The public address of this page — this is what the share buttons send.
+  // Set by hand on purpose: when the page is previewed inside a frame,
+  // location.href is the frame's internal address, not a link anyone can open.
+  shareUrl: "https://shul-funding.vercel.app/",
+
+  // The rabbi's number. Leave "" and the footer just says to speak to him.
+  // Written the way you'd dial it; the tel: link strips the dashes itself.
+  phone: "054-215-6447",
+
+  // ---------------------------------------------------------------------
+  // PAYING ON THIS PAGE instead of sending people to Nedarim.
+  //
+  // This is OFF while apiValid is "". Every donate button keeps doing exactly
+  // what it does today: opening the Nedarim page in a new tab. Nothing changes
+  // for donors until you fill this in, so it is safe to leave as-is.
+  //
+  // To switch it on, ask Nedarim for:
+  //   1. the ApiValid key for mosad 7006016
+  //   2. iframe payments enabled for this website's address
+  //   3. the Groupe code for each fund (below)
+  //
+  // The key ends up readable in this page's source - that is how Nedarim built
+  // this, and it can only send money TO the mosad, never take any out. The rav
+  // should know that before agreeing.
+  //
+  // NOT TESTED. Nobody has been able to run a real transaction through this
+  // yet. Before trusting it with anyone else's money, give 1 shekel yourself
+  // and check it arrives in the right fund in the Nedarim account.
+  // ---------------------------------------------------------------------
+  apiValid: "",
+  mosad: "7006016",
+
+  // Confirm these three with Nedarim - they are my best reading of their form,
+  // not something I could verify without the key.
+  currency:       "1",      // 1 = shekel
+  payTypeOnce:    "Ragil",  // single charge
+  payTypeMonthly: "HK",     // monthly standing order
+
+  // The single fund this site raises for. `pick` must stay exactly what the
+  // Nedarim list shows, or donors will not find it. `groupe` is Nedarim's own
+  // code for it, needed only for paying on this page.
+  fund: {
+    en:     "Teen Programing",
+    he:     "בני עלייה",
+    pick:   "בני עלייה (תכניות לנוער) — Teen Programing",
+    groupe: ""
+  }
+};
+
+/* ============================================================
+   Translations
+   ============================================================ */
+const T = {
+  en: {
+    brand: "Torah B'Ahava",
+    tagline: "Be Part of their Torah",
+    nav_give: "Donate",
+    hero_eyebrow: "Bein Hazmanim · Every morning",
+    hero_h1: "It's vacation. At 8:30 this morning, the beis medrash was full.",
+    hero_lede: "Boys from first grade through eighth pack the room every single day of bein hazmanim — to daven, eat breakfast, and learn. There's a program for girls too. It runs on breakfast, snacks, and a raffle table, and every bit of that is paid for by people who donate.",
+    raise_label: "Raised so far",
+    raise_of: "of",
+    cta_give: "Donate now",
+    cta_wa: "Send on WhatsApp",
+    cta_share: "Copy link",
+    foot_phone: "Questions, or want to sponsor something specific? Call Rav Frankenthal:",
+    sound_on: "Turn on sound",
+    sound_off: "Turn off sound",
+    seder_eyebrow: "The daily seder",
+    seder_h2: "One day, start to finish",
+    seder_intro: "This is what a boy's morning looks like — the same shape every day, the topics changing as the zman goes on.",
+    s1_t: "Shacharis with a minyan", s1_d: "Before most of the neighborhood is awake, on a day off school.",
+    s2_time: "after", s2_t: "Breakfast", s2_d: "Every boy eats. Every single morning.",
+    s3_time: "then", s3_t: "Shiur in Navi", s3_d: "A different sugya and a different sefer as the days go on.",
+    s4_time: "break", s4_t: "Recess", s4_d: "They're kids. They run around.",
+    s5_time: "seder", s5_t: "Mishnayos and Gemara", s5_d: "The younger boys learn Mishnayos. The older ones are in Gemara. The topic changes; the seder doesn't.",
+    s6_time: "break", s6_t: "Second recess, with snacks", s6_d: "A whole room of kids, twice a day, every day of the zman.",
+    s7_time: "seder", s7_t: "Second learning seder", s7_d: "Back to the sefarim.",
+    s8_time: "prizes", s8_t: "The raffle", s8_d: "This is the part they talk about at home.",
+    s9_time: "end", s9_t: "Mincha", s9_d: "And then home — and back again tomorrow.",
+    cost_eyebrow: "Where the money goes",
+    cost_h2: "Nothing here is optional",
+    cost_intro: "Take any one of these away and the program stops working the way it works.",
+    c1_t: "Breakfast, every morning", c1_d: "A room full of kids, every morning of bein hazmanim. It's the first thing after davening, and the last thing anyone would give up.",
+    c2_t: "Snacks at both recesses", c2_d: "Two recesses a day, every day of the zman. It adds up quietly.",
+    c3_t: "Prizes for the raffle", c3_d: "Real prizes, every day, or the raffle stops meaning anything. This is what keeps attendance high.",
+    c4_t: "Sefarim and supplies", c4_d: "Enough copies that no boy is sharing or sitting out.",
+    c5_t: "Rebbeim to give the shiurim", c5_d: "Someone has to teach Navi at nine in the morning during their own bein hazmanim.",
+    c6_t: "The girls' program", c6_d: "Smaller, and running on the same shoestring.",
+    debt_eyebrow: "Why we're asking",
+    debt_h2: "None of this appears on its own",
+    debt_p1: "Breakfast every morning. Snacks at both recesses. Prizes worth winning. Enough sefarim for everyone. Rebbeim who give up their own bein hazmanim to teach. Every one of those things is there because somebody paid for it.",
+    debt_p2: "The learning happens either way — these boys keep showing up. The only question is whether the people running it are doing it with support behind them, or without.",
+    debt_p3: "That's the whole ask.",
+    give_eyebrow: "How to give",
+    give_h2: "Give whatever you can",
+    give_intro: "You'll enter your own amount on the donation page — anything helps.",
+    give_btn: "Donate",
+    give_note: "Opens the program's donation page on Nedarim Plus. It's a non-profit, so you'll get a receipt.",
+    note_a: "On the donation page, please select",
+    note_b: "(Bnei Aliyah) — the row marked “Teen Programing”. That's what makes sure your donation reaches this program.",
+    mini_a: "Please select",
+    mini_b: "(Bnei Aliyah) — the row marked “Teen Programing”.",
+    bar_a: "When you donate, please select",
+    bar_b: "(Bnei Aliyah)",
+    help_label: "How to donate",
+    demo_open: "Show me how — 18 second walkthrough",
+    demo_big: "View full screen",
+    t_pick: "Pick בני עלייה — the “Teen Programing” row — on the page that just opened.",
+    pay_eyebrow: "Donate",
+    pay_h2: "Give to {f}",
+    pay_intro: "Your card details go straight to Nedarim Plus — they never pass through this website.",
+    pay_amount: "Amount in shekels",
+    pay_first: "First name",
+    pay_last: "Last name",
+    pay_mail: "Email, for the receipt",
+    pay_phone: "Phone",
+    pay_dedication: "Dedication, if you'd like one (optional)",
+    pay_how: "How often",
+    pay_once: "One time",
+    pay_monthly: "Every month",
+    pay_card: "Card details",
+    pay_btn: "Donate",
+    pay_working: "Sending your donation…",
+    pay_thanks: "Thank you — your donation went through. A receipt is on its way to your email.",
+    pay_failed: "That didn't go through, and you have not been charged. Please check the card details and try again.",
+    pay_card_bad: "Please check the card details ({f}).",
+    pay_need_amount: "Please enter how much you'd like to give.",
+    pay_need_name: "Please enter your first and last name.",
+    pay_need_mail: "Please enter a valid email so we can send your receipt.",
+    pay_wait: "The secure card form is still loading — one moment.",
+    close_h2: "A room full of kids picked learning over a morning off. The rest is on us.",
+    close_btn: "Donate now",
+    close_share: "Send this to someone",
+    foot_1: "A bein hazmanim learning program for boys and girls.",
+    foot_3: "This page uses no cookies and collects nothing about you. Donations are handled by Nedarim Plus.",
+    foot_2: "Questions, or want to sponsor something specific? Speak to the program's rabbi directly.",
+    t_copied: "Link copied",
+    t_manual: "Copy this link:",
+    t_soon: "The donation link isn't set up yet — check back soon.",
+    share_text: "It's bein hazmanim, and the beis medrash is full every morning. Be part of their Torah:"
+  },
+  he: {
+    brand: "תורה באהבה",
+    tagline: "קחו חלק בתורה שלהם",
+    nav_give: "לתרומה",
+    hero_eyebrow: "בין הזמנים · כל בוקר",
+    hero_h1: "זה בין הזמנים. היום ב-8:30 בבוקר בית המדרש היה מלא.",
+    hero_lede: "ילדים מכיתה א' ועד ח' ממלאים את החדר כל יום בבין הזמנים — להתפלל, לאכול ארוחת בוקר וללמוד. יש גם תוכנית לבנות. הכול רץ על ארוחות בוקר, חטיפים ושולחן הגרלות, וכל זה ממומן על ידי אנשים שתורמים.",
+    raise_label: "נאסף עד כה",
+    raise_of: "מתוך",
+    cta_give: "לתרומה עכשיו",
+    cta_wa: "שליחה בוואטסאפ",
+    cta_share: "העתקת קישור",
+    foot_phone: "שאלות, או רוצים לתת חסות למשהו מסוים? התקשרו לרב פרנקנטל:",
+    sound_on: "הפעילו קול",
+    sound_off: "כבו את הקול",
+    seder_eyebrow: "סדר היום",
+    seder_h2: "יום אחד, מההתחלה עד הסוף",
+    seder_intro: "ככה נראה הבוקר של ילד אצלנו — אותו מבנה כל יום, כשהנושאים מתחלפים עם הזמן.",
+    s1_t: "שחרית במניין", s1_d: "לפני שרוב השכונה בכלל התעוררה, ביום חופש מבית הספר.",
+    s2_time: "אח״כ", s2_t: "ארוחת בוקר", s2_d: "כל ילד אוכל. כל בוקר מחדש.",
+    s3_time: "אז", s3_t: "שיעור בנ״ך", s3_d: "סוגיה אחרת וספר אחר ככל שהימים מתקדמים.",
+    s4_time: "הפסקה", s4_t: "הפסקה", s4_d: "הם ילדים. הם משתוללים קצת.",
+    s5_time: "סדר", s5_t: "משניות וגמרא", s5_d: "הקטנים לומדים משניות. הגדולים בגמרא. הנושא מתחלף; הסדר לא.",
+    s6_time: "הפסקה", s6_t: "הפסקה שנייה, עם חטיפים", s6_d: "חדר מלא ילדים, פעמיים ביום, כל יום בזמן.",
+    s7_time: "סדר", s7_t: "סדר לימוד שני", s7_d: "חוזרים לספרים.",
+    s8_time: "פרסים", s8_t: "ההגרלה", s8_d: "זה החלק שעליו הם מספרים בבית.",
+    s9_time: "סיום", s9_t: "מנחה", s9_d: "ואז הביתה — ומחר שוב מהתחלה.",
+    cost_eyebrow: "לאן הכסף הולך",
+    cost_h2: "שום דבר כאן הוא לא מותרות",
+    cost_intro: "תורידו אחד מהדברים האלה והתוכנית מפסיקה לעבוד כמו שהיא עובדת.",
+    c1_t: "ארוחת בוקר, כל בוקר", c1_d: "חדר מלא ילדים, כל בוקר בבין הזמנים. זה הדבר הראשון אחרי התפילה, והדבר האחרון שמישהו היה מוותר עליו.",
+    c2_t: "חטיפים בשתי ההפסקות", c2_d: "שתי הפסקות ביום, כל יום בזמן. זה מצטבר בשקט.",
+    c3_t: "פרסים להגרלה", c3_d: "פרסים אמיתיים, כל יום, אחרת ההגרלה מפסיקה להיות שווה משהו. זה מה שמחזיק את ההגעה גבוהה.",
+    c4_t: "ספרים וציוד", c4_d: "מספיק עותקים כדי שאף ילד לא יצטרך לחלוק או לשבת בצד.",
+    c5_t: "רבנים שמוסרים את השיעורים", c5_d: "מישהו צריך למסור שיעור בנ״ך בתשע בבוקר בבין הזמנים של עצמו.",
+    c6_t: "התוכנית לבנות", c6_d: "קטנה יותר, ורצה על אותו תקציב דחוק.",
+    debt_eyebrow: "למה אנחנו מבקשים",
+    debt_h2: "שום דבר מזה לא מגיע מעצמו",
+    debt_p1: "ארוחת בוקר כל בוקר. חטיפים בשתי ההפסקות. פרסים ששווה לזכות בהם. מספיק ספרים לכולם. רבנים שמוותרים על בין הזמנים של עצמם כדי ללמד. כל אחד מהדברים האלה נמצא שם כי מישהו שילם עליו.",
+    debt_p2: "הלימוד קורה כך או כך — הילדים האלה ממשיכים להגיע. השאלה היחידה היא אם מי שמנהל את זה עושה את זה עם גב, או בלי.",
+    debt_p3: "זו כל הבקשה.",
+    give_eyebrow: "איך תורמים",
+    give_h2: "תנו כמה שאתם יכולים",
+    give_intro: "את הסכום תזינו בעצמכם בדף התרומה — כל סכום עוזר.",
+    give_btn: "לתרומה",
+    give_note: "נפתח בדף התרומות של התוכנית בנדרים פלוס. זו עמותה, אז תקבלו קבלה על התרומה.",
+    note_a: "בדף התרומה, אנא בחרו",
+    note_b: "— השורה שכתוב בה ״תכניות לנוער״. זה מה שמוודא שהתרומה מגיעה לתוכנית הזאת.",
+    mini_a: "אנא בחרו",
+    mini_b: "— השורה שכתוב בה ״תכניות לנוער״.",
+    bar_a: "בתרומה, אנא בחרו",
+    bar_b: "— תכניות לנוער",
+    help_label: "איך תורמים",
+    demo_open: "רוצים לראות איך? — סרטון של 18 שניות",
+    demo_big: "צפייה במסך מלא",
+    t_pick: "בחרו בני עלייה — השורה של ״תכניות לנוער״ — בדף שנפתח.",
+    pay_eyebrow: "תרומה",
+    pay_h2: "תרומה ל{f}",
+    pay_intro: "פרטי הכרטיס נשלחים ישירות לנדרים פלוס — הם לא עוברים דרך האתר הזה.",
+    pay_amount: "סכום בשקלים",
+    pay_first: "שם פרטי",
+    pay_last: "שם משפחה",
+    pay_mail: "אימייל, לקבלה",
+    pay_phone: "טלפון",
+    pay_dedication: "הקדשה, אם תרצו (לא חובה)",
+    pay_how: "כל כמה זמן",
+    pay_once: "חד־פעמי",
+    pay_monthly: "כל חודש",
+    pay_card: "פרטי כרטיס",
+    pay_btn: "לתרומה",
+    pay_working: "שולח את התרומה…",
+    pay_thanks: "תודה רבה — התרומה עברה בהצלחה. הקבלה נשלחת לאימייל שלכם.",
+    pay_failed: "התרומה לא עברה, ולא חויבתם. בדקו את פרטי הכרטיס ונסו שוב.",
+    pay_card_bad: "בדקו את פרטי הכרטיס ({f}).",
+    pay_need_amount: "אנא הזינו סכום.",
+    pay_need_name: "אנא הזינו שם פרטי ושם משפחה.",
+    pay_need_mail: "אנא הזינו אימייל תקין כדי שנשלח לכם קבלה.",
+    pay_wait: "טופס הכרטיס המאובטח עוד נטען — רגע אחד.",
+    close_h2: "חדר מלא ילדים בחרו ללמוד במקום בוקר חופשי. השאר תלוי בנו.",
+    close_btn: "לתרומה עכשיו",
+    close_share: "שלחו את זה למישהו",
+    foot_1: "תוכנית לימוד בבין הזמנים לבנים ולבנות.",
+    foot_3: "הדף הזה לא משתמש בעוגיות ולא אוסף עליכם שום מידע. התרומות מתבצעות דרך נדרים פלוס.",
+    foot_2: "שאלות, או רוצים לתת חסות למשהו מסוים? דברו ישירות עם הרב של התוכנית.",
+    t_copied: "הקישור הועתק",
+    t_manual: "העתיקו את הקישור:",
+    t_soon: "קישור התרומה עדיין לא מוכן — נסו שוב בקרוב.",
+    share_text: "זה בין הזמנים, ובית המדרש מלא כל בוקר. קחו חלק בתורה שלהם:"
+  }
+};
+
+/* ============================================================
+   Wiring
+   ============================================================ */
+const root  = document.documentElement;
+const toast = document.getElementById("toast");
+let lang = "en";
+
+const shek = n => "₪" + n.toLocaleString("en-US");
+
+function say(msg, ms) {
+  toast.textContent = msg;
+  toast.classList.add("show");
+  clearTimeout(say._t);
+  say._t = setTimeout(() => toast.classList.remove("show"), ms || 2600);
+}
+
+/* ---------- the one fund this site raises for ---------- */
+
+/* Once paying happens on this page the fund is set by the code, so telling
+   donors to pick it themselves is both pointless and confusing. */
+function syncPickNotices() {
+  const on = payEnabled();
+  const bn = document.getElementById("barnote");
+  if (bn) bn.hidden = on;
+  document.querySelectorAll(".note").forEach(el => { el.hidden = on; });
+  // There are two of these - one under the hero, one in the closing section.
+  document.querySelectorAll('[data-t="mini_a"]').forEach(x => {
+    if (x.parentElement) x.parentElement.hidden = on;
+  });
+}
+
+function renderBarnote() {
+  const bn = document.getElementById("barnote");
+  if (!bn) return;
+  bn.textContent = "";
+  bn.appendChild(document.createTextNode(T[lang].bar_a + " "));
+  const strong = document.createElement("strong");
+  strong.className = "he-term";
+  strong.textContent = CONFIG.fund.pick;
+  bn.appendChild(strong);
+}
+
+/* ---------- paying without leaving the page ----------
+   Nedarim's embeddable form takes the card number, expiry, CVV and ID inside
+   its own iframe, so none of that ever touches this page. Everything else -
+   amount, name, email, and crucially the fund - is sent to it by us, which is
+   what removes the "please pick the right row" problem entirely.
+
+   Off unless a key exists AND this fund has a Groupe code, so it can be
+   switched on one fund at a time. */
+const NEDARIM_ORIGIN = "https://www.matara.pro";
+const NEDARIM_IFRAME = NEDARIM_ORIGIN + "/nedarimplus/iframe/?mosad=";
+
+const payEnabled = () => !!CONFIG.apiValid && !!CONFIG.fund.groupe;
+
+let payReady = false;      // iframe loaded
+let paying   = false;      // guards against a double charge
+
+function setStatus(msg, kind) {
+  const el = document.getElementById("pf-status");
+  el.textContent = msg || "";
+  el.className = "paystatus" + (kind ? " " + kind : "");
+}
+
+function initPay() {
+  const sec = document.getElementById("paysec");
+  if (!sec) return;
+  sec.hidden = !payEnabled();
+  if (!payEnabled()) return;
+
+  const frame = document.getElementById("nedarim");
+  // Load the third-party frame only once, and only when actually in use.
+  if (!payReady) {
+    frame.src = NEDARIM_IFRAME + encodeURIComponent(CONFIG.mosad);
+    frame.addEventListener("load", () => {
+      payReady = true;
+      frame.contentWindow.postMessage({ Name: "GetHeight" }, NEDARIM_ORIGIN);
+    });
+  }
+  const h = document.getElementById("pay-h2");
+  if (h) h.textContent = T[lang].pay_h2.replace("{f}",
+    lang === "he" ? CONFIG.fund.he : CONFIG.fund.en);
+}
+
+window.addEventListener("message", e => {
+  if (e.origin !== NEDARIM_ORIGIN || !e.data || !e.data.Name) return;
+  const d = T[lang];
+
+  if (e.data.Name === "Height") {
+    document.getElementById("nedarim").style.height = (Number(e.data.Value) + 12) + "px";
+    return;
+  }
+  if (e.data.Name === "ValidateFields") {
+    paying = false;
+    document.getElementById("pf-pay").disabled = false;
+    setStatus(d.pay_card_bad.replace("{f}", e.data.Field || ""), "err");
+    return;
+  }
+  if (e.data.Name === "TransactionResponse") {
+    paying = false;
+    document.getElementById("pf-pay").disabled = false;
+    const v = e.data.Value || {};
+    const ok = String(v.Status || "").toLowerCase() === "success" || v.Result === "OK";
+    if (ok) {
+      setStatus(d.pay_thanks, "ok");
+      document.getElementById("payform").reset();
+    } else {
+      setStatus((v.Message || v.Error || d.pay_failed), "err");
+    }
+  }
+});
+
+document.getElementById("payform").addEventListener("submit", e => {
+  e.preventDefault();
+  if (paying) return;
+  const d = T[lang];
+  const val = id => document.getElementById(id).value.trim();
+
+  // Check our own fields first, so the donor is not charged for a typo here.
+  const required = [["pf-amount", d.pay_need_amount], ["pf-first", d.pay_need_name],
+                    ["pf-last", d.pay_need_name], ["pf-mail", d.pay_need_mail]];
+  for (const [id, msg] of required) {
+    const el = document.getElementById(id);
+    const bad = !el.value.trim() || (id === "pf-amount" && !(Number(el.value) > 0)) ||
+                (id === "pf-mail" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value.trim()));
+    el.setAttribute("aria-invalid", bad ? "true" : "false");
+    if (bad) { setStatus(msg, "err"); el.focus(); return; }
+  }
+  if (!payReady) { setStatus(d.pay_wait, "err"); return; }
+
+  paying = true;
+  document.getElementById("pf-pay").disabled = true;
+  setStatus(d.pay_working);
+
+  const monthly = document.querySelector('input[name="freq"]:checked').value === "monthly";
+  document.getElementById("nedarim").contentWindow.postMessage({
+    Name: "FinishTransaction2",
+    Value: {
+      Mosad:       CONFIG.mosad,
+      ApiValid:    CONFIG.apiValid,
+      PaymentType: monthly ? CONFIG.payTypeMonthly : CONFIG.payTypeOnce,
+      Currency:    CONFIG.currency,
+      Amount:      val("pf-amount"),
+      Tashlumim:   "1",
+      Groupe:      CONFIG.fund.groupe,
+      FirstName:   val("pf-first"),
+      LastName:    val("pf-last"),
+      Mail:        val("pf-mail"),
+      Phone:       val("pf-phone"),
+      Comment:     val("pf-comment"),
+      Street: "", City: "", CallBack: "", CallBackMailError: "",
+      Param1: "", Param2: "", Day: "", ThirdPartyReceipt: "", ForceUpdateMatching: ""
+    }
+  }, NEDARIM_ORIGIN);
+});
+
+/* Donate buttons: with paying switched on they bring you to the form on this
+   page; otherwise they open Nedarim and name the row to pick, because that page
+   accepts only ?mosad= and keeps the fund in a hidden field. */
+function go() {
+  if (payEnabled()) {
+    document.getElementById("paysec").scrollIntoView({ behavior: "smooth", block: "start" });
+    setTimeout(() => document.getElementById("pf-amount").focus(), 350);
+    return;
+  }
+  if (!CONFIG.donateUrl) { say(T[lang].t_soon); return; }
+  say(T[lang].t_pick, 8000);
+  window.open(CONFIG.donateUrl, "_blank", "noopener");
+}
+
+function paint() {
+  const d = T[lang];
+  document.querySelectorAll("[data-t]").forEach(el => {
+    const v = d[el.dataset.t];
+    if (v !== undefined) el.textContent = v;
+  });
+
+  root.lang = lang === "he" ? "he" : "en";
+  root.dir  = lang === "he" ? "rtl" : "ltr";
+  document.body.dir = root.dir;
+  document.getElementById("lang").textContent = lang === "he" ? "English" : "עברית";
+  // The label is hidden on the narrowest phones, so the name lives here too.
+  document.getElementById("help").setAttribute("aria-label", d.help_label);
+
+  document.getElementById("raised").textContent = shek(CONFIG.raised);
+  if (CONFIG.goal) document.getElementById("goal").textContent = shek(CONFIG.goal);
+
+  // Phone number is optional, and the digits must stay left-to-right even when
+  // the sentence around them is Hebrew.
+  const pl = document.getElementById("phoneline");
+  pl.textContent = "";
+  pl.hidden = !CONFIG.phone;
+  // With a number to call, the phone line replaces the "speak to him" line
+  // rather than sitting under it repeating the same question.
+  document.querySelector('[data-t="foot_2"]').hidden = !!CONFIG.phone;
+  if (CONFIG.phone) {
+    pl.appendChild(document.createTextNode(d.foot_phone + " "));
+    const a = document.createElement("a");
+    a.href = "tel:" + CONFIG.phone.replace(/[^\d+]/g, "");
+    a.textContent = CONFIG.phone;
+    a.className = "money";
+    pl.appendChild(a);
+  }
+
+  renderBarnote();
+  initPay();
+  syncPickNotices();
+
+  // The sound button's label depends on play state, not just language, so it
+  // opts out of the data-t sweep above and re-renders itself here.
+  window.dispatchEvent(new Event("langchange"));
+}
+
+/* Show the card only once there's something honest to put in it:
+   money raised, a target, or both. A target turns the bar on. */
+function fillBar() {
+  const hasGoal = Number(CONFIG.goal) > 0;
+  const show    = hasGoal || CONFIG.raised > 0;
+
+  document.getElementById("raise").hidden     = !show;
+  document.getElementById("goalwrap").hidden  = !hasGoal;
+  document.getElementById("bar").hidden       = !hasGoal;
+  if (!show || !hasGoal) return;
+
+  const pct = Math.max(0, Math.min(100, (CONFIG.raised / CONFIG.goal) * 100));
+  document.getElementById("bar").setAttribute("aria-valuenow", Math.round(pct));
+  requestAnimationFrame(() => {
+    document.getElementById("fill").style.width = Math.max(pct, pct > 0 ? 1.5 : 0) + "%";
+  });
+}
+
+const shareUrl = () => CONFIG.shareUrl || location.href;
+
+/* Copying is surprisingly easy to get wrong in a framed page: the async
+   clipboard API needs a permission this frame may not have. Fall back to the
+   old textarea trick, and if even that fails, hand the text to the user. */
+async function copyText(txt) {
+  try {
+    await navigator.clipboard.writeText(txt);
+    return true;
+  } catch (e) { /* fall through */ }
+  try {
+    const ta = document.createElement("textarea");
+    ta.value = txt;
+    ta.setAttribute("readonly", "");
+    ta.style.cssText = "position:fixed;top:0;left:-9999px;opacity:0";
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand("copy");
+    ta.remove();
+    return ok;
+  } catch (e) { return false; }
+}
+
+async function shareIt() {
+  const url = shareUrl();
+  // navigator.share is blocked in most embedded frames and rejects silently,
+  // so it is a bonus path, never the only one.
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: T[lang].brand, text: T[lang].share_text, url });
+      return;
+    } catch (e) {
+      if (e && e.name === "AbortError") return;   // user closed the sheet on purpose
+    }
+  }
+  if (await copyText(url)) { say(T[lang].t_copied); return; }
+  window.prompt(T[lang].t_manual, url);           // last resort: let them copy it
+}
+
+function whatsapp() {
+  const msg = T[lang].share_text + " " + shareUrl();
+  window.open("https://wa.me/?text=" + encodeURIComponent(msg), "_blank", "noopener");
+}
+
+document.getElementById("lang").addEventListener("click", () => {
+  lang = lang === "en" ? "he" : "en";
+  paint();
+});
+document.getElementById("share").addEventListener("click", shareIt);
+document.getElementById("wa").addEventListener("click", whatsapp);
+document.getElementById("wa2").addEventListener("click", whatsapp);
+
+/* The ? shows the walkthrough big straight away. Native fullscreen is blocked
+   whenever the page sits in a frame that withholds the permission, so this uses
+   the same full-viewport overlay as the photos, which always works. */
+document.getElementById("help").addEventListener("click", () => {
+  const d = document.getElementById("demo");
+  if (d) d.open = true;
+  openLightbox(document.getElementById("howtovid"));
+});
+
+document.getElementById("bigger").addEventListener("click", () => {
+  openLightbox(document.getElementById("howtovid"));
+});
+
+/* The clip runs muted so it can autoplay at all — browsers block sound that
+   nobody asked for. The button hands that choice back. */
+const clip     = document.getElementById("clip");
+const soundBtn = document.getElementById("sound");
+
+if (clip && soundBtn) {
+  const paintSound = () => {
+    soundBtn.textContent = T[lang][clip.muted ? "sound_on" : "sound_off"];
+    soundBtn.setAttribute("aria-pressed", String(!clip.muted));
+  };
+  soundBtn.addEventListener("click", () => {
+    clip.muted = !clip.muted;
+    if (!clip.muted) clip.play().catch(() => {});
+    paintSound();
+  });
+  paintSound();
+  window.addEventListener("langchange", paintSound);
+
+  // Motion nobody asked for is worse than no motion. Hand over the controls.
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    clip.autoplay = false;
+    clip.loop     = false;
+    clip.controls = true;
+    clip.pause();
+    soundBtn.hidden = true;
+  }
+}
+
+document.querySelectorAll("a.donate").forEach(a => {
+  a.addEventListener("click", e => { e.preventDefault(); go(); });
+});
+
+/* ---------- tap a photo or the clip to see it full size ---------- */
+const lb      = document.getElementById("lightbox");
+const lbStage = document.getElementById("lbstage");
+let lastFocus = null;
+
+function openLightbox(node) {
+  lbStage.textContent = "";
+
+  if (node.tagName === "VIDEO") {
+    // Clone rather than move the player, so the looping clip in the page keeps
+    // running and we don't have to put it back afterwards.
+    const v = document.createElement("video");
+    v.src = node.currentSrc || node.src;
+    v.poster = node.poster;
+    // Carry the shape across so the overlay is correctly sized on the very
+    // first frame, before the clone has read its own metadata.
+    const ratio = (node.videoWidth && node.videoHeight)
+      ? node.videoWidth + " / " + node.videoHeight
+      : getComputedStyle(node).aspectRatio;
+    if (ratio && ratio !== "auto") v.style.aspectRatio = ratio;
+    v.controls = true;
+    v.playsInline = true;
+    v.autoplay = true;
+    v.muted = false;
+    v.currentTime = 0;
+    lbStage.appendChild(v);
+    // Browsers block autoplay that could make noise. If that happens, fall back
+    // to playing silently rather than leaving the viewer staring at a still.
+    v.play().catch(() => { v.muted = true; v.play().catch(() => {}); });
+  } else {
+    const img = document.createElement("img");
+    img.src = node.currentSrc || node.src;
+    img.alt = node.alt || "";
+    lbStage.appendChild(img);
+  }
+
+  lastFocus = document.activeElement;
+  lb.classList.add("open");
+  document.body.style.overflow = "hidden";
+  document.getElementById("lbclose").focus();
+}
+
+function closeLightbox() {
+  lb.classList.remove("open");
+  lbStage.textContent = "";          // stops any playing clone
+  document.body.style.overflow = "";
+  if (lastFocus) lastFocus.focus();
+}
+
+document.querySelectorAll(".shot img, #clip").forEach(node => {
+  node.classList.add("zoomable");
+  node.tabIndex = 0;
+  node.setAttribute("role", "button");
+  node.addEventListener("click", () => openLightbox(node));
+  node.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLightbox(node); }
+  });
+});
+
+document.getElementById("lbclose").addEventListener("click", closeLightbox);
+lb.addEventListener("click", e => { if (e.target === lb) closeLightbox(); });
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && lb.classList.contains("open")) closeLightbox();
+});
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll(".slot").forEach(s => io.observe(s));
+
+paint();
+fillBar();
+renderBarnote();
+initPay();
+syncPickNotices();
+</script>
