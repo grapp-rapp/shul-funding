@@ -42,14 +42,11 @@ $jobs = @(
 #          -crf 32 -preset slower -pix_fmt yuv420p -c:a aac -b:a 56k -ac 1
 #          -movflags +faststart images\clip.mp4
 # The original is VP9-in-MP4, which iPhones will not play; H.264 is universal.
-# howto.mp4 is a screen recording, which is nearly all static pixels, so it
-# survives brutal compression - 2.42 MB down to 124 KB:
-#   ffmpeg -i donation-ad-finger.mp4 -an -vf "scale=960:-2,fps=20" -c:v libx264
-#          -profile:v main -crf 30 -preset veryslow -pix_fmt yuv420p
-#          -movflags +faststart images\howto.mp4
+# NOTE: images/howto.mp4 (the how-to walkthrough) is no longer used - the
+# donation link now preselects the fund, so the walkthrough was removed. The
+# file is kept in images/ in case it is ever wanted back.
 $rawJobs = @(
-  @{ Token = "__VID_CLIP__";  File = "clip.mp4";   Mime = "video/mp4" },
-  @{ Token = "__VID_HOWTO__"; File = "howto.mp4";  Mime = "video/mp4" }
+  @{ Token = "__VID_CLIP__";  File = "clip.mp4";   Mime = "video/mp4" }
 )
 
 function Convert-ToDataUri {

@@ -242,25 +242,6 @@ a  { color: var(--accent); }
 }
 .topbar-actions { display: flex; align-items: center; gap: 0.5rem; }
 
-/* The header Donate button is reachable from anywhere on the page, and a
-   compact sticky bar has no room for a note underneath it - so the note
-   becomes part of the bar and travels with it. */
-.barnote {
-  margin: 0;
-  padding: 0.35rem var(--pad) 0.4rem;
-  background: var(--accent-wash);
-  border-block-start: 1px solid var(--line);
-  color: var(--accent);
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1.4;
-  text-align: center;
-  text-wrap: balance;
-}
-/* The notice now carries the full bilingual row label, which must be allowed to
-   wrap - .he-term is nowrap by default and would run off a phone screen. */
-.barnote .he-term { font-size: 1em; white-space: normal; }
-
 .btn {
   font: inherit;
   font-size: 0.9375rem;
@@ -292,24 +273,8 @@ a  { color: var(--accent); }
 
 .btn-sm { padding: 0.5rem 0.9rem; font-size: 0.875rem; }
 
-.helpbtn {
-  gap: 0.4rem;
-  padding: 0.5rem 0.8rem;
-  min-height: 40px;
-  white-space: nowrap;
-}
-.helpbtn svg { flex: none; }
-
-/* A bare "?" told nobody there was a video behind it, so the button now carries
-   a play icon and words. That costs width, and the wordmark is the cheapest
-   thing to give up - the logo directly below already carries the branding. */
 @media (max-width: 34rem) { .brand { display: none; } }
-/* On the narrowest phones even the label will not fit, so it drops back to the
-   play icon alone. The button keeps its accessible name via aria-label. */
-@media (max-width: 23rem) {
-  .helpbtn span { display: none; }
-  .helpbtn { padding: 0.5rem 0.6rem; }
-}
+
 
 /* ---------- hero ---------- */
 .hero { padding-block: clamp(2.5rem, 7vw, 4.5rem) clamp(2rem, 5vw, 3rem); }
@@ -381,10 +346,7 @@ a  { color: var(--accent); }
 .section-deep .section-head p,
 .section-deep .prose p { color: var(--on-deep-mut); }
 .section-deep .eyebrow { color: var(--on-deep-mut); }
-/* The dark brass used on paper is close to unreadable on the deep band, so the
-   note and the Hebrew term switch to the brighter tone here. */
 .section-deep .cta-note { color: var(--on-deep-mut); }
-.section-deep .he-term  { color: var(--accent-brt); }
 
 /* ---------- the seder: a timetable ---------- */
 .seder { display: grid; gap: 0; }
@@ -445,34 +407,6 @@ a  { color: var(--accent); }
 }
 .cost p { font-size: 0.9375rem; color: var(--ink-mut); }
 
-/* ---------- the "choose בני עלייה" callout ---------- */
-.note {
-  display: flex;
-  gap: 0.8rem;
-  align-items: flex-start;
-  max-width: 42rem;
-  margin-block-end: 1.5rem;
-  padding: 1rem 1.15rem;
-  border: 1px solid var(--accent);
-  border-radius: 10px;
-  background: var(--accent-wash);
-}
-.note-mark {
-  color: var(--accent);
-  font-weight: 700;
-  line-height: 1.5;
-  flex: none;
-}
-.note p { font-size: 0.9375rem; line-height: 1.55; }
-.he-term {
-  font-family: 'Narkisim', 'Frank Ruehl CLM', David, 'Arial Hebrew', serif;
-  font-weight: 700;
-  font-size: 1.05em;
-  color: var(--accent);
-  unicode-bidi: isolate;
-  white-space: nowrap;
-}
-
 /* ---------- closing ---------- */
 .close-cta { display: flex; flex-direction: column; gap: 1.25rem; align-items: flex-start; }
 .close-sub {
@@ -528,44 +462,6 @@ a  { color: var(--accent); }
   letter-spacing: -0.01em;
 }
 [dir="rtl"] .foot-name { font-family: 'Narkisim', 'Frank Ruehl CLM', David, serif; }
-
-/* ---------- the how-to walkthrough ---------- */
-/* Collapsed by default: it should be there for anyone unsure, and invisible to
-   everyone else. <details> gives that for free, with no JavaScript. */
-/* It is a screen recording of small UI text, so it gets the full content
-   width rather than being boxed in. */
-.demo { margin-block: 0 1.5rem; }
-.bigbtn { margin-block-start: 0.75rem; }
-.demo summary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: var(--accent);
-  cursor: pointer;
-  padding: 0.55rem 0.15rem;
-  list-style: none;
-  min-height: 44px;
-}
-.demo summary::-webkit-details-marker { display: none; }
-.demo summary::before {
-  content: "▸";
-  font-size: 0.8em;
-  transition: transform .15s;
-}
-.demo[open] summary::before { transform: rotate(90deg); }
-.demo summary:hover { text-decoration: underline; }
-.demo summary:focus-visible { outline: 2.5px solid var(--accent-brt); outline-offset: 3px; border-radius: 3px; }
-.demo-vid {
-  width: 100%;
-  aspect-ratio: 1918 / 916;
-  margin-block-start: 0.75rem;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--surface-2);
-  display: block;
-}
 
 /* ---------- Nedarim's page, embedded ---------- */
 .embedwrap {
@@ -716,18 +612,10 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
       <span class="brand" data-t="brand">Torah B'Ahava</span>
     </div>
     <div class="topbar-actions">
-      <button class="btn btn-quiet helpbtn" id="help" type="button">
-        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
-          <circle cx="8" cy="8" r="7.1" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M6.5 5.1 L11 8 L6.5 10.9 Z" fill="currentColor"/>
-        </svg>
-        <span data-t="help_label">How to donate</span>
-      </button>
       <button class="btn btn-quiet" id="lang" type="button">עברית</button>
       <a class="btn btn-solid btn-sm donate" href="#" data-t="nav_give">Donate</a>
     </div>
   </div>
-  <p class="barnote" id="barnote"></p>
 </header>
 
 <main>
@@ -756,11 +644,7 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
         <button class="btn btn-quiet" type="button" id="share" data-t="cta_share">Copy link</button>
       </div>
 
-      <p class="cta-note">
-        <span data-t="mini_a">Please select</span>
-        <span class="he-term" dir="rtl" lang="he">בני עלייה</span>
-        <span data-t="mini_b">(Bnei Aliyah) — the row marked “Teen Programing”.</span>
-      </p>
+</p>
     </div>
   </section>
 
@@ -940,19 +824,12 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
       <p data-t="give_intro">You'll enter your own amount on the donation page — anything helps.</p>
     </div>
 
-    <div class="note">
-      <span class="note-mark" aria-hidden="true">!</span>
-      <p>
-        <span data-t="note_a">On the donation page, please select</span>
-        <span class="he-term" dir="rtl" lang="he">בני עלייה</span>
-        <span data-t="note_b">(Bnei Aliyah) — the row marked “Teen Programing”. That's what makes sure your donation reaches this program.</span>
-      </p>
-    </div>
-
-    <div class="cta-row">
+        <div class="cta-row">
       <a class="btn btn-solid donate" href="#" data-t="give_btn">Donate</a>
       <span class="cta-note" data-t="give_note">It's a non-profit, so you'll get a receipt.</span>
     </div>
+
+    <p class="cta-note" data-t="confirm_line">Teen Programing should already be selected below — just check before you pay.</p>
 
     <!-- Nedarim's own donation page, shown inside this one. The src is set
          only when it scrolls into view, so it costs nothing until needed. -->
@@ -972,22 +849,8 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
         <button class="btn btn-quiet" type="button" id="wa2" data-t="close_share">Send this to someone</button>
       </div>
 
-      <p class="cta-note">
-        <span data-t="mini_a">Please select</span>
-        <span class="he-term" dir="rtl" lang="he">בני עלייה</span>
-        <span data-t="mini_b">(Bnei Aliyah) — the row marked “Teen Programing”.</span>
-      </p>
+</p>
     </div>
-  </section>
-
-  <!-- WALKTHROUGH — parked at the bottom on purpose; the ? button jumps here -->
-  <section class="section wrap" id="howto">
-    <details class="demo" id="demo">
-      <summary data-t="demo_open">Show me how — 18 second walkthrough</summary>
-      <video class="demo-vid" id="howtovid" src="__VID_HOWTO__" controls playsinline preload="metadata"
-             aria-label="A walkthrough of the donation page, showing which option to pick."></video>
-      <button class="btn btn-quiet bigbtn" type="button" id="bigger" data-t="demo_big">View full screen</button>
-    </details>
   </section>
 
     <!-- Pay-on-this-page panel. Shared by all eleven pages; stays hidden while
@@ -1079,9 +942,12 @@ const CONFIG = {
   // fine. Set to false to go back to opening it in a new tab.
   embedDonate: true,
 
-  // The program's Nedarim Plus donation page (mosad 7006016).
+  // The program's Nedarim donation page, with בני עלייה ALREADY CHOSEN.
+  // Short form of this link is https://nedar.im/Pouv - but use the expanded
+  // one here: the short link redirects, and that redirect sends
+  // x-frame-options SAMEORIGIN, which can stop it showing inside this page.
   // Leave as "" and the buttons will politely say "coming soon".
-  donateUrl: "https://www.matara.pro/nedarimplus/online/?mosad=7006016",
+  donateUrl: "https://www.matara.pro/nedarimplus/online/?S=Pouv",
 
   // How much has been raised so far, in shekels. Leave 0 until you know.
   raised: 0,
@@ -1191,19 +1057,10 @@ const T = {
     debt_p3: "That's the whole ask.",
     give_eyebrow: "How to give",
     give_h2: "Give whatever you can",
-    give_intro: "You'll enter your own amount on the donation page — anything helps.",
+    give_intro: "Enter any amount below. It goes straight to this program — nothing else to choose.",
     give_btn: "Donate",
+    confirm_line: "Teen Programing should already be selected below — just check before you pay.",
     give_note: "It's a non-profit, so you'll get a receipt.",
-    note_a: "On the donation page, please select",
-    note_b: "(Bnei Aliyah) — the row marked “Teen Programing”. That's what makes sure your donation reaches this program.",
-    mini_a: "Please select",
-    mini_b: "(Bnei Aliyah) — the row marked “Teen Programing”.",
-    bar_a: "When you donate, please select",
-    bar_b: "(Bnei Aliyah)",
-    help_label: "How to donate",
-    demo_open: "Show me how — 18 second walkthrough",
-    demo_big: "View full screen",
-    t_pick: "Pick בני עלייה — the “Teen Programing” row — on the page that just opened.",
     pay_eyebrow: "Donate",
     pay_h2: "Give to {f}",
     pay_intro: "Your card details go straight to Nedarim Plus — they never pass through this website.",
@@ -1280,19 +1137,10 @@ const T = {
     debt_p3: "זו כל הבקשה.",
     give_eyebrow: "איך תורמים",
     give_h2: "תנו כמה שאתם יכולים",
-    give_intro: "את הסכום תזינו בעצמכם בדף התרומה — כל סכום עוזר.",
+    give_intro: "הזינו כל סכום למטה. הכסף הולך ישירות לתוכנית הזאת — אין מה לבחור.",
     give_btn: "לתרומה",
+    confirm_line: "בני עלייה אמור כבר להיות מסומן למטה — רק בדקו לפני התשלום.",
     give_note: "זו עמותה, אז תקבלו קבלה על התרומה.",
-    note_a: "בדף התרומה, אנא בחרו",
-    note_b: "— השורה שכתוב בה ״תכניות לנוער״. זה מה שמוודא שהתרומה מגיעה לתוכנית הזאת.",
-    mini_a: "אנא בחרו",
-    mini_b: "— השורה שכתוב בה ״תכניות לנוער״.",
-    bar_a: "בתרומה, אנא בחרו",
-    bar_b: "— תכניות לנוער",
-    help_label: "איך תורמים",
-    demo_open: "רוצים לראות איך? — סרטון של 18 שניות",
-    demo_big: "צפייה במסך מלא",
-    t_pick: "בחרו בני עלייה — השורה של ״תכניות לנוער״ — בדף שנפתח.",
     pay_eyebrow: "תרומה",
     pay_h2: "תרומה ל{f}",
     pay_intro: "פרטי הכרטיס נשלחים ישירות לנדרים פלוס — הם לא עוברים דרך האתר הזה.",
@@ -1345,30 +1193,6 @@ function say(msg, ms) {
 }
 
 /* ---------- the one fund this site raises for ---------- */
-
-/* Once paying happens on this page the fund is set by the code, so telling
-   donors to pick it themselves is both pointless and confusing. */
-function syncPickNotices() {
-  const on = payEnabled();
-  const bn = document.getElementById("barnote");
-  if (bn) bn.hidden = on;
-  document.querySelectorAll(".note").forEach(el => { el.hidden = on; });
-  // There are two of these - one under the hero, one in the closing section.
-  document.querySelectorAll('[data-t="mini_a"]').forEach(x => {
-    if (x.parentElement) x.parentElement.hidden = on;
-  });
-}
-
-function renderBarnote() {
-  const bn = document.getElementById("barnote");
-  if (!bn) return;
-  bn.textContent = "";
-  bn.appendChild(document.createTextNode(T[lang].bar_a + " "));
-  const strong = document.createElement("strong");
-  strong.className = "he-term";
-  strong.textContent = CONFIG.fund.pick;
-  bn.appendChild(strong);
-}
 
 /* ---------- paying without leaving the page ----------
    Nedarim's embeddable form takes the card number, expiry, CVV and ID inside
@@ -1509,7 +1333,6 @@ function go() {
     const wrap = document.getElementById("embedwrap");
     if (wrap._load) wrap._load();
     wrap.scrollIntoView({ behavior: "smooth", block: "center" });
-    say(T[lang].t_pick, 8000);
     return;
   }
   if (payEnabled()) {
@@ -1518,7 +1341,6 @@ function go() {
     return;
   }
   if (!CONFIG.donateUrl) { say(T[lang].t_soon); return; }
-  say(T[lang].t_pick, 8000);
   window.open(CONFIG.donateUrl, "_blank", "noopener");
 }
 
@@ -1533,8 +1355,6 @@ function paint() {
   root.dir  = lang === "he" ? "rtl" : "ltr";
   document.body.dir = root.dir;
   document.getElementById("lang").textContent = lang === "he" ? "English" : "עברית";
-  // The label is hidden on the narrowest phones, so the name lives here too.
-  document.getElementById("help").setAttribute("aria-label", d.help_label);
 
   document.getElementById("raised").textContent = shek(CONFIG.raised);
   if (CONFIG.goal) document.getElementById("goal").textContent = shek(CONFIG.goal);
@@ -1556,9 +1376,7 @@ function paint() {
     pl.appendChild(a);
   }
 
-  renderBarnote();
   initPay();
-  syncPickNotices();
 
   // The sound button's label depends on play state, not just language, so it
   // opts out of the data-t sweep above and re-renders itself here.
@@ -1634,19 +1452,6 @@ document.getElementById("lang").addEventListener("click", () => {
 document.getElementById("share").addEventListener("click", shareIt);
 document.getElementById("wa").addEventListener("click", whatsapp);
 document.getElementById("wa2").addEventListener("click", whatsapp);
-
-/* The ? shows the walkthrough big straight away. Native fullscreen is blocked
-   whenever the page sits in a frame that withholds the permission, so this uses
-   the same full-viewport overlay as the photos, which always works. */
-document.getElementById("help").addEventListener("click", () => {
-  const d = document.getElementById("demo");
-  if (d) d.open = true;
-  openLightbox(document.getElementById("howtovid"));
-});
-
-document.getElementById("bigger").addEventListener("click", () => {
-  openLightbox(document.getElementById("howtovid"));
-});
 
 /* The clip runs muted so it can autoplay at all — browsers block sound that
    nobody asked for. The button hands that choice back. */
@@ -1752,8 +1557,6 @@ document.querySelectorAll(".slot").forEach(s => io.observe(s));
 
 paint();
 fillBar();
-renderBarnote();
 initPay();
 initEmbed();
-syncPickNotices();
 </script>
