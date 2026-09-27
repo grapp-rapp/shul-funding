@@ -138,6 +138,7 @@ a  { color: var(--accent); }
   gap: 1rem;
 }
 .brandbox { display: flex; align-items: center; gap: 0.6rem; min-width: 0; }
+.header-logo { display: block; width: 44px; height: auto; flex: none; border-radius: 8px; }
 .brand {
   font-family: var(--f-display);
   font-size: 1.0625rem;
@@ -146,8 +147,7 @@ a  { color: var(--accent); }
   white-space: nowrap;
 }
 
-/* The logo carries the top of the page, so the sticky bar keeps only the
-   wordmark - showing the same mark twice within 60px reads as a mistake. */
+/* A compact logo stays in the sticky header while the hero introduces the program. */
 .hero-logo {
   width: clamp(4.5rem, 7vw, 5.5rem);
   /* Without this the height="" attribute on the <img> stays in force, pinning
@@ -693,6 +693,7 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
 <header class="topbar">
   <div class="topbar-in">
     <div class="brandbox">
+      <img class="header-logo" src="__IMG_LOGO__" alt="Torah B'Ahava — תורה באהבה" width="440" height="441">
       <span class="brand" data-t="brand">Torah B'Ahava</span>
     </div>
     <div class="topbar-actions">
