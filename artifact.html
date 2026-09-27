@@ -567,6 +567,21 @@ a  { color: var(--accent); }
   display: block;
 }
 
+/* ---------- Nedarim's page, embedded ---------- */
+.embedwrap {
+  margin-block-start: 1.5rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.embedwrap iframe {
+  width: 100%;
+  height: clamp(620px, 96vh, 1000px);
+  border: 0;
+  display: block;
+}
+
 /* ---------- pay-on-this-page form ---------- */
 .payform {
   display: flex;
@@ -936,7 +951,14 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
 
     <div class="cta-row">
       <a class="btn btn-solid donate" href="#" data-t="give_btn">Donate</a>
-      <span class="cta-note" data-t="give_note">Opens the program's donation page on Nedarim Plus. It's a non-profit, so you'll get a receipt.</span>
+      <span class="cta-note" data-t="give_note">It's a non-profit, so you'll get a receipt.</span>
+    </div>
+
+    <!-- Nedarim's own donation page, shown inside this one. The src is set
+         only when it scrolls into view, so it costs nothing until needed. -->
+    <div class="embedwrap" id="embedwrap" hidden>
+      <iframe id="donateframe" title="Donation form, provided by Nedarim Plus"
+              loading="lazy"></iframe>
     </div>
   </section>
 
@@ -1052,6 +1074,11 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
    CONFIG — the only part you need to edit
    ============================================================ */
 const CONFIG = {
+  // Show the Nedarim donation page inside this page, so nobody has to leave.
+  // Their page sets no X-Frame-Options and no frame-busting, so it embeds
+  // fine. Set to false to go back to opening it in a new tab.
+  embedDonate: true,
+
   // The program's Nedarim Plus donation page (mosad 7006016).
   // Leave as "" and the buttons will politely say "coming soon".
   donateUrl: "https://www.matara.pro/nedarimplus/online/?mosad=7006016",
@@ -1166,7 +1193,7 @@ const T = {
     give_h2: "Give whatever you can",
     give_intro: "You'll enter your own amount on the donation page — anything helps.",
     give_btn: "Donate",
-    give_note: "Opens the program's donation page on Nedarim Plus. It's a non-profit, so you'll get a receipt.",
+    give_note: "It's a non-profit, so you'll get a receipt.",
     note_a: "On the donation page, please select",
     note_b: "(Bnei Aliyah) — the row marked “Teen Programing”. That's what makes sure your donation reaches this program.",
     mini_a: "Please select",
@@ -1255,7 +1282,7 @@ const T = {
     give_h2: "תנו כמה שאתם יכולים",
     give_intro: "את הסכום תזינו בעצמכם בדף התרומה — כל סכום עוזר.",
     give_btn: "לתרומה",
-    give_note: "נפתח בדף התרומות של התוכנית בנדרים פלוס. זו עמותה, אז תקבלו קבלה על התרומה.",
+    give_note: "זו עמותה, אז תקבלו קבלה על התרומה.",
     note_a: "בדף התרומה, אנא בחרו",
     note_b: "— השורה שכתוב בה ״תכניות לנוער״. זה מה שמוודא שהתרומה מגיעה לתוכנית הזאת.",
     mini_a: "אנא בחרו",
@@ -1457,10 +1484,34 @@ document.getElementById("payform").addEventListener("submit", e => {
   }, NEDARIM_ORIGIN);
 });
 
+/* Nedarim's page embedded below, loaded only once it is actually scrolled to
+   so it costs nothing on arrival. */
+const embedOn = () => CONFIG.embedDonate && !!CONFIG.donateUrl && !payEnabled();
+
+function initEmbed() {
+  const wrap = document.getElementById("embedwrap");
+  if (!wrap) return;
+  wrap.hidden = !embedOn();
+  if (!embedOn()) return;
+  const frame = document.getElementById("donateframe");
+  const load = () => { if (!frame.src) frame.src = CONFIG.donateUrl; };
+  new IntersectionObserver((es, obs) => {
+    if (es.some(e => e.isIntersecting)) { load(); obs.disconnect(); }
+  }, { rootMargin: "300px" }).observe(wrap);
+  wrap._load = load;
+}
+
 /* Donate buttons: with paying switched on they bring you to the form on this
-   page; otherwise they open Nedarim and name the row to pick, because that page
-   accepts only ?mosad= and keeps the fund in a hidden field. */
+   page; with the embed on they bring you to Nedarim's page shown inside this
+   one; otherwise they open it in a new tab. */
 function go() {
+  if (embedOn()) {
+    const wrap = document.getElementById("embedwrap");
+    if (wrap._load) wrap._load();
+    wrap.scrollIntoView({ behavior: "smooth", block: "center" });
+    say(T[lang].t_pick, 8000);
+    return;
+  }
   if (payEnabled()) {
     document.getElementById("paysec").scrollIntoView({ behavior: "smooth", block: "start" });
     setTimeout(() => document.getElementById("pf-amount").focus(), 350);
@@ -1703,5 +1754,6 @@ paint();
 fillBar();
 renderBarnote();
 initPay();
+initEmbed();
 syncPickNotices();
 </script>
