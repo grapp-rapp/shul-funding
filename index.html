@@ -471,20 +471,48 @@ a  { color: var(--accent); }
 }
 [dir="rtl"] .foot-name { font-family: 'Narkisim', 'Frank Ruehl CLM', David, serif; }
 
-/* ---------- Nedarim's page, embedded ---------- */
-.embedwrap {
-  margin-block-start: 1.5rem;
-  border: 1px solid var(--line-strong);
-  border-radius: 10px;
-  overflow: hidden;
+/* ---------- the donation form, full screen ---------- */
+/* Nedarim's page cannot report its height (their /iframe/ endpoint can, this
+   one cannot) and it is cross-origin, so it can never be sized to fit. Giving
+   it the whole window sidesteps that: the form scrolls, the page behind does
+   not, and the donor still never leaves the site. */
+.payover {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background: var(--ground);
+  display: flex;
+  flex-direction: column;
+}
+.payover[hidden] { display: none; }
+.payover-bar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem var(--pad);
   background: var(--surface);
+  border-block-end: 1px solid var(--line);
 }
-.embedwrap iframe {
-  width: 100%;
-  height: clamp(620px, 96vh, 1000px);
-  border: 0;
-  display: block;
+.payover-titles { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+.payover-title { font-family: var(--f-display); font-size: 1.0625rem; font-weight: 600; }
+[dir="rtl"] .payover-title { font-family: 'Narkisim', 'Frank Ruehl CLM', David, serif; }
+.payover-sub { font-size: 0.75rem; color: var(--ink-mut); }
+.payover-close {
+  flex: none;
+  width: 44px; height: 44px;
+  font: inherit; font-size: 1.6rem; line-height: 1;
+  color: var(--ink-mut);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: 99px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
 }
+.payover-close:hover { color: var(--ink); border-color: var(--ink-faint); }
+.payover-close:focus-visible { outline: 2.5px solid var(--accent-brt); outline-offset: 2px; }
+.payover iframe { flex: 1 1 auto; width: 100%; border: 0; display: block; }
 
 /* ---------- pay-on-this-page form ---------- */
 .payform {
@@ -839,12 +867,6 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
 
     <p class="cta-note" data-t="confirm_line">Teen Programing should already be selected below — just check before you pay.</p>
 
-    <!-- Nedarim's own donation page, shown inside this one. The src is set
-         only when it scrolls into view, so it costs nothing until needed. -->
-    <div class="embedwrap" id="embedwrap" hidden>
-      <iframe id="donateframe" title="Donation form, provided by Nedarim Plus"
-              loading="lazy"></iframe>
-    </div>
   </section>
 
   <!-- CLOSE -->
@@ -936,6 +958,20 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged view">
   <button class="lb-close" id="lbclose" type="button" aria-label="Close">&times;</button>
   <div id="lbstage"></div>
+</div>
+
+<!-- The donation form, full screen. The page behind is locked while it is
+     open, so the form is the only thing that scrolls - no scrollbar inside a
+     scrollbar, however tall the form grows. -->
+<div class="payover" id="payover" role="dialog" aria-modal="true" aria-label="Donate" hidden>
+  <div class="payover-bar">
+    <div class="payover-titles">
+      <strong class="payover-title" data-t="over_title">Donate</strong>
+      <span class="payover-sub" data-t="confirm_line">Teen Programing should already be selected — just check before you pay.</span>
+    </div>
+    <button class="payover-close" id="payclose" type="button" aria-label="Close">&times;</button>
+  </div>
+  <iframe id="donateframe" title="Donation form, provided by Nedarim Plus"></iframe>
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -1067,6 +1103,7 @@ const T = {
     give_h2: "Give whatever you can",
     give_intro: "Enter any amount below. It goes straight to this program — nothing else to choose.",
     give_btn: "Donate",
+    over_title: "Donate to Torah B'Ahava",
     confirm_line: "Teen Programing should already be selected below — just check before you pay.",
     give_note: "It's a non-profit, so you'll get a receipt.",
     pay_eyebrow: "Donate",
@@ -1147,6 +1184,7 @@ const T = {
     give_h2: "תנו כמה שאתם יכולים",
     give_intro: "הזינו כל סכום למטה. הכסף הולך ישירות לתוכנית הזאת — אין מה לבחור.",
     give_btn: "לתרומה",
+    over_title: "תרומה לתורה באהבה",
     confirm_line: "בני עלייה אמור כבר להיות מסומן למטה — רק בדקו לפני התשלום.",
     give_note: "זו עמותה, אז תקבלו קבלה על התרומה.",
     pay_eyebrow: "תרומה",
@@ -1320,29 +1358,31 @@ document.getElementById("payform").addEventListener("submit", e => {
    so it costs nothing on arrival. */
 const embedOn = () => CONFIG.embedDonate && !!CONFIG.donateUrl && !payEnabled();
 
-function initEmbed() {
-  const wrap = document.getElementById("embedwrap");
-  if (!wrap) return;
-  wrap.hidden = !embedOn();
-  if (!embedOn()) return;
+let payoverOpen = false, payoverReturn = null;
+
+function openPayover() {
+  const over  = document.getElementById("payover");
   const frame = document.getElementById("donateframe");
-  const load = () => { if (!frame.src) frame.src = CONFIG.donateUrl; };
-  new IntersectionObserver((es, obs) => {
-    if (es.some(e => e.isIntersecting)) { load(); obs.disconnect(); }
-  }, { rootMargin: "300px" }).observe(wrap);
-  wrap._load = load;
+  if (!frame.src) frame.src = CONFIG.donateUrl;   // loaded only on first open
+  payoverReturn = document.activeElement;
+  over.hidden = false;
+  payoverOpen = true;
+  document.body.style.overflow = "hidden";        // only the form scrolls
+  document.getElementById("payclose").focus();
+}
+
+function closePayover() {
+  document.getElementById("payover").hidden = true;
+  payoverOpen = false;
+  document.body.style.overflow = "";
+  if (payoverReturn) payoverReturn.focus();
 }
 
 /* Donate buttons: with paying switched on they bring you to the form on this
    page; with the embed on they bring you to Nedarim's page shown inside this
    one; otherwise they open it in a new tab. */
 function go() {
-  if (embedOn()) {
-    const wrap = document.getElementById("embedwrap");
-    if (wrap._load) wrap._load();
-    wrap.scrollIntoView({ behavior: "smooth", block: "center" });
-    return;
-  }
+  if (embedOn()) { openPayover(); return; }
   if (payEnabled()) {
     document.getElementById("paysec").scrollIntoView({ behavior: "smooth", block: "start" });
     setTimeout(() => document.getElementById("pf-amount").focus(), 350);
@@ -1552,10 +1592,13 @@ document.querySelectorAll(".shot img, #clip").forEach(node => {
   });
 });
 
+document.getElementById("payclose").addEventListener("click", closePayover);
 document.getElementById("lbclose").addEventListener("click", closeLightbox);
 lb.addEventListener("click", e => { if (e.target === lb) closeLightbox(); });
 document.addEventListener("keydown", e => {
-  if (e.key === "Escape" && lb.classList.contains("open")) closeLightbox();
+  if (e.key !== "Escape") return;
+  if (payoverOpen) { closePayover(); return; }
+  if (lb.classList.contains("open")) closeLightbox();
 });
 
 const io = new IntersectionObserver((entries) => {
@@ -1566,7 +1609,6 @@ document.querySelectorAll(".slot").forEach(s => io.observe(s));
 paint();
 fillBar();
 initPay();
-initEmbed();
 </script>
 
 </body>
