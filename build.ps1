@@ -1,4 +1,4 @@
-# Builds site.html from index.html by inlining every image as a data: URI.
+# Builds index.html and artifact.html from template.html.
 # The published page must be one self-contained file - it cannot load images
 # from anywhere else - so each photo gets shrunk, re-compressed, and pasted
 # straight into the HTML as text.
@@ -133,6 +133,19 @@ if ($html.Length -ne $before) { Write-Output "  note  removed tags for missing m
 
 $utf8 = New-Object System.Text.UTF8Encoding $false
 
+# A social preview must be a public image URL, never an embedded data URI.
+# Generate it from the existing logo; no extra authoring file is needed.
+$preview = New-Object System.Drawing.Bitmap 1200, 630
+$canvas = [System.Drawing.Graphics]::FromImage($preview)
+$logo = [System.Drawing.Image]::FromFile((Join-Path $imgDir 'logo.png'))
+try {
+    $canvas.Clear([System.Drawing.ColorTranslator]::FromHtml('#F1F3F0'))
+    $canvas.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+    $logoWidth = [int][Math]::Round(510 * $logo.Width / $logo.Height)
+    $canvas.DrawImage($logo, [int]((1200 - $logoWidth) / 2), 60, $logoWidth, 510)
+    $preview.Save((Join-Path $root 'share-preview.jpg'), [System.Drawing.Imaging.ImageFormat]::Jpeg)
+} finally { $logo.Dispose(); $canvas.Dispose(); $preview.Dispose() }
+
 # 1. Body-only fragment, for the Claude artifact preview.
 [System.IO.File]::WriteAllText($fragment, $html, $utf8)
 
@@ -143,6 +156,10 @@ $icon  = ""
 if ($html -match '(?s)<title>(.*?)</title>')   { $title = $matches[1] }
 if ($html -match '(<link rel="icon"[^>]*>)')   { $icon  = $matches[1] }
 $body = $html -replace '(?s)<title>.*?</title>\s*', '' -replace '<link rel="icon"[^>]*>\s*', ''
+$shareMeta = ''
+$sharePattern = '(?s)<!-- SHARE_META_START.*?-->(.*?)<!-- SHARE_META_END -->'
+if ($body -match $sharePattern) { $shareMeta = $matches[1] }
+$body = $body -replace $sharePattern, ''
 
 $doc = @"
 <!doctype html>
@@ -154,6 +171,7 @@ $doc = @"
 <meta name="description" content="A bein hazmanim learning program. Be part of their Torah.">
 <title>$title</title>
 $icon
+$shareMeta
 </head>
 <body>
 $body

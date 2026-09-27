@@ -1,5 +1,17 @@
 <title>Torah B'Ahava — Be Part of their Torah</title>
 <link rel="icon" href="__IMG_ICON__">
+<!-- SHARE_META_START: the build moves these tags into the document head. -->
+<link rel="canonical" href="https://shul-funding.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shul-funding.vercel.app/">
+<meta property="og:title" content="תורה באהבה | Torah B'Ahava">
+<meta property="og:description" content="קחו חלק בתורה שלהם · Be part of their Torah. Support our bein hazmanim learning program.">
+<meta property="og:image" content="https://shul-funding.vercel.app/share-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Torah B'Ahava — תורה באהבה">
+<meta name="twitter:card" content="summary_large_image">
+<!-- SHARE_META_END -->
 
 <!-- ============================================================
      EDIT THESE FOUR THINGS AND THE PAGE IS LIVE.
@@ -277,8 +289,8 @@ a  { color: var(--accent); }
 
 
 /* ---------- hero ---------- */
-.hero { padding-block: clamp(2.5rem, 7vw, 4.5rem) clamp(2rem, 5vw, 3rem); }
-.hero-stack { display: flex; flex-direction: column; gap: 1.5rem; }
+.hero { padding-block: clamp(1.75rem, 5vw, 3rem) clamp(2rem, 5vw, 3rem); }
+.hero-stack { display: flex; flex-direction: column; gap: 1.25rem; }
 .hero-lede {
   font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem);
   color: var(--ink-mut);
@@ -505,6 +517,12 @@ a  { color: var(--accent); }
 .payover-close:hover { color: var(--ink); border-color: var(--ink-faint); }
 .payover-close:focus-visible { outline: 2.5px solid var(--accent-brt); outline-offset: 2px; }
 .payover iframe { flex: 1 1 auto; width: 100%; border: 0; display: block; }
+.payover-actions { display: flex; align-items: center; gap: .65rem; flex: none; }
+.payover-external { font-size: .8125rem; text-underline-offset: 3px; }
+@media (max-width: 34rem) {
+  .payover-bar { flex-wrap: wrap; gap: .5rem; }
+  .payover-actions { width: 100%; justify-content: space-between; }
+}
 
 /* ---------- pay-on-this-page form ---------- */
 .payform {
@@ -652,8 +670,8 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
     <div class="hero-stack">
       <img class="hero-logo" src="__IMG_LOGO__" alt="Torah B'Ahava — תורה באהבה" width="440" height="441">
       <p class="eyebrow" data-t="hero_eyebrow">Bein Hazmanim · Every morning</p>
-      <h1 data-t="hero_h1">It's vacation. At 8:30 this morning, the beis medrash was full.</h1>
-      <p class="hero-lede" data-t="hero_lede">Boys from first grade through eighth pack the room every single day of bein hazmanim — to daven, eat breakfast, and learn. There's a program for girls too. It runs on breakfast, snacks, and a raffle table, and every bit of that is paid for by people who donate.</p>
+      <h1 data-t="hero_h1">Every morning of bein hazmanim, a room full of children comes together to learn.</h1>
+      <p class="hero-lede" data-t="hero_lede">Davening, learning, and time together for boys in first through eighth grade, with a program for girls too. Your donation helps support it all.</p>
 
       <div class="raise" id="raise" hidden>
         <div class="raise-head">
@@ -672,7 +690,6 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
         <button class="btn btn-quiet" type="button" id="share" data-t="cta_share">Copy link</button>
       </div>
 
-</p>
     </div>
   </section>
 
@@ -760,7 +777,7 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
         <span class="slot-rail"><span class="slot-dot"></span></span>
         <div class="slot-body">
           <h3 data-t="s8_t">The raffle</h3>
-          <p data-t="s8_d">This is the part they talk about at home.</p>
+          <p data-t="s8_d">A celebration of the day's learning.</p>
         </div>
       </div>
 
@@ -812,7 +829,7 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
       </div>
       <div class="cost">
         <h3 data-t="c3_t">Prizes for the raffle</h3>
-        <p data-t="c3_d">Real prizes, every day, or the raffle stops meaning anything. This is what keeps attendance high.</p>
+        <p data-t="c3_d">Prizes for the daily raffle, celebrating the children's learning.</p>
       </div>
       <div class="cost">
         <h3 data-t="c4_t">Sefarim and supplies</h3>
@@ -824,7 +841,7 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
       </div>
       <div class="cost">
         <h3 data-t="c6_t">The girls' program</h3>
-        <p data-t="c6_d">Smaller, and running on the same shoestring.</p>
+        <p data-t="c6_d">The girls' program needs your support too.</p>
       </div>
     </div>
   </section>
@@ -849,15 +866,13 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
     <div class="section-head">
       <p class="eyebrow" data-t="give_eyebrow">How to give</p>
       <h2 data-t="give_h2">Give whatever you can</h2>
-      <p data-t="give_intro">You'll enter your own amount on the donation page — anything helps.</p>
+      <p data-t="give_intro">Choose your amount on the donation page — every donation helps support the program.</p>
     </div>
 
         <div class="cta-row">
       <a class="btn btn-solid donate" href="#" data-t="give_btn">Donate</a>
       <span class="cta-note" data-t="give_note">It's a non-profit, so you'll get a receipt.</span>
     </div>
-
-    <p class="cta-note" data-t="confirm_line">Teen Programing should already be selected below — just check before you pay.</p>
 
   </section>
 
@@ -871,7 +886,6 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
         <button class="btn btn-quiet" type="button" id="wa2" data-t="close_share">Send this to someone</button>
       </div>
 
-</p>
     </div>
   </section>
 
@@ -961,7 +975,10 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
       <strong class="payover-title" data-t="over_title">Donate</strong>
       <span class="payover-sub" data-t="confirm_line">Teen Programing should already be selected — just check before you pay.</span>
     </div>
-    <button class="payover-close" id="payclose" type="button" aria-label="Close">&times;</button>
+    <div class="payover-actions">
+      <a class="payover-external" id="payexternal" target="_blank" rel="noopener noreferrer" data-t="over_external">Open in a new tab</a>
+      <button class="payover-close" id="payclose" type="button" aria-label="Close">&times;</button>
+    </div>
   </div>
   <iframe id="donateframe" title="Donation form, provided by Nedarim Plus"></iframe>
 </div>
@@ -1055,8 +1072,8 @@ const T = {
     tagline: "Be Part of their Torah",
     nav_give: "Donate",
     hero_eyebrow: "Bein Hazmanim · Every morning",
-    hero_h1: "It's vacation. At 8:30 this morning, the beis medrash was full.",
-    hero_lede: "Boys from first grade through eighth pack the room every single day of bein hazmanim — to daven, eat breakfast, and learn. There's a program for girls too. It runs on breakfast, snacks, and a raffle table, and every bit of that is paid for by people who donate.",
+    hero_h1: "Every morning of bein hazmanim, a room full of children comes together to learn.",
+    hero_lede: "Davening, learning, and time together for boys in first through eighth grade, with a program for girls too. Your donation helps support it all.",
     raise_label: "Raised so far",
     raise_of: "of",
     cta_give: "Donate now",
@@ -1075,17 +1092,17 @@ const T = {
     s5_time: "seder", s5_t: "Mishnayos and Gemara", s5_d: "The younger boys learn Mishnayos. The older ones are in Gemara. The topic changes; the seder doesn't.",
     s6_time: "break", s6_t: "Second recess, with snacks", s6_d: "A whole room of kids, twice a day, every day of the zman.",
     s7_time: "seder", s7_t: "Second learning seder", s7_d: "Back to the sefarim.",
-    s8_time: "prizes", s8_t: "The raffle", s8_d: "This is the part they talk about at home.",
+    s8_time: "prizes", s8_t: "The raffle", s8_d: "A celebration of the day's learning.",
     s9_time: "end", s9_t: "Mincha", s9_d: "And then home — and back again tomorrow.",
     cost_eyebrow: "Where the money goes",
     cost_h2: "Nothing here is optional",
     cost_intro: "Take any one of these away and the program stops working the way it works.",
     c1_t: "Breakfast, every morning", c1_d: "A room full of kids, every morning of bein hazmanim. It's the first thing after davening, and the last thing anyone would give up.",
     c2_t: "Snacks at both recesses", c2_d: "Two recesses a day, every day of the zman. It adds up quietly.",
-    c3_t: "Prizes for the raffle", c3_d: "Real prizes, every day, or the raffle stops meaning anything. This is what keeps attendance high.",
+    c3_t: "Prizes for the raffle", c3_d: "Prizes for the daily raffle, celebrating the children's learning.",
     c4_t: "Sefarim and supplies", c4_d: "Enough copies that no boy is sharing or sitting out.",
     c5_t: "Rebbeim to give the shiurim", c5_d: "Someone has to teach Navi at nine in the morning during their own bein hazmanim.",
-    c6_t: "The girls' program", c6_d: "Smaller, and running on the same shoestring.",
+    c6_t: "The girls' program", c6_d: "The girls' program needs your support too.",
     debt_eyebrow: "Why we're asking",
     debt_h2: "None of this appears on its own",
     debt_p1: "Breakfast every morning. Snacks at both recesses. Prizes worth winning. Enough sefarim for everyone. Rebbeim who give up their own bein hazmanim to teach. Every one of those things is there because somebody paid for it.",
@@ -1093,10 +1110,12 @@ const T = {
     debt_p3: "That's the whole ask.",
     give_eyebrow: "How to give",
     give_h2: "Give whatever you can",
-    give_intro: "Enter any amount below. It goes straight to this program — nothing else to choose.",
+    give_intro: "Choose your amount on the donation page — every donation helps support the program.",
     give_btn: "Donate",
     over_title: "Donate to Torah B'Ahava",
-    confirm_line: "Teen Programing should already be selected below — just check before you pay.",
+    over_external: "Open in a new tab",
+    close_label: "Close",
+    confirm_line: "Teen Programing should already be selected — just check before you pay.",
     give_note: "It's a non-profit, so you'll get a receipt.",
     pay_eyebrow: "Donate",
     pay_h2: "Give to {f}",
@@ -1136,8 +1155,8 @@ const T = {
     tagline: "קחו חלק בתורה שלהם",
     nav_give: "לתרומה",
     hero_eyebrow: "בין הזמנים · כל בוקר",
-    hero_h1: "זה בין הזמנים. היום ב-8:30 בבוקר בית המדרש היה מלא.",
-    hero_lede: "ילדים מכיתה א' ועד ח' ממלאים את החדר כל יום בבין הזמנים — להתפלל, לאכול ארוחת בוקר וללמוד. יש גם תוכנית לבנות. הכול רץ על ארוחות בוקר, חטיפים ושולחן הגרלות, וכל זה ממומן על ידי אנשים שתורמים.",
+    hero_h1: "בכל בוקר בבין הזמנים, חדר מלא ילדים נפגש כדי ללמוד יחד.",
+    hero_lede: "תפילה, לימוד וזמן יחד לילדים מכיתה א' ועד ח', לצד תוכנית לבנות. התרומה שלכם עוזרת לקיים את כל זה.",
     raise_label: "נאסף עד כה",
     raise_of: "מתוך",
     cta_give: "לתרומה עכשיו",
@@ -1154,19 +1173,19 @@ const T = {
     s3_time: "אז", s3_t: "שיעור בנ״ך", s3_d: "סוגיה אחרת וספר אחר ככל שהימים מתקדמים.",
     s4_time: "הפסקה", s4_t: "הפסקה", s4_d: "הם ילדים. הם משתוללים קצת.",
     s5_time: "סדר", s5_t: "משניות וגמרא", s5_d: "הקטנים לומדים משניות. הגדולים בגמרא. הנושא מתחלף; הסדר לא.",
-    s6_time: "הפסקה", s6_t: "הפסקה שנייה, עם חטיפים", s6_d: "חדר מלא ילדים, פעמיים ביום, כל יום בזמן.",
+    s6_time: "הפסקה", s6_t: "הפסקה שנייה, עם חטיפים", s6_d: "חטיפים לחדר מלא ילדים, בשתי ההפסקות, בכל יום בבין הזמנים.",
     s7_time: "סדר", s7_t: "סדר לימוד שני", s7_d: "חוזרים לספרים.",
-    s8_time: "פרסים", s8_t: "ההגרלה", s8_d: "זה החלק שעליו הם מספרים בבית.",
+    s8_time: "פרסים", s8_t: "ההגרלה", s8_d: "מציינים בשמחה את הלימוד של היום.",
     s9_time: "סיום", s9_t: "מנחה", s9_d: "ואז הביתה — ומחר שוב מהתחלה.",
     cost_eyebrow: "לאן הכסף הולך",
     cost_h2: "שום דבר כאן הוא לא מותרות",
     cost_intro: "תורידו אחד מהדברים האלה והתוכנית מפסיקה לעבוד כמו שהיא עובדת.",
     c1_t: "ארוחת בוקר, כל בוקר", c1_d: "חדר מלא ילדים, כל בוקר בבין הזמנים. זה הדבר הראשון אחרי התפילה, והדבר האחרון שמישהו היה מוותר עליו.",
-    c2_t: "חטיפים בשתי ההפסקות", c2_d: "שתי הפסקות ביום, כל יום בזמן. זה מצטבר בשקט.",
-    c3_t: "פרסים להגרלה", c3_d: "פרסים אמיתיים, כל יום, אחרת ההגרלה מפסיקה להיות שווה משהו. זה מה שמחזיק את ההגעה גבוהה.",
+    c2_t: "חטיפים בשתי ההפסקות", c2_d: "חטיפים בשתי ההפסקות, בכל יום בבין הזמנים. גם ההוצאות הקטנות מצטברות.",
+    c3_t: "פרסים להגרלה", c3_d: "פרסים להגרלה היומית, לכבוד הלימוד וההשקעה של הילדים.",
     c4_t: "ספרים וציוד", c4_d: "מספיק עותקים כדי שאף ילד לא יצטרך לחלוק או לשבת בצד.",
     c5_t: "רבנים שמוסרים את השיעורים", c5_d: "מישהו צריך למסור שיעור בנ״ך בתשע בבוקר בבין הזמנים של עצמו.",
-    c6_t: "התוכנית לבנות", c6_d: "קטנה יותר, ורצה על אותו תקציב דחוק.",
+    c6_t: "התוכנית לבנות", c6_d: "גם התוכנית לבנות זקוקה לתמיכה שלכם.",
     debt_eyebrow: "למה אנחנו מבקשים",
     debt_h2: "שום דבר מזה לא מגיע מעצמו",
     debt_p1: "ארוחת בוקר כל בוקר. חטיפים בשתי ההפסקות. פרסים ששווה לזכות בהם. מספיק ספרים לכולם. רבנים שמוותרים על בין הזמנים של עצמם כדי ללמד. כל אחד מהדברים האלה נמצא שם כי מישהו שילם עליו.",
@@ -1174,10 +1193,12 @@ const T = {
     debt_p3: "זו כל הבקשה.",
     give_eyebrow: "איך תורמים",
     give_h2: "תנו כמה שאתם יכולים",
-    give_intro: "הזינו כל סכום למטה. הכסף הולך ישירות לתוכנית הזאת — אין מה לבחור.",
+    give_intro: "בחרו את הסכום בעמוד התרומה — כל תרומה עוזרת לקיים את התוכנית.",
     give_btn: "לתרומה",
     over_title: "תרומה לתורה באהבה",
-    confirm_line: "בני עלייה אמור כבר להיות מסומן למטה — רק בדקו לפני התשלום.",
+    over_external: "פתיחה בלשונית חדשה",
+    close_label: "סגירה",
+    confirm_line: "בני עלייה אמור כבר להיות מסומן — רק בדקו לפני התשלום.",
     give_note: "זו עמותה, אז תקבלו קבלה על התרומה.",
     pay_eyebrow: "תרומה",
     pay_h2: "תרומה ל{f}",
@@ -1201,7 +1222,7 @@ const T = {
     pay_need_name: "אנא הזינו שם פרטי ושם משפחה.",
     pay_need_mail: "אנא הזינו אימייל תקין כדי שנשלח לכם קבלה.",
     pay_wait: "טופס הכרטיס המאובטח עוד נטען — רגע אחד.",
-    close_h2: "חדר מלא ילדים בחרו ללמוד במקום בוקר חופשי. השאר תלוי בנו.",
+    close_h2: "חדר מלא ילדים שבוחרים להקדיש את הבוקר ללימוד. בואו נהיה שם בשבילם.",
     close_btn: "לתרומה עכשיו",
     close_share: "שלחו את זה למישהו",
     foot_1: "תוכנית לימוד בבין הזמנים לבנים ולבנות.",
@@ -1219,7 +1240,9 @@ const T = {
    ============================================================ */
 const root  = document.documentElement;
 const toast = document.getElementById("toast");
-let lang = "en";
+// Use the browser's primary language; the toggle always lets visitors choose.
+// No cookies, storage, or database are needed.
+let lang = /^(he|iw)(-|$)/i.test(navigator.language || "") ? "he" : "en";
 
 const shek = n => "₪" + n.toLocaleString("en-US");
 
@@ -1395,6 +1418,10 @@ function paint() {
   root.dir  = lang === "he" ? "rtl" : "ltr";
   document.body.dir = root.dir;
   document.getElementById("lang").textContent = lang === "he" ? "English" : "עברית";
+  document.getElementById("payexternal").href = CONFIG.donateUrl;
+  document.getElementById("payclose").setAttribute("aria-label", d.close_label);
+  document.getElementById("lbclose").setAttribute("aria-label", d.close_label);
+  document.getElementById("payover").setAttribute("aria-label", d.over_title);
 
   document.getElementById("raised").textContent = shek(CONFIG.raised);
   if (CONFIG.goal) document.getElementById("goal").textContent = shek(CONFIG.goal);
