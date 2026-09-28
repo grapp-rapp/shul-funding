@@ -263,6 +263,14 @@ a  { color: var(--accent); }
   line-height: 1.15;
 }
 .topbar-actions { display: flex; align-items: center; gap: 0.5rem; }
+.topbar-actions .btn-parsha { background: var(--accent-wash); color: var(--accent); border-color: var(--accent); }
+.btn-parsha:hover { background: var(--surface); }
+@media (max-width: 34rem) {
+  .topbar-in { gap: .5rem; padding-inline: .75rem; }
+  .topbar-actions { gap: .35rem; }
+  .topbar-actions .btn { padding-inline: .55rem; font-size: .8125rem; min-height: 44px; }
+  .topbar-in .header-logo { width: 38px; }
+}
 
 .btn {
   font: inherit;
@@ -318,7 +326,6 @@ a  { color: var(--accent); }
 .hero-media .filmwrap { overflow: hidden; border-radius: 16px; background: var(--deep); }
 .hero-media .film { height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 .hero-media figcaption { color: var(--ink-mut); font-size: .8125rem; margin-block-start: .65rem; }
-.parsha-entry { margin-block-start: .85rem; }
 .hero-share { grid-area: share; display: flex; align-items: center; flex-wrap: wrap; gap: .85rem; }
 .hero-stack .btn-solid { min-height: 48px; padding-inline: 1.5rem; }
 @media (max-width: 52rem) {
@@ -565,6 +572,14 @@ a  { color: var(--accent); }
 }
 .payover-close:hover { color: var(--ink); border-color: var(--ink-faint); }
 .payover-close:focus-visible { outline: 2.5px solid var(--accent-brt); outline-offset: 2px; }
+.payover-close {
+  width: auto; min-width: 100px; height: auto; min-height: 48px;
+  padding: .6rem 1rem; gap: .55rem; border-radius: 8px;
+  background: var(--deep); color: #fff; border: 2px solid var(--deep);
+  font-size: .9375rem; font-weight: 700; white-space: nowrap;
+}
+.payover-close:hover { background: #24434E; color: #fff; border-color: #24434E; }
+.payover-close .close-icon { font-size: 1.65rem; line-height: 1; }
 .payover iframe { flex: 1 1 auto; width: 100%; border: 0; display: block; }
 .parsha-dialog {
   position: fixed; inset: 0; margin: 0; padding: 0; border: 0;
@@ -718,6 +733,7 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
     </div>
     <div class="topbar-actions">
       <button class="btn btn-quiet" id="lang" type="button">עברית</button>
+      <button class="btn btn-parsha btn-sm" id="parsha" type="button" aria-haspopup="dialog" data-t="parsha_btn">Weekly Parsha</button>
       <a class="btn btn-solid btn-sm donate" href="#" data-t="nav_give">Donate</a>
     </div>
   </div>
@@ -758,7 +774,6 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
         <button class="sound" id="sound" type="button" aria-pressed="false">Turn on sound</button>
       </div>
       <figcaption data-t="film_caption">A morning of learning at Torah B'Ahava · Tap to enlarge</figcaption>
-      <button class="btn btn-quiet parsha-entry" id="parsha" type="button" aria-haspopup="dialog" data-t="parsha_btn">Weekly Parsha</button>
     </figure>
     <div class="hero-share">
       <button class="btn btn-quiet" type="button" id="wa" data-t="cta_wa">Send on WhatsApp</button>
@@ -1026,7 +1041,7 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
     </div>
     <div class="payover-actions">
       <a class="payover-external" id="payexternal" target="_blank" rel="noopener noreferrer" data-t="over_external">Open in a new tab</a>
-      <button class="payover-close" id="payclose" type="button" aria-label="Close">&times;</button>
+      <button class="payover-close" id="payclose" type="button" aria-label="Close"><span class="close-icon" aria-hidden="true">&times;</span><span data-t="close_label">Close</span></button>
     </div>
   </div>
   <iframe id="donateframe" title="Donation form, provided by Nedarim Plus"></iframe>
@@ -1040,7 +1055,7 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
       <strong class="payover-title" id="parsha-title" data-t="parsha_btn">Weekly Parsha</strong>
       <span class="payover-sub" data-t="parsha_sub">Learn with Ohr Hayom</span>
     </div>
-    <button class="payover-close" id="parshaclose" type="button" aria-label="Close">&times;</button>
+    <button class="payover-close" id="parshaclose" type="button" aria-label="Close"><span class="close-icon" aria-hidden="true">&times;</span><span data-t="close_label">Close</span></button>
   </div>
   <iframe id="parshaframe" title="Weekly Parsha — Ohr Hayom" allow="fullscreen" allowfullscreen></iframe>
 </dialog>
