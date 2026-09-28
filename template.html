@@ -308,6 +308,7 @@ a  { color: var(--accent); }
 .hero-media .filmwrap { overflow: hidden; border-radius: 16px; background: var(--deep); }
 .hero-media .film { height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 .hero-media figcaption { color: var(--ink-mut); font-size: .8125rem; margin-block-start: .65rem; }
+.parsha-entry { margin-block-start: .85rem; }
 .hero-share { grid-area: share; display: flex; align-items: center; flex-wrap: wrap; gap: .85rem; }
 .hero-stack .btn-solid { min-height: 48px; padding-inline: 1.5rem; }
 @media (max-width: 52rem) {
@@ -555,6 +556,15 @@ a  { color: var(--accent); }
 .payover-close:hover { color: var(--ink); border-color: var(--ink-faint); }
 .payover-close:focus-visible { outline: 2.5px solid var(--accent-brt); outline-offset: 2px; }
 .payover iframe { flex: 1 1 auto; width: 100%; border: 0; display: block; }
+.parsha-dialog {
+  position: fixed; inset: 0; margin: 0; padding: 0; border: 0;
+  width: 100%; height: 100%; height: 100dvh; max-width: none; max-height: none;
+  background: var(--ground); color: var(--ink);
+}
+.parsha-dialog[open] { display: flex; flex-direction: column; }
+.parsha-dialog iframe { flex: 1 1 auto; min-height: 0; width: 100%; border: 0; background: var(--surface); }
+.parsha-dialog .payover-bar { flex-wrap: nowrap; }
+.parsha-dialog::backdrop { background: var(--ground); }
 .payover-actions { display: flex; align-items: center; gap: .65rem; flex: none; }
 .payover-external { font-size: .8125rem; text-underline-offset: 3px; }
 @media (max-width: 34rem) {
@@ -738,6 +748,7 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
         <button class="sound" id="sound" type="button" aria-pressed="false">Turn on sound</button>
       </div>
       <figcaption data-t="film_caption">A morning of learning at Torah B'Ahava · Tap to enlarge</figcaption>
+      <button class="btn btn-quiet parsha-entry" id="parsha" type="button" aria-haspopup="dialog" data-t="parsha_btn">Weekly Parsha</button>
     </figure>
     <div class="hero-share">
       <button class="btn btn-quiet" type="button" id="wa" data-t="cta_wa">Send on WhatsApp</button>
@@ -1013,6 +1024,17 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<dialog class="parsha-dialog" id="parshaover" aria-labelledby="parsha-title">
+  <div class="payover-bar">
+    <div class="payover-titles">
+      <strong class="payover-title" id="parsha-title" data-t="parsha_btn">Weekly Parsha</strong>
+      <span class="payover-sub" data-t="parsha_sub">Learn with Ohr Hayom</span>
+    </div>
+    <button class="payover-close" id="parshaclose" type="button" aria-label="Close">&times;</button>
+  </div>
+  <iframe id="parshaframe" title="Weekly Parsha — Ohr Hayom" allow="fullscreen" allowfullscreen></iframe>
+</dialog>
+
 <script>
 /* ============================================================
    CONFIG — the only part you need to edit
@@ -1146,6 +1168,8 @@ const T = {
     over_title: "Donate to Torah B'Ahava",
     over_external: "Open in a new tab",
     close_label: "Close",
+    parsha_btn: "Weekly Parsha",
+    parsha_sub: "Learn with Ohr Hayom",
     confirm_line: "Teen Programing should already be selected — just check before you pay.",
     give_note: "It's a non-profit, so you'll get a receipt.",
     pay_eyebrow: "Donate",
@@ -1232,6 +1256,8 @@ const T = {
     over_title: "תרומה לתורה באהבה",
     over_external: "פתיחה בלשונית חדשה",
     close_label: "סגירה",
+    parsha_btn: "פרשת השבוע",
+    parsha_sub: "לומדים עם אור היום",
     confirm_line: "בני עלייה אמור כבר להיות מסומן — רק בדקו לפני התשלום.",
     give_note: "זו עמותה, אז תקבלו קבלה על התרומה.",
     pay_eyebrow: "תרומה",
@@ -1456,6 +1482,8 @@ function paint() {
   document.getElementById("payclose").setAttribute("aria-label", d.close_label);
   document.getElementById("lbclose").setAttribute("aria-label", d.close_label);
   document.getElementById("payover").setAttribute("aria-label", d.over_title);
+  document.getElementById("parshaclose").setAttribute("aria-label", d.close_label);
+  document.getElementById("parshaframe").title = d.parsha_btn + " — " + d.parsha_sub;
 
   document.getElementById("raised").textContent = shek(CONFIG.raised);
   if (CONFIG.goal) document.getElementById("goal").textContent = shek(CONFIG.goal);
@@ -1633,6 +1661,25 @@ document.querySelectorAll(".shot img, #clip").forEach(node => {
   node.addEventListener("keydown", e => {
     if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLightbox(node); }
   });
+});
+
+// Native modal keeps focus inside the learning view and the page behind inert.
+// Load only on request; unloading on close also stops any lesson audio.
+const parshaDialog = document.getElementById("parshaover");
+let parshaReturn = null, parshaOverflow = "";
+document.getElementById("parsha").addEventListener("click", () => {
+  parshaReturn = document.activeElement;
+  parshaOverflow = document.body.style.overflow;
+  parshaDialog.showModal();
+  document.getElementById("parshaframe").src = "https://ohr-hayom.vercel.app/today";
+  document.body.style.overflow = "hidden";
+  document.getElementById("parshaclose").focus();
+});
+document.getElementById("parshaclose").addEventListener("click", () => parshaDialog.close());
+parshaDialog.addEventListener("close", () => {
+  document.getElementById("parshaframe").removeAttribute("src");
+  document.body.style.overflow = parshaOverflow;
+  if (parshaReturn) parshaReturn.focus();
 });
 
 document.getElementById("payclose").addEventListener("click", closePayover);
