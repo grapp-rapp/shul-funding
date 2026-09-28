@@ -1,0 +1,3958 @@
+{
+  "notice": "DRAFT: Every question and translation must be reviewed by a rav before publication. No raffle reward is promised. The website serves only the exact version approved in /admin. Editing questions invalidates approval.",
+  "version": 1,
+  "parshas": [
+    {
+      "id": "bereshit",
+      "en": "Bereshit",
+      "he": "בראשית",
+      "aliases": [
+        "Bereishit"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What did Hashem create on the first day?",
+            "a": "Light."
+          },
+          "he": {
+            "q": "מה ברא ה׳ ביום הראשון?",
+            "a": "אור."
+          },
+          "ref": "Genesis 1–6"
+        },
+        {
+          "en": {
+            "q": "On which day were the sun and moon made?",
+            "a": "The fourth day."
+          },
+          "he": {
+            "q": "באיזה יום נבראו השמש והירח?",
+            "a": "ביום הרביעי."
+          },
+          "ref": "Genesis 1–6"
+        },
+        {
+          "en": {
+            "q": "What were the first man and woman called?",
+            "a": "Adam and Chavah."
+          },
+          "he": {
+            "q": "מה שמות האיש והאישה הראשונים?",
+            "a": "אדם וחוה."
+          },
+          "ref": "Genesis 1–6"
+        },
+        {
+          "en": {
+            "q": "Which day did Hashem bless and make holy?",
+            "a": "The seventh day, Shabbos."
+          },
+          "he": {
+            "q": "איזה יום בירך ה׳ וקידש?",
+            "a": "היום השביעי, שבת."
+          },
+          "ref": "Genesis 1–6"
+        },
+        {
+          "en": {
+            "q": "What question did Hashem ask Adam after he hid?",
+            "a": "“Where are you?”"
+          },
+          "he": {
+            "q": "מה שאל ה׳ את אדם לאחר שהתחבא?",
+            "a": "״איכה?״ — היכן אתה?"
+          },
+          "ref": "Genesis 1–6"
+        }
+      ]
+    },
+    {
+      "id": "noach",
+      "en": "Noach",
+      "he": "נח",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What did Noach build?",
+            "a": "A teivah, an ark."
+          },
+          "he": {
+            "q": "מה בנה נח?",
+            "a": "תיבה."
+          },
+          "ref": "Genesis 6–11"
+        },
+        {
+          "en": {
+            "q": "Who came into the ark with Noach?",
+            "a": "His wife, his sons and their wives, and the animals."
+          },
+          "he": {
+            "q": "מי נכנס לתיבה עם נח?",
+            "a": "אשתו, בניו ונשותיהם, ובעלי החיים."
+          },
+          "ref": "Genesis 6–11"
+        },
+        {
+          "en": {
+            "q": "How many days and nights did the rain fall?",
+            "a": "Forty days and forty nights."
+          },
+          "he": {
+            "q": "כמה ימים ולילות ירד הגשם?",
+            "a": "ארבעים יום וארבעים לילה."
+          },
+          "ref": "Genesis 6–11"
+        },
+        {
+          "en": {
+            "q": "What did the dove bring back in its beak?",
+            "a": "An olive leaf."
+          },
+          "he": {
+            "q": "מה הביאה היונה בפיה?",
+            "a": "עלה זית."
+          },
+          "ref": "Genesis 6–11"
+        },
+        {
+          "en": {
+            "q": "What sign did Hashem give for His covenant after the flood?",
+            "a": "A rainbow."
+          },
+          "he": {
+            "q": "מה היה אות הברית שנתן ה׳ אחרי המבול?",
+            "a": "הקשת בענן."
+          },
+          "ref": "Genesis 6–11"
+        }
+      ]
+    },
+    {
+      "id": "lech-lecha",
+      "en": "Lech-Lecha",
+      "he": "לך לך",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Whom did Hashem tell to leave his homeland?",
+            "a": "Avram."
+          },
+          "he": {
+            "q": "למי אמר ה׳ לעזוב את ארצו?",
+            "a": "לאברם."
+          },
+          "ref": "Genesis 12–17"
+        },
+        {
+          "en": {
+            "q": "What was Avram’s new name?",
+            "a": "Avraham."
+          },
+          "he": {
+            "q": "מה היה שמו החדש של אברם?",
+            "a": "אברהם."
+          },
+          "ref": "Genesis 12–17"
+        },
+        {
+          "en": {
+            "q": "What was Sarai’s new name?",
+            "a": "Sarah."
+          },
+          "he": {
+            "q": "מה היה שמה החדש של שרי?",
+            "a": "שרה."
+          },
+          "ref": "Genesis 12–17"
+        },
+        {
+          "en": {
+            "q": "Who was Avraham’s nephew?",
+            "a": "Lot."
+          },
+          "he": {
+            "q": "מי היה בן אחיו של אברהם?",
+            "a": "לוט."
+          },
+          "ref": "Genesis 12–17"
+        },
+        {
+          "en": {
+            "q": "What did Hashem ask Avraham to count as a picture of his many descendants?",
+            "a": "The stars."
+          },
+          "he": {
+            "q": "מה ביקש ה׳ מאברהם לספור כדי להמחיש את ריבוי זרעו?",
+            "a": "את הכוכבים."
+          },
+          "ref": "Genesis 12–17"
+        }
+      ]
+    },
+    {
+      "id": "vayera",
+      "en": "Vayera",
+      "he": "וירא",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "How many visitors did Avraham see near his tent?",
+            "a": "Three."
+          },
+          "he": {
+            "q": "כמה אורחים ראה אברהם ליד אוהלו?",
+            "a": "שלושה."
+          },
+          "ref": "Genesis 18–22"
+        },
+        {
+          "en": {
+            "q": "What son was born to Avraham and Sarah?",
+            "a": "Yitzchak."
+          },
+          "he": {
+            "q": "איזה בן נולד לאברהם ולשרה?",
+            "a": "יצחק."
+          },
+          "ref": "Genesis 18–22"
+        },
+        {
+          "en": {
+            "q": "For which city did Avraham plead with Hashem?",
+            "a": "Sedom."
+          },
+          "he": {
+            "q": "על איזו עיר התפלל אברהם לפני ה׳?",
+            "a": "סדום."
+          },
+          "ref": "Genesis 18–22"
+        },
+        {
+          "en": {
+            "q": "Who called to Avraham to stop him from harming Yitzchak?",
+            "a": "An angel of Hashem."
+          },
+          "he": {
+            "q": "מי קרא לאברהם שלא לפגוע ביצחק?",
+            "a": "מלאך ה׳."
+          },
+          "ref": "Genesis 18–22"
+        },
+        {
+          "en": {
+            "q": "What did Avraham offer instead of Yitzchak?",
+            "a": "A ram caught by its horns in a thicket."
+          },
+          "he": {
+            "q": "מה הקריב אברהם במקום יצחק?",
+            "a": "איל שנאחז בקרניו בסבך."
+          },
+          "ref": "Genesis 18–22"
+        }
+      ]
+    },
+    {
+      "id": "chayei-sara",
+      "en": "Chayei Sara",
+      "he": "חיי שרה",
+      "aliases": [
+        "Chayei Sarah"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Where did Avraham bury Sarah?",
+            "a": "In the Cave of Machpelah."
+          },
+          "he": {
+            "q": "היכן קבר אברהם את שרה?",
+            "a": "במערת המכפלה."
+          },
+          "ref": "Genesis 23–25"
+        },
+        {
+          "en": {
+            "q": "From whom did Avraham buy the cave and field?",
+            "a": "Ephron."
+          },
+          "he": {
+            "q": "ממי קנה אברהם את המערה והשדה?",
+            "a": "מעפרון."
+          },
+          "ref": "Genesis 23–25"
+        },
+        {
+          "en": {
+            "q": "Who became Yitzchak’s wife?",
+            "a": "Rivkah."
+          },
+          "he": {
+            "q": "מי נעשתה אשתו של יצחק?",
+            "a": "רבקה."
+          },
+          "ref": "Genesis 23–25"
+        },
+        {
+          "en": {
+            "q": "Which animals did Rivkah offer to water?",
+            "a": "The servant’s camels."
+          },
+          "he": {
+            "q": "לאילו בעלי חיים הציעה רבקה לשאוב מים?",
+            "a": "לגמלי העבד."
+          },
+          "ref": "Genesis 23–25"
+        },
+        {
+          "en": {
+            "q": "What did Rivkah answer when asked whether she would go with the servant?",
+            "a": "“I will go.”"
+          },
+          "he": {
+            "q": "מה ענתה רבקה כשנשאלה אם תלך עם העבד?",
+            "a": "״אלך״."
+          },
+          "ref": "Genesis 23–25"
+        }
+      ]
+    },
+    {
+      "id": "toldot",
+      "en": "Toldot",
+      "he": "תולדות",
+      "aliases": [
+        "Toldos"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Who were Yitzchak and Rivkah’s twin sons?",
+            "a": "Esav and Yaakov."
+          },
+          "he": {
+            "q": "מי היו בניהם התאומים של יצחק ורבקה?",
+            "a": "עשו ויעקב."
+          },
+          "ref": "Genesis 25–28"
+        },
+        {
+          "en": {
+            "q": "Which twin was born first?",
+            "a": "Esav."
+          },
+          "he": {
+            "q": "איזה תאום נולד ראשון?",
+            "a": "עשו."
+          },
+          "ref": "Genesis 25–28"
+        },
+        {
+          "en": {
+            "q": "What food did Yaakov cook when Esav came home hungry?",
+            "a": "A lentil stew."
+          },
+          "he": {
+            "q": "איזה תבשיל הכין יעקב כשעשו חזר רעב?",
+            "a": "נזיד עדשים."
+          },
+          "ref": "Genesis 25–28"
+        },
+        {
+          "en": {
+            "q": "What did Esav sell to Yaakov?",
+            "a": "His birthright."
+          },
+          "he": {
+            "q": "מה מכר עשו ליעקב?",
+            "a": "את הבכורה."
+          },
+          "ref": "Genesis 25–28"
+        },
+        {
+          "en": {
+            "q": "What did Yitzchak’s servants dig?",
+            "a": "Wells."
+          },
+          "he": {
+            "q": "מה חפרו עבדי יצחק?",
+            "a": "בארות."
+          },
+          "ref": "Genesis 25–28"
+        }
+      ]
+    },
+    {
+      "id": "vayetzei",
+      "en": "Vayetzei",
+      "he": "ויצא",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What did Yaakov see in his dream?",
+            "a": "A ladder reaching heaven, with angels going up and down."
+          },
+          "he": {
+            "q": "מה ראה יעקב בחלומו?",
+            "a": "סולם שראשו מגיע השמימה ומלאכים עולים ויורדים בו."
+          },
+          "ref": "Genesis 28–32"
+        },
+        {
+          "en": {
+            "q": "Whom did Yaakov meet at the well?",
+            "a": "Rachel."
+          },
+          "he": {
+            "q": "את מי פגש יעקב ליד הבאר?",
+            "a": "את רחל."
+          },
+          "ref": "Genesis 28–32"
+        },
+        {
+          "en": {
+            "q": "Who was Rachel and Leah’s father?",
+            "a": "Lavan."
+          },
+          "he": {
+            "q": "מי היה אביהן של רחל ולאה?",
+            "a": "לבן."
+          },
+          "ref": "Genesis 28–32"
+        },
+        {
+          "en": {
+            "q": "Who was Yaakov’s first son?",
+            "a": "Reuven."
+          },
+          "he": {
+            "q": "מי היה בנו הראשון של יעקב?",
+            "a": "ראובן."
+          },
+          "ref": "Genesis 28–32"
+        },
+        {
+          "en": {
+            "q": "How many years did Yaakov first agree to work to marry Rachel?",
+            "a": "Seven years."
+          },
+          "he": {
+            "q": "כמה שנים הסכים יעקב לעבוד בתחילה כדי לשאת את רחל?",
+            "a": "שבע שנים."
+          },
+          "ref": "Genesis 28–32"
+        }
+      ]
+    },
+    {
+      "id": "vayishlach",
+      "en": "Vayishlach",
+      "he": "וישלח",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Which brother was Yaakov preparing to meet?",
+            "a": "Esav."
+          },
+          "he": {
+            "q": "איזה אח התכונן יעקב לפגוש?",
+            "a": "את עשו."
+          },
+          "ref": "Genesis 32–36"
+        },
+        {
+          "en": {
+            "q": "What new name was given to Yaakov?",
+            "a": "Yisrael."
+          },
+          "he": {
+            "q": "איזה שם חדש ניתן ליעקב?",
+            "a": "ישראל."
+          },
+          "ref": "Genesis 32–36"
+        },
+        {
+          "en": {
+            "q": "What did Yaakov send ahead to Esav?",
+            "a": "Gifts of animals."
+          },
+          "he": {
+            "q": "מה שלח יעקב לפניו לעשו?",
+            "a": "מנחה של בעלי חיים."
+          },
+          "ref": "Genesis 32–36"
+        },
+        {
+          "en": {
+            "q": "What was the name of Rachel’s younger son?",
+            "a": "Binyamin."
+          },
+          "he": {
+            "q": "מה שמו של בנה הצעיר של רחל?",
+            "a": "בנימין."
+          },
+          "ref": "Genesis 32–36"
+        },
+        {
+          "en": {
+            "q": "What did Yaakov do with his family and possessions when he feared an attack?",
+            "a": "He divided them into two camps."
+          },
+          "he": {
+            "q": "מה עשה יעקב במשפחתו וברכושו כשחשש מהתקפה?",
+            "a": "חילק אותם לשני מחנות."
+          },
+          "ref": "Genesis 32–36"
+        }
+      ]
+    },
+    {
+      "id": "vayeshev",
+      "en": "Vayeshev",
+      "he": "וישב",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What special garment did Yaakov give Yosef?",
+            "a": "A kesones passim, a special tunic."
+          },
+          "he": {
+            "q": "איזה בגד מיוחד נתן יעקב ליוסף?",
+            "a": "כתונת פסים."
+          },
+          "ref": "Genesis 37–40"
+        },
+        {
+          "en": {
+            "q": "In Yosef’s first dream, what bowed to his sheaf?",
+            "a": "His brothers’ sheaves."
+          },
+          "he": {
+            "q": "בחלומו הראשון של יוסף, מה השתחווה לאלומתו?",
+            "a": "אלומות אחיו."
+          },
+          "ref": "Genesis 37–40"
+        },
+        {
+          "en": {
+            "q": "To which country was Yosef taken?",
+            "a": "Egypt."
+          },
+          "he": {
+            "q": "לאיזו ארץ נלקח יוסף?",
+            "a": "למצרים."
+          },
+          "ref": "Genesis 37–40"
+        },
+        {
+          "en": {
+            "q": "Who bought Yosef in Egypt?",
+            "a": "Potiphar."
+          },
+          "he": {
+            "q": "מי קנה את יוסף במצרים?",
+            "a": "פוטיפר."
+          },
+          "ref": "Genesis 37–40"
+        },
+        {
+          "en": {
+            "q": "Whose dreams did Yosef explain in prison?",
+            "a": "The chief cupbearer’s and the chief baker’s."
+          },
+          "he": {
+            "q": "את חלומותיהם של מי פתר יוסף בבית הסוהר?",
+            "a": "של שר המשקים ושר האופים."
+          },
+          "ref": "Genesis 37–40"
+        }
+      ]
+    },
+    {
+      "id": "miketz",
+      "en": "Miketz",
+      "he": "מקץ",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Who dreamed about cows and ears of grain?",
+            "a": "Pharaoh."
+          },
+          "he": {
+            "q": "מי חלם על פרות ועל שיבולים?",
+            "a": "פרעה."
+          },
+          "ref": "Genesis 41–44"
+        },
+        {
+          "en": {
+            "q": "Who explained Pharaoh’s dreams?",
+            "a": "Yosef."
+          },
+          "he": {
+            "q": "מי פתר את חלומות פרעה?",
+            "a": "יוסף."
+          },
+          "ref": "Genesis 41–44"
+        },
+        {
+          "en": {
+            "q": "How many years of plenty came before the famine?",
+            "a": "Seven years."
+          },
+          "he": {
+            "q": "כמה שנות שובע היו לפני הרעב?",
+            "a": "שבע שנים."
+          },
+          "ref": "Genesis 41–44"
+        },
+        {
+          "en": {
+            "q": "Why did Yosef’s brothers travel to Egypt?",
+            "a": "To buy food during the famine."
+          },
+          "he": {
+            "q": "מדוע ירדו אחי יוסף למצרים?",
+            "a": "לקנות אוכל בזמן הרעב."
+          },
+          "ref": "Genesis 41–44"
+        },
+        {
+          "en": {
+            "q": "Which younger brother did Yosef tell them to bring?",
+            "a": "Binyamin."
+          },
+          "he": {
+            "q": "איזה אח צעיר ביקש יוסף שיביאו?",
+            "a": "בנימין."
+          },
+          "ref": "Genesis 41–44"
+        }
+      ]
+    },
+    {
+      "id": "vayigash",
+      "en": "Vayigash",
+      "he": "ויגש",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Which brother spoke up for Binyamin?",
+            "a": "Yehudah."
+          },
+          "he": {
+            "q": "איזה אח דיבר למען בנימין?",
+            "a": "יהודה."
+          },
+          "ref": "Genesis 44–47"
+        },
+        {
+          "en": {
+            "q": "What did Yehudah offer to do instead of Binyamin?",
+            "a": "Remain as Yosef’s servant."
+          },
+          "he": {
+            "q": "מה הציע יהודה לעשות במקום בנימין?",
+            "a": "להישאר עבד ליוסף."
+          },
+          "ref": "Genesis 44–47"
+        },
+        {
+          "en": {
+            "q": "What did Yosef tell his brothers about who he was?",
+            "a": "“I am Yosef.”"
+          },
+          "he": {
+            "q": "מה אמר יוסף לאחיו כשגילה מי הוא?",
+            "a": "״אני יוסף״."
+          },
+          "ref": "Genesis 44–47"
+        },
+        {
+          "en": {
+            "q": "Who came down to Egypt to see Yosef?",
+            "a": "Yaakov and his family."
+          },
+          "he": {
+            "q": "מי ירד למצרים לראות את יוסף?",
+            "a": "יעקב ומשפחתו."
+          },
+          "ref": "Genesis 44–47"
+        },
+        {
+          "en": {
+            "q": "In which part of Egypt did the family settle?",
+            "a": "Goshen."
+          },
+          "he": {
+            "q": "באיזה חבל במצרים התיישבה המשפחה?",
+            "a": "בארץ גושן."
+          },
+          "ref": "Genesis 44–47"
+        }
+      ]
+    },
+    {
+      "id": "vayechi",
+      "en": "Vayechi",
+      "he": "ויחי",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Which two sons of Yosef did Yaakov bless?",
+            "a": "Ephraim and Menashe."
+          },
+          "he": {
+            "q": "את שני בני יוסף, מי בירך יעקב?",
+            "a": "את אפרים ומנשה."
+          },
+          "ref": "Genesis 47–50"
+        },
+        {
+          "en": {
+            "q": "Which of those two sons was younger?",
+            "a": "Ephraim."
+          },
+          "he": {
+            "q": "מי מבין שני הבנים היה צעיר יותר?",
+            "a": "אפרים."
+          },
+          "ref": "Genesis 47–50"
+        },
+        {
+          "en": {
+            "q": "Where did Yaakov ask to be buried?",
+            "a": "In the Cave of Machpelah."
+          },
+          "he": {
+            "q": "היכן ביקש יעקב להיקבר?",
+            "a": "במערת המכפלה."
+          },
+          "ref": "Genesis 47–50"
+        },
+        {
+          "en": {
+            "q": "What did Yaakov do with his hands when blessing Yosef’s sons?",
+            "a": "He crossed them, placing his right hand on Ephraim."
+          },
+          "he": {
+            "q": "מה עשה יעקב בידיו כשבירך את בני יוסף?",
+            "a": "שיכל את ידיו והניח את ימינו על אפרים."
+          },
+          "ref": "Genesis 47–50"
+        },
+        {
+          "en": {
+            "q": "What promise did Yosef ask his brothers to make about his bones?",
+            "a": "To take them up from Egypt when Hashem redeemed them."
+          },
+          "he": {
+            "q": "איזו הבטחה ביקש יוסף מאחיו על עצמותיו?",
+            "a": "שיעלו אותן ממצרים כשה׳ יפקוד אותם."
+          },
+          "ref": "Genesis 47–50"
+        }
+      ]
+    },
+    {
+      "id": "shemot",
+      "en": "Shemot",
+      "he": "שמות",
+      "aliases": [
+        "Shemos"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Who put baby Moshe in a basket among the reeds?",
+            "a": "His mother."
+          },
+          "he": {
+            "q": "מי שמה את משה התינוק בתיבה בסוף?",
+            "a": "אמו."
+          },
+          "ref": "Exodus 1–6"
+        },
+        {
+          "en": {
+            "q": "Who found baby Moshe?",
+            "a": "Pharaoh’s daughter."
+          },
+          "he": {
+            "q": "מי מצאה את משה התינוק?",
+            "a": "בת פרעה."
+          },
+          "ref": "Exodus 1–6"
+        },
+        {
+          "en": {
+            "q": "What unusual sight did Moshe see in the wilderness?",
+            "a": "A burning bush that was not being consumed."
+          },
+          "he": {
+            "q": "איזה מראה מיוחד ראה משה במדבר?",
+            "a": "סנה בוער באש שאינו נאכל."
+          },
+          "ref": "Exodus 1–6"
+        },
+        {
+          "en": {
+            "q": "Who was Moshe’s brother and spokesman?",
+            "a": "Aharon."
+          },
+          "he": {
+            "q": "מי היה אחיו של משה שדיבר עבורו?",
+            "a": "אהרן."
+          },
+          "ref": "Exodus 1–6"
+        },
+        {
+          "en": {
+            "q": "What did Hashem tell Moshe to remove near the burning bush?",
+            "a": "His shoes, because the ground was holy."
+          },
+          "he": {
+            "q": "מה אמר ה׳ למשה להסיר ליד הסנה?",
+            "a": "את נעליו, כי המקום אדמת קודש."
+          },
+          "ref": "Exodus 1–6"
+        }
+      ]
+    },
+    {
+      "id": "vaera",
+      "en": "Vaera",
+      "he": "וארא",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What did the Nile’s water become in the first plague?",
+            "a": "Blood."
+          },
+          "he": {
+            "q": "למה הפכו מי היאור במכה הראשונה?",
+            "a": "לדם."
+          },
+          "ref": "Exodus 6–9"
+        },
+        {
+          "en": {
+            "q": "Which animals filled Egypt in the second plague?",
+            "a": "Frogs."
+          },
+          "he": {
+            "q": "אילו בעלי חיים מילאו את מצרים במכה השנייה?",
+            "a": "צפרדעים."
+          },
+          "ref": "Exodus 6–9"
+        },
+        {
+          "en": {
+            "q": "Who spoke to Pharaoh together with Moshe?",
+            "a": "Aharon."
+          },
+          "he": {
+            "q": "מי דיבר עם משה אל פרעה?",
+            "a": "אהרן."
+          },
+          "ref": "Exodus 6–9"
+        },
+        {
+          "en": {
+            "q": "What fell from the sky in the seventh plague?",
+            "a": "Hail, with fire flashing amid it."
+          },
+          "he": {
+            "q": "מה ירד מן השמים במכה השביעית?",
+            "a": "ברד ואש מתלקחת בתוכו."
+          },
+          "ref": "Exodus 6–9"
+        },
+        {
+          "en": {
+            "q": "Why did Moshe ask Pharaoh to let the people go?",
+            "a": "So they could serve Hashem."
+          },
+          "he": {
+            "q": "מדוע ביקש משה מפרעה לשלח את העם?",
+            "a": "כדי שיעבדו את ה׳."
+          },
+          "ref": "Exodus 6–9"
+        }
+      ]
+    },
+    {
+      "id": "bo",
+      "en": "Bo",
+      "he": "בא",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Which insects came in the eighth plague?",
+            "a": "Locusts."
+          },
+          "he": {
+            "q": "אילו חרקים באו במכה השמינית?",
+            "a": "ארבה."
+          },
+          "ref": "Exodus 10–13"
+        },
+        {
+          "en": {
+            "q": "What happened in the ninth plague?",
+            "a": "Thick darkness covered Egypt."
+          },
+          "he": {
+            "q": "מה קרה במכה התשיעית?",
+            "a": "חושך כבד כיסה את מצרים."
+          },
+          "ref": "Exodus 10–13"
+        },
+        {
+          "en": {
+            "q": "What bread did Bnei Yisrael eat as they left Egypt?",
+            "a": "Matzah."
+          },
+          "he": {
+            "q": "איזה לחם אכלו בני ישראל בצאתם ממצרים?",
+            "a": "מצה."
+          },
+          "ref": "Exodus 10–13"
+        },
+        {
+          "en": {
+            "q": "Why did their dough not rise before they left?",
+            "a": "They were driven out and could not wait."
+          },
+          "he": {
+            "q": "מדוע לא הספיק הבצק להחמיץ?",
+            "a": "כי גורשו ממצרים ולא יכלו להתמהמה."
+          },
+          "ref": "Exodus 10–13"
+        },
+        {
+          "en": {
+            "q": "What were families told to tell their children about?",
+            "a": "What Hashem did for them when they left Egypt."
+          },
+          "he": {
+            "q": "על מה נצטוו לספר לבנים?",
+            "a": "על מה שעשה ה׳ עבורם ביציאת מצרים."
+          },
+          "ref": "Exodus 10–13"
+        }
+      ]
+    },
+    {
+      "id": "beshalach",
+      "en": "Beshalach",
+      "he": "בשלח",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What sea split for Bnei Yisrael?",
+            "a": "The Yam Suf."
+          },
+          "he": {
+            "q": "איזה ים נבקע לבני ישראל?",
+            "a": "ים סוף."
+          },
+          "ref": "Exodus 13–17"
+        },
+        {
+          "en": {
+            "q": "What food fell from heaven in the wilderness?",
+            "a": "Manna."
+          },
+          "he": {
+            "q": "איזה אוכל ירד מן השמים במדבר?",
+            "a": "מן."
+          },
+          "ref": "Exodus 13–17"
+        },
+        {
+          "en": {
+            "q": "How much manna did they gather on Friday compared with other days?",
+            "a": "A double portion."
+          },
+          "he": {
+            "q": "כמה מן ליקטו ביום שישי לעומת שאר הימים?",
+            "a": "מנה כפולה."
+          },
+          "ref": "Exodus 13–17"
+        },
+        {
+          "en": {
+            "q": "Who led the women with a tambourine after crossing the sea?",
+            "a": "Miriam."
+          },
+          "he": {
+            "q": "מי הובילה את הנשים בתוף אחרי קריעת הים?",
+            "a": "מרים."
+          },
+          "ref": "Exodus 13–17"
+        },
+        {
+          "en": {
+            "q": "Who supported Moshe’s hands during the battle with Amalek?",
+            "a": "Aharon and Chur."
+          },
+          "he": {
+            "q": "מי תמכו בידי משה במלחמת עמלק?",
+            "a": "אהרן וחור."
+          },
+          "ref": "Exodus 13–17"
+        }
+      ]
+    },
+    {
+      "id": "yitro",
+      "en": "Yitro",
+      "he": "יתרו",
+      "aliases": [
+        "Yisro"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Who was Moshe’s father-in-law?",
+            "a": "Yitro."
+          },
+          "he": {
+            "q": "מי היה חותנו של משה?",
+            "a": "יתרו."
+          },
+          "ref": "Exodus 18–20"
+        },
+        {
+          "en": {
+            "q": "At which mountain did Bnei Yisrael receive the Torah?",
+            "a": "Har Sinai."
+          },
+          "he": {
+            "q": "באיזה הר קיבלו בני ישראל את התורה?",
+            "a": "הר סיני."
+          },
+          "ref": "Exodus 18–20"
+        },
+        {
+          "en": {
+            "q": "How many statements are in the Aseres Hadibros?",
+            "a": "Ten."
+          },
+          "he": {
+            "q": "כמה דיברות יש בעשרת הדיברות?",
+            "a": "עשרה."
+          },
+          "ref": "Exodus 18–20"
+        },
+        {
+          "en": {
+            "q": "Which commandment tells us to honor our parents?",
+            "a": "Honor your father and your mother."
+          },
+          "he": {
+            "q": "איזו מצווה עוסקת בכבוד ההורים?",
+            "a": "כבד את אביך ואת אמך."
+          },
+          "ref": "Exodus 18–20"
+        },
+        {
+          "en": {
+            "q": "What advice did Yitro give Moshe about judging the people?",
+            "a": "Appoint capable judges to share the work."
+          },
+          "he": {
+            "q": "מה יעץ יתרו למשה בעניין המשפט?",
+            "a": "למנות שופטים ראויים שישתתפו בעבודה."
+          },
+          "ref": "Exodus 18–20"
+        }
+      ]
+    },
+    {
+      "id": "mishpatim",
+      "en": "Mishpatim",
+      "he": "משפטים",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What should someone do if they see their enemy’s lost ox or donkey?",
+            "a": "Return it."
+          },
+          "he": {
+            "q": "מה עושים כשמוצאים שור או חמור של אויב שאבד?",
+            "a": "משיבים אותו לבעליו."
+          },
+          "ref": "Exodus 21–24"
+        },
+        {
+          "en": {
+            "q": "Whom does the Torah especially warn us not to mistreat?",
+            "a": "A widow or an orphan."
+          },
+          "he": {
+            "q": "את מי מזהירה התורה במיוחד שלא לענות?",
+            "a": "אלמנה ויתום."
+          },
+          "ref": "Exodus 21–24"
+        },
+        {
+          "en": {
+            "q": "What did the people say when accepting Hashem’s words?",
+            "a": "“Naaseh venishma” — we will do and we will hear."
+          },
+          "he": {
+            "q": "מה אמר העם בקבלת דברי ה׳?",
+            "a": "״נעשה ונשמע״."
+          },
+          "ref": "Exodus 21–24"
+        },
+        {
+          "en": {
+            "q": "What should happen to the land in the seventh year?",
+            "a": "It is left to rest."
+          },
+          "he": {
+            "q": "מה עושים לאדמה בשנה השביעית?",
+            "a": "מניחים לה לשבות."
+          },
+          "ref": "Exodus 21–24"
+        },
+        {
+          "en": {
+            "q": "How long was Moshe on the mountain at the end of the parsha?",
+            "a": "Forty days and forty nights."
+          },
+          "he": {
+            "q": "כמה זמן היה משה בהר בסוף הפרשה?",
+            "a": "ארבעים יום וארבעים לילה."
+          },
+          "ref": "Exodus 21–24"
+        }
+      ]
+    },
+    {
+      "id": "terumah",
+      "en": "Terumah",
+      "he": "תרומה",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What holy dwelling were Bnei Yisrael asked to build?",
+            "a": "The Mishkan."
+          },
+          "he": {
+            "q": "איזה משכן קדוש התבקשו בני ישראל לבנות?",
+            "a": "את המשכן."
+          },
+          "ref": "Exodus 25–27"
+        },
+        {
+          "en": {
+            "q": "What was placed inside the Aron?",
+            "a": "The tablets of the covenant."
+          },
+          "he": {
+            "q": "מה הונח בתוך הארון?",
+            "a": "לוחות הברית."
+          },
+          "ref": "Exodus 25–27"
+        },
+        {
+          "en": {
+            "q": "How many branches did the Menorah have, including its central stem?",
+            "a": "Seven."
+          },
+          "he": {
+            "q": "כמה קנים היו למנורה עם הקנה האמצעי?",
+            "a": "שבעה."
+          },
+          "ref": "Exodus 25–27"
+        },
+        {
+          "en": {
+            "q": "What metal covered the Aron inside and outside?",
+            "a": "Gold."
+          },
+          "he": {
+            "q": "באיזו מתכת ציפו את הארון מבפנים ומבחוץ?",
+            "a": "בזהב."
+          },
+          "ref": "Exodus 25–27"
+        },
+        {
+          "en": {
+            "q": "What was kept on the Shulchan?",
+            "a": "The lechem hapanim."
+          },
+          "he": {
+            "q": "מה היה מונח על השולחן?",
+            "a": "לחם הפנים."
+          },
+          "ref": "Exodus 25–27"
+        }
+      ]
+    },
+    {
+      "id": "tetzaveh",
+      "en": "Tetzaveh",
+      "he": "תצוה",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What kind of oil was brought for the Menorah?",
+            "a": "Pure beaten olive oil."
+          },
+          "he": {
+            "q": "איזה שמן הובא למנורה?",
+            "a": "שמן זית זך כתית."
+          },
+          "ref": "Exodus 27–30"
+        },
+        {
+          "en": {
+            "q": "Who was chosen to serve as Kohen Gadol?",
+            "a": "Aharon."
+          },
+          "he": {
+            "q": "מי נבחר להיות הכהן הגדול?",
+            "a": "אהרן."
+          },
+          "ref": "Exodus 27–30"
+        },
+        {
+          "en": {
+            "q": "How many stones were on the Choshen?",
+            "a": "Twelve."
+          },
+          "he": {
+            "q": "כמה אבנים היו בחושן?",
+            "a": "שתים עשרה."
+          },
+          "ref": "Exodus 27–30"
+        },
+        {
+          "en": {
+            "q": "What names were engraved on the Choshen’s stones?",
+            "a": "The names of the tribes of Israel."
+          },
+          "he": {
+            "q": "אילו שמות נחקקו באבני החושן?",
+            "a": "שמות שבטי ישראל."
+          },
+          "ref": "Exodus 27–30"
+        },
+        {
+          "en": {
+            "q": "What words were engraved on the golden Tzitz?",
+            "a": "“Kodesh LaHashem.”"
+          },
+          "he": {
+            "q": "אילו מילים נחקקו על הציץ?",
+            "a": "״קודש לה׳״."
+          },
+          "ref": "Exodus 27–30"
+        }
+      ]
+    },
+    {
+      "id": "ki-tisa",
+      "en": "Ki Tisa",
+      "he": "כי תשא",
+      "aliases": [
+        "Ki Sisa"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What coin contribution was used when counting the people?",
+            "a": "Half a shekel."
+          },
+          "he": {
+            "q": "איזו תרומה נתנו כשמנו את העם?",
+            "a": "מחצית השקל."
+          },
+          "ref": "Exodus 30–34"
+        },
+        {
+          "en": {
+            "q": "What did the people make while Moshe was on the mountain?",
+            "a": "A golden calf."
+          },
+          "he": {
+            "q": "מה עשה העם בזמן שמשה היה בהר?",
+            "a": "עגל זהב."
+          },
+          "ref": "Exodus 30–34"
+        },
+        {
+          "en": {
+            "q": "What happened to the first tablets when Moshe saw the calf?",
+            "a": "Moshe broke them."
+          },
+          "he": {
+            "q": "מה קרה ללוחות הראשונים כשראה משה את העגל?",
+            "a": "משה שבר אותם."
+          },
+          "ref": "Exodus 30–34"
+        },
+        {
+          "en": {
+            "q": "Who was chosen to lead the skilled work of building the Mishkan?",
+            "a": "Betzalel."
+          },
+          "he": {
+            "q": "מי נבחר לעמוד בראש מלאכת המשכן?",
+            "a": "בצלאל."
+          },
+          "ref": "Exodus 30–34"
+        },
+        {
+          "en": {
+            "q": "What shone when Moshe came down with the second tablets?",
+            "a": "The skin of his face."
+          },
+          "he": {
+            "q": "מה קרן כשירד משה עם הלוחות השניים?",
+            "a": "עור פניו."
+          },
+          "ref": "Exodus 30–34"
+        }
+      ]
+    },
+    {
+      "id": "vayakhel",
+      "en": "Vayakhel",
+      "he": "ויקהל",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Which holy day did Moshe speak about before the Mishkan work?",
+            "a": "Shabbos."
+          },
+          "he": {
+            "q": "על איזה יום קדוש דיבר משה לפני מלאכת המשכן?",
+            "a": "שבת."
+          },
+          "ref": "Exodus 35–38"
+        },
+        {
+          "en": {
+            "q": "Who brought materials for the Mishkan?",
+            "a": "People whose hearts moved them to give."
+          },
+          "he": {
+            "q": "מי הביאו תרומות למשכן?",
+            "a": "כל נדיבי הלב."
+          },
+          "ref": "Exodus 35–38"
+        },
+        {
+          "en": {
+            "q": "Which two craftsmen led the work?",
+            "a": "Betzalel and Oholiav."
+          },
+          "he": {
+            "q": "אילו שני אומנים הובילו את העבודה?",
+            "a": "בצלאל ואהליאב."
+          },
+          "ref": "Exodus 35–38"
+        },
+        {
+          "en": {
+            "q": "Why did Moshe tell the people to stop bringing materials?",
+            "a": "There was already more than enough."
+          },
+          "he": {
+            "q": "מדוע אמר משה להפסיק להביא תרומות?",
+            "a": "כי כבר הייתה די והותר תרומה."
+          },
+          "ref": "Exodus 35–38"
+        },
+        {
+          "en": {
+            "q": "What did the skilled women make by spinning?",
+            "a": "Yarn for the Mishkan."
+          },
+          "he": {
+            "q": "מה הכינו הנשים חכמות הלב בטווייה?",
+            "a": "חוטים לצורכי המשכן."
+          },
+          "ref": "Exodus 35–38"
+        }
+      ]
+    },
+    {
+      "id": "pekudei",
+      "en": "Pekudei",
+      "he": "פקודי",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What does the parsha count and report?",
+            "a": "The materials used for the Mishkan."
+          },
+          "he": {
+            "q": "מה מונים ומפרטים בפרשה?",
+            "a": "את החומרים ששימשו למשכן."
+          },
+          "ref": "Exodus 38–40"
+        },
+        {
+          "en": {
+            "q": "Who inspected the finished work and blessed the workers?",
+            "a": "Moshe."
+          },
+          "he": {
+            "q": "מי ראה את המלאכה המוכנה ובירך את העושים?",
+            "a": "משה."
+          },
+          "ref": "Exodus 38–40"
+        },
+        {
+          "en": {
+            "q": "In which month was the Mishkan set up?",
+            "a": "The first month, Nisan."
+          },
+          "he": {
+            "q": "באיזה חודש הוקם המשכן?",
+            "a": "בחודש הראשון, ניסן."
+          },
+          "ref": "Exodus 38–40"
+        },
+        {
+          "en": {
+            "q": "What covered the Mishkan when it was completed?",
+            "a": "The cloud."
+          },
+          "he": {
+            "q": "מה כיסה את המשכן כשהושלם?",
+            "a": "הענן."
+          },
+          "ref": "Exodus 38–40"
+        },
+        {
+          "en": {
+            "q": "What told Bnei Yisrael when to continue their journeys?",
+            "a": "The cloud rising from above the Mishkan."
+          },
+          "he": {
+            "q": "מה הראה לבני ישראל מתי לצאת למסע?",
+            "a": "העלות הענן מעל המשכן."
+          },
+          "ref": "Exodus 38–40"
+        }
+      ]
+    },
+    {
+      "id": "vayikra",
+      "en": "Vayikra",
+      "he": "ויקרא",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "From where did Hashem call to Moshe?",
+            "a": "The Ohel Moed."
+          },
+          "he": {
+            "q": "מאין קרא ה׳ אל משה?",
+            "a": "מאוהל מועד."
+          },
+          "ref": "Leviticus 1–5"
+        },
+        {
+          "en": {
+            "q": "What is a korban?",
+            "a": "An offering brought to Hashem."
+          },
+          "he": {
+            "q": "מהו קורבן?",
+            "a": "דבר שמקריבים לה׳."
+          },
+          "ref": "Leviticus 1–5"
+        },
+        {
+          "en": {
+            "q": "What is a minchah offering made from?",
+            "a": "Fine flour, in the forms described in the Torah."
+          },
+          "he": {
+            "q": "ממה עשויה מנחה?",
+            "a": "מסולת, בצורות המתוארות בתורה."
+          },
+          "ref": "Leviticus 1–5"
+        },
+        {
+          "en": {
+            "q": "What seasoning must accompany offerings?",
+            "a": "Salt."
+          },
+          "he": {
+            "q": "איזה תבלין צריך ללוות את הקורבנות?",
+            "a": "מלח."
+          },
+          "ref": "Leviticus 1–5"
+        },
+        {
+          "en": {
+            "q": "What should a person do about something they stole?",
+            "a": "Return it, with the required additional payment."
+          },
+          "he": {
+            "q": "מה צריך לעשות אדם בדבר שגזל?",
+            "a": "להשיב אותו ולשלם את התוספת הנדרשת."
+          },
+          "ref": "Leviticus 1–5"
+        }
+      ]
+    },
+    {
+      "id": "tzav",
+      "en": "Tzav",
+      "he": "צו",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What must keep burning on the mizbeach?",
+            "a": "The fire."
+          },
+          "he": {
+            "q": "מה צריך לבעור תמיד על המזבח?",
+            "a": "אש."
+          },
+          "ref": "Leviticus 6–8"
+        },
+        {
+          "en": {
+            "q": "What did the kohen remove from the mizbeach?",
+            "a": "Ashes."
+          },
+          "he": {
+            "q": "מה הרים הכהן מעל המזבח?",
+            "a": "דשן."
+          },
+          "ref": "Leviticus 6–8"
+        },
+        {
+          "en": {
+            "q": "Who dressed Aharon in the priestly garments?",
+            "a": "Moshe."
+          },
+          "he": {
+            "q": "מי הלביש את אהרן בבגדי הכהונה?",
+            "a": "משה."
+          },
+          "ref": "Leviticus 6–8"
+        },
+        {
+          "en": {
+            "q": "What special oil did Moshe use for the Mishkan and Aharon?",
+            "a": "The anointing oil."
+          },
+          "he": {
+            "q": "באיזה שמן מיוחד השתמש משה למשכן ולאהרן?",
+            "a": "שמן המשחה."
+          },
+          "ref": "Leviticus 6–8"
+        },
+        {
+          "en": {
+            "q": "How many days did the inauguration period last?",
+            "a": "Seven days."
+          },
+          "he": {
+            "q": "כמה ימים נמשכו ימי המילואים?",
+            "a": "שבעה ימים."
+          },
+          "ref": "Leviticus 6–8"
+        }
+      ]
+    },
+    {
+      "id": "shmini",
+      "en": "Shmini",
+      "he": "שמיני",
+      "aliases": [
+        "Shemini"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "On which day after the seven inauguration days does the parsha begin?",
+            "a": "The eighth day."
+          },
+          "he": {
+            "q": "באיזה יום אחרי שבעת ימי המילואים מתחילה הפרשה?",
+            "a": "ביום השמיני."
+          },
+          "ref": "Leviticus 9–11"
+        },
+        {
+          "en": {
+            "q": "Who blessed the people after bringing the offerings?",
+            "a": "Aharon."
+          },
+          "he": {
+            "q": "מי בירך את העם לאחר הקרבת הקורבנות?",
+            "a": "אהרן."
+          },
+          "ref": "Leviticus 9–11"
+        },
+        {
+          "en": {
+            "q": "What two signs identify a kosher land animal?",
+            "a": "It chews its cud and has completely split hooves."
+          },
+          "he": {
+            "q": "אילו שני סימנים יש בבהמה טהורה?",
+            "a": "מעלת גרה ומפרסת פרסה שסועה."
+          },
+          "ref": "Leviticus 9–11"
+        },
+        {
+          "en": {
+            "q": "What two signs identify a kosher fish?",
+            "a": "Fins and scales."
+          },
+          "he": {
+            "q": "אילו שני סימנים יש בדג טהור?",
+            "a": "סנפיר וקשקשת."
+          },
+          "ref": "Leviticus 9–11"
+        },
+        {
+          "en": {
+            "q": "Which two sons of Aharon died in this parsha?",
+            "a": "Nadav and Avihu."
+          },
+          "he": {
+            "q": "אילו שני בני אהרן מתו בפרשה?",
+            "a": "נדב ואביהוא."
+          },
+          "ref": "Leviticus 9–11"
+        }
+      ]
+    },
+    {
+      "id": "tazria",
+      "en": "Tazria",
+      "he": "תזריע",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "On which day is a baby boy’s bris described in the Torah?",
+            "a": "The eighth day."
+          },
+          "he": {
+            "q": "באיזה יום מתוארת בתורה מילת בן?",
+            "a": "ביום השמיני."
+          },
+          "ref": "Leviticus 12–13"
+        },
+        {
+          "en": {
+            "q": "Who examines a suspected mark of tzaraas?",
+            "a": "A kohen."
+          },
+          "he": {
+            "q": "מי בודק נגע החשוד כצרעת?",
+            "a": "כהן."
+          },
+          "ref": "Leviticus 12–13"
+        },
+        {
+          "en": {
+            "q": "Can the person decide their own tzaraas status without the kohen?",
+            "a": "No; the Torah gives that decision to the kohen."
+          },
+          "he": {
+            "q": "האם האדם מחליט לבדו על דינו בנגע צרעת?",
+            "a": "לא; התורה נותנת את ההכרעה לכהן."
+          },
+          "ref": "Leviticus 12–13"
+        },
+        {
+          "en": {
+            "q": "Besides skin, on what does this parsha describe tzaraas appearing?",
+            "a": "Garments."
+          },
+          "he": {
+            "q": "מלבד העור, היכן מתוארת צרעת בפרשה?",
+            "a": "בבגדים."
+          },
+          "ref": "Leviticus 12–13"
+        },
+        {
+          "en": {
+            "q": "For how long might the kohen first isolate an uncertain mark for another examination?",
+            "a": "Seven days."
+          },
+          "he": {
+            "q": "לכמה זמן עשוי הכהן להסגיר נגע מסופק לפני בדיקה נוספת?",
+            "a": "לשבעה ימים."
+          },
+          "ref": "Leviticus 12–13"
+        }
+      ]
+    },
+    {
+      "id": "metzora",
+      "en": "Metzora",
+      "he": "מצורע",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Who goes outside the camp to examine the recovering metzora?",
+            "a": "The kohen."
+          },
+          "he": {
+            "q": "מי יוצא מחוץ למחנה לראות את המצורע שנרפא?",
+            "a": "הכהן."
+          },
+          "ref": "Leviticus 14–15"
+        },
+        {
+          "en": {
+            "q": "How many birds are brought at the start of the purification described here?",
+            "a": "Two."
+          },
+          "he": {
+            "q": "כמה ציפורים מביאים בתחילת הטהרה המתוארת?",
+            "a": "שתיים."
+          },
+          "ref": "Leviticus 14–15"
+        },
+        {
+          "en": {
+            "q": "What happens to the living bird at the end of that part of the purification?",
+            "a": "It is sent free into the open field."
+          },
+          "he": {
+            "q": "מה עושים בציפור החיה בסיום אותו חלק בטהרה?",
+            "a": "משלחים אותה על פני השדה."
+          },
+          "ref": "Leviticus 14–15"
+        },
+        {
+          "en": {
+            "q": "Besides people and clothing, where can tzaraas appear?",
+            "a": "On a house."
+          },
+          "he": {
+            "q": "מלבד באדם ובבגד, היכן יכולה להופיע צרעת?",
+            "a": "בבית."
+          },
+          "ref": "Leviticus 14–15"
+        },
+        {
+          "en": {
+            "q": "Why is a house emptied before the kohen examines its mark?",
+            "a": "So its contents will not become impure if the house is declared impure."
+          },
+          "he": {
+            "q": "למה מפנים בית לפני שהכהן בודק את הנגע?",
+            "a": "כדי שלא ייטמא מה שבבית אם ייקבע שהוא טמא."
+          },
+          "ref": "Leviticus 14–15"
+        }
+      ]
+    },
+    {
+      "id": "achrei-mot",
+      "en": "Achrei Mot",
+      "he": "אחרי מות",
+      "aliases": [
+        "Achrei Mos"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "On which holy day does the Kohen Gadol enter the Kodesh Hakodashim for its special service?",
+            "a": "Yom Kippur."
+          },
+          "he": {
+            "q": "באיזה יום נכנס הכהן הגדול לקודש הקודשים לעבודת היום?",
+            "a": "ביום הכיפורים."
+          },
+          "ref": "Leviticus 16–18"
+        },
+        {
+          "en": {
+            "q": "What color are the special linen garments worn for that service?",
+            "a": "White."
+          },
+          "he": {
+            "q": "מה צבעם של בגדי הבד המיוחדים לעבודה זו?",
+            "a": "לבן."
+          },
+          "ref": "Leviticus 16–18"
+        },
+        {
+          "en": {
+            "q": "How many goats were taken for the lots on Yom Kippur?",
+            "a": "Two."
+          },
+          "he": {
+            "q": "כמה שעירים הובאו להגרלה ביום הכיפורים?",
+            "a": "שניים."
+          },
+          "ref": "Leviticus 16–18"
+        },
+        {
+          "en": {
+            "q": "What did Aharon place on the goats to decide their roles?",
+            "a": "Lots."
+          },
+          "he": {
+            "q": "מה נתן אהרן על השעירים כדי לקבוע את תפקידם?",
+            "a": "גורלות."
+          },
+          "ref": "Leviticus 16–18"
+        },
+        {
+          "en": {
+            "q": "What must be done with the blood of a hunted kosher wild animal or bird?",
+            "a": "Cover it with earth."
+          },
+          "he": {
+            "q": "מה עושים בדם חיה או עוף טהורים שניצודו ונשחטו?",
+            "a": "מכסים אותו בעפר."
+          },
+          "ref": "Leviticus 16–18"
+        }
+      ]
+    },
+    {
+      "id": "kedoshim",
+      "en": "Kedoshim",
+      "he": "קדושים",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "How does the Torah tell us to love our neighbor?",
+            "a": "As ourselves."
+          },
+          "he": {
+            "q": "כיצד מצווה התורה לאהוב את הרֵע?",
+            "a": "כמונו — ״ואהבת לרעך כמוך״."
+          },
+          "ref": "Leviticus 19–20"
+        },
+        {
+          "en": {
+            "q": "For whom should parts of the harvest be left?",
+            "a": "The poor and the stranger."
+          },
+          "he": {
+            "q": "למי משאירים חלקים מהיבול?",
+            "a": "לעני ולגר."
+          },
+          "ref": "Leviticus 19–20"
+        },
+        {
+          "en": {
+            "q": "What does the Torah say about putting a stumbling block before a blind person?",
+            "a": "It forbids it."
+          },
+          "he": {
+            "q": "מה אומרת התורה על נתינת מכשול לפני עיוור?",
+            "a": "״ולפני עיוור לא תתן מכשול״."
+          },
+          "ref": "Leviticus 19–20"
+        },
+        {
+          "en": {
+            "q": "What should we do in the presence of an elderly person?",
+            "a": "Rise and show respect."
+          },
+          "he": {
+            "q": "מה עושים בפני אדם זקן?",
+            "a": "קמים ומכבדים אותו."
+          },
+          "ref": "Leviticus 19–20"
+        },
+        {
+          "en": {
+            "q": "What kind of weights and measures must a shopkeeper use?",
+            "a": "Honest and accurate ones."
+          },
+          "he": {
+            "q": "באילו משקלות ומידות צריך להשתמש במסחר?",
+            "a": "במשקלות ובמידות צדק."
+          },
+          "ref": "Leviticus 19–20"
+        }
+      ]
+    },
+    {
+      "id": "emor",
+      "en": "Emor",
+      "he": "אמור",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Which special days are listed in this parsha?",
+            "a": "Shabbos and the festivals."
+          },
+          "he": {
+            "q": "אילו ימים מיוחדים נמנים בפרשה?",
+            "a": "שבת והמועדים."
+          },
+          "ref": "Leviticus 21–24"
+        },
+        {
+          "en": {
+            "q": "How many weeks do we count in Sefiras HaOmer?",
+            "a": "Seven complete weeks."
+          },
+          "he": {
+            "q": "כמה שבועות סופרים בספירת העומר?",
+            "a": "שבעה שבועות תמימים."
+          },
+          "ref": "Leviticus 21–24"
+        },
+        {
+          "en": {
+            "q": "What is taken on Sukkos, together with the esrog?",
+            "a": "Lulav, hadassim and aravos."
+          },
+          "he": {
+            "q": "מה לוקחים בסוכות יחד עם האתרוג?",
+            "a": "לולב, הדסים וערבות."
+          },
+          "ref": "Leviticus 21–24"
+        },
+        {
+          "en": {
+            "q": "How many days are we commanded to dwell in a sukkah?",
+            "a": "Seven days."
+          },
+          "he": {
+            "q": "כמה ימים נצטווינו לשבת בסוכה?",
+            "a": "שבעה ימים."
+          },
+          "ref": "Leviticus 21–24"
+        },
+        {
+          "en": {
+            "q": "How many loaves were arranged on the pure table?",
+            "a": "Twelve."
+          },
+          "he": {
+            "q": "כמה חלות ערכו על השולחן הטהור?",
+            "a": "שתים עשרה."
+          },
+          "ref": "Leviticus 21–24"
+        }
+      ]
+    },
+    {
+      "id": "behar",
+      "en": "Behar",
+      "he": "בהר",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What is the seventh year of rest for the land called?",
+            "a": "Shemitah."
+          },
+          "he": {
+            "q": "איך נקראת השנה השביעית שבה הארץ שובתת?",
+            "a": "שמיטה."
+          },
+          "ref": "Leviticus 25–26"
+        },
+        {
+          "en": {
+            "q": "How many years are counted before the fiftieth year, Yovel?",
+            "a": "Forty-nine years."
+          },
+          "he": {
+            "q": "כמה שנים סופרים לפני שנת היובל החמישים?",
+            "a": "ארבעים ותשע שנים."
+          },
+          "ref": "Leviticus 25–26"
+        },
+        {
+          "en": {
+            "q": "What instrument is sounded to announce Yovel?",
+            "a": "A shofar."
+          },
+          "he": {
+            "q": "באיזה כלי תוקעים להכרזת היובל?",
+            "a": "בשופר."
+          },
+          "ref": "Leviticus 25–26"
+        },
+        {
+          "en": {
+            "q": "What should we do when a fellow Jew becomes poor?",
+            "a": "Support and help them."
+          },
+          "he": {
+            "q": "מה עושים כשאחינו נעשה עני?",
+            "a": "מחזיקים בו ועוזרים לו."
+          },
+          "ref": "Leviticus 25–26"
+        },
+        {
+          "en": {
+            "q": "Who does the Torah say is the true owner of the land?",
+            "a": "Hashem."
+          },
+          "he": {
+            "q": "למי שייכת הארץ באמת, לפי התורה?",
+            "a": "לה׳ — ״כי לי הארץ״."
+          },
+          "ref": "Leviticus 25–26"
+        }
+      ]
+    },
+    {
+      "id": "bechukotai",
+      "en": "Bechukotai",
+      "he": "בחוקותי",
+      "aliases": [
+        "Bechukosai"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What blessing for rain is promised when the people follow Hashem’s ways?",
+            "a": "Rain in its proper time."
+          },
+          "he": {
+            "q": "איזו ברכה על הגשם מובטחת כששומרים את מצוות ה׳?",
+            "a": "גשמים בעתם."
+          },
+          "ref": "Leviticus 26–27"
+        },
+        {
+          "en": {
+            "q": "What blessing about safety in the land is promised?",
+            "a": "Peace in the land."
+          },
+          "he": {
+            "q": "איזו ברכה על הביטחון בארץ מובטחת?",
+            "a": "שלום בארץ."
+          },
+          "ref": "Leviticus 26–27"
+        },
+        {
+          "en": {
+            "q": "What does Hashem promise about His dwelling among the people?",
+            "a": "He will place His dwelling among them."
+          },
+          "he": {
+            "q": "מה מבטיח ה׳ על משכנו בתוך העם?",
+            "a": "״ונתתי משכני בתוככם״."
+          },
+          "ref": "Leviticus 26–27"
+        },
+        {
+          "en": {
+            "q": "What happens in the parsha after the list of blessings?",
+            "a": "Warnings about turning away from Hashem’s mitzvos."
+          },
+          "he": {
+            "q": "מה בא בפרשה אחרי הברכות?",
+            "a": "אזהרות על עזיבת מצוות ה׳."
+          },
+          "ref": "Leviticus 26–27"
+        },
+        {
+          "en": {
+            "q": "What does the Torah call every tenth animal passing under the rod?",
+            "a": "Holy to Hashem, the animal tithe."
+          },
+          "he": {
+            "q": "איך מכונה כל עשירי העובר תחת השבט?",
+            "a": "קודש לה׳ — מעשר בהמה."
+          },
+          "ref": "Leviticus 26–27"
+        }
+      ]
+    },
+    {
+      "id": "bamidbar",
+      "en": "Bamidbar",
+      "he": "במדבר",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Where were Bnei Yisrael when this book begins?",
+            "a": "In the wilderness of Sinai."
+          },
+          "he": {
+            "q": "היכן היו בני ישראל בתחילת הספר?",
+            "a": "במדבר סיני."
+          },
+          "ref": "Numbers 1–4"
+        },
+        {
+          "en": {
+            "q": "Who was told to count the people with Aharon?",
+            "a": "Moshe."
+          },
+          "he": {
+            "q": "מי נצטווה למנות את העם עם אהרן?",
+            "a": "משה."
+          },
+          "ref": "Numbers 1–4"
+        },
+        {
+          "en": {
+            "q": "Which tribe was counted separately for service around the Mishkan?",
+            "a": "Levi."
+          },
+          "he": {
+            "q": "איזה שבט נמנה בנפרד לשירות סביב המשכן?",
+            "a": "לוי."
+          },
+          "ref": "Numbers 1–4"
+        },
+        {
+          "en": {
+            "q": "What stood in the center of the camp?",
+            "a": "The Mishkan."
+          },
+          "he": {
+            "q": "מה היה במרכז המחנה?",
+            "a": "המשכן."
+          },
+          "ref": "Numbers 1–4"
+        },
+        {
+          "en": {
+            "q": "Which tribe led the camp on the east side?",
+            "a": "Yehudah."
+          },
+          "he": {
+            "q": "איזה שבט עמד בראש המחנה במזרח?",
+            "a": "יהודה."
+          },
+          "ref": "Numbers 1–4"
+        }
+      ]
+    },
+    {
+      "id": "naso",
+      "en": "Naso",
+      "he": "נשא",
+      "aliases": [
+        "Nasso"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Who says the priestly blessing, Birkas Kohanim?",
+            "a": "The kohanim."
+          },
+          "he": {
+            "q": "מי מברכים בברכת כהנים?",
+            "a": "הכהנים."
+          },
+          "ref": "Numbers 4–7"
+        },
+        {
+          "en": {
+            "q": "What is the first word of Birkas Kohanim?",
+            "a": "Yevarechecha — may He bless you."
+          },
+          "he": {
+            "q": "מה המילה הראשונה בברכת כהנים?",
+            "a": "יברכך."
+          },
+          "ref": "Numbers 4–7"
+        },
+        {
+          "en": {
+            "q": "What word ends Birkas Kohanim?",
+            "a": "Shalom, peace."
+          },
+          "he": {
+            "q": "באיזו מילה מסתיימת ברכת כהנים?",
+            "a": "שלום."
+          },
+          "ref": "Numbers 4–7"
+        },
+        {
+          "en": {
+            "q": "Who brought gifts for the dedication of the mizbeach?",
+            "a": "The leaders of the tribes."
+          },
+          "he": {
+            "q": "מי הביאו קורבנות לחנוכת המזבח?",
+            "a": "נשיאי השבטים."
+          },
+          "ref": "Numbers 4–7"
+        },
+        {
+          "en": {
+            "q": "Over how many days did those leaders bring their dedication offerings?",
+            "a": "Twelve days, one leader each day."
+          },
+          "he": {
+            "q": "במשך כמה ימים הביאו הנשיאים את קורבנות החנוכה?",
+            "a": "שנים עשר יום, נשיא אחד בכל יום."
+          },
+          "ref": "Numbers 4–7"
+        }
+      ]
+    },
+    {
+      "id": "behaalotcha",
+      "en": "Beha’alotcha",
+      "he": "בהעלותך",
+      "aliases": [
+        "Beha'alotcha",
+        "Behaaloscha"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Who was told how to light the Menorah?",
+            "a": "Aharon."
+          },
+          "he": {
+            "q": "למי נאמר כיצד להעלות את נרות המנורה?",
+            "a": "לאהרן."
+          },
+          "ref": "Numbers 8–12"
+        },
+        {
+          "en": {
+            "q": "What showed the people when to travel and when to camp?",
+            "a": "The cloud over the Mishkan."
+          },
+          "he": {
+            "q": "מה הראה לעם מתי לנסוע ומתי לחנות?",
+            "a": "הענן שמעל המשכן."
+          },
+          "ref": "Numbers 8–12"
+        },
+        {
+          "en": {
+            "q": "What were the two trumpets made from?",
+            "a": "Silver."
+          },
+          "he": {
+            "q": "ממה נעשו שתי החצוצרות?",
+            "a": "מכסף."
+          },
+          "ref": "Numbers 8–12"
+        },
+        {
+          "en": {
+            "q": "What second opportunity was given to those unable to bring the Pesach offering at its time?",
+            "a": "Pesach Sheni, in the second month."
+          },
+          "he": {
+            "q": "איזו הזדמנות נוספת ניתנה למי שלא יכלו להקריב פסח בזמנו?",
+            "a": "פסח שני, בחודש השני."
+          },
+          "ref": "Numbers 8–12"
+        },
+        {
+          "en": {
+            "q": "What short prayer did Moshe say for Miriam?",
+            "a": "“Please, Hashem, please heal her.”"
+          },
+          "he": {
+            "q": "איזו תפילה קצרה התפלל משה על מרים?",
+            "a": "״אל נא רפא נא לה״."
+          },
+          "ref": "Numbers 8–12"
+        }
+      ]
+    },
+    {
+      "id": "shlach",
+      "en": "Sh’lach",
+      "he": "שלח",
+      "aliases": [
+        "Sh'lach",
+        "Shelach"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "How many men were sent to explore the land?",
+            "a": "Twelve."
+          },
+          "he": {
+            "q": "כמה אנשים נשלחו לתור את הארץ?",
+            "a": "שנים עשר."
+          },
+          "ref": "Numbers 13–15"
+        },
+        {
+          "en": {
+            "q": "Which two explorers encouraged the people to trust Hashem and enter the land?",
+            "a": "Yehoshua and Calev."
+          },
+          "he": {
+            "q": "אילו שני תרים עודדו לבטוח בה׳ ולעלות לארץ?",
+            "a": "יהושע וכלב."
+          },
+          "ref": "Numbers 13–15"
+        },
+        {
+          "en": {
+            "q": "What large fruit cluster did the explorers carry?",
+            "a": "A cluster of grapes."
+          },
+          "he": {
+            "q": "איזה אשכול גדול נשאו התרים?",
+            "a": "אשכול ענבים."
+          },
+          "ref": "Numbers 13–15"
+        },
+        {
+          "en": {
+            "q": "For how many days did they explore the land?",
+            "a": "Forty days."
+          },
+          "he": {
+            "q": "כמה ימים תרו את הארץ?",
+            "a": "ארבעים יום."
+          },
+          "ref": "Numbers 13–15"
+        },
+        {
+          "en": {
+            "q": "What mitzvah at the end of the parsha helps us remember Hashem’s commandments?",
+            "a": "Tzitzis."
+          },
+          "he": {
+            "q": "איזו מצווה בסוף הפרשה מזכירה את מצוות ה׳?",
+            "a": "ציצית."
+          },
+          "ref": "Numbers 13–15"
+        }
+      ]
+    },
+    {
+      "id": "korach",
+      "en": "Korach",
+      "he": "קרח",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Who led the challenge against Moshe and Aharon?",
+            "a": "Korach."
+          },
+          "he": {
+            "q": "מי עמד בראש המחלוקת על משה ואהרן?",
+            "a": "קרח."
+          },
+          "ref": "Numbers 16–18"
+        },
+        {
+          "en": {
+            "q": "What swallowed Dasan and Aviram and those with them?",
+            "a": "The ground opened and swallowed them."
+          },
+          "he": {
+            "q": "מה בלע את דתן ואבירם ואת אשר איתם?",
+            "a": "האדמה פתחה את פיה ובלעה אותם."
+          },
+          "ref": "Numbers 16–18"
+        },
+        {
+          "en": {
+            "q": "Whose staff blossomed?",
+            "a": "Aharon’s."
+          },
+          "he": {
+            "q": "המטה של מי פרח?",
+            "a": "מטה אהרן."
+          },
+          "ref": "Numbers 16–18"
+        },
+        {
+          "en": {
+            "q": "What fruit grew on that staff?",
+            "a": "Almonds."
+          },
+          "he": {
+            "q": "איזה פרי צמח במטה?",
+            "a": "שקדים."
+          },
+          "ref": "Numbers 16–18"
+        },
+        {
+          "en": {
+            "q": "Which tribe did the blossoming staff represent?",
+            "a": "Levi."
+          },
+          "he": {
+            "q": "איזה שבט ייצג המטה שפרח?",
+            "a": "לוי."
+          },
+          "ref": "Numbers 16–18"
+        }
+      ]
+    },
+    {
+      "id": "chukat",
+      "en": "Chukat",
+      "he": "חקת",
+      "aliases": [
+        "Chukas"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What color is the cow described for the purification water?",
+            "a": "Red."
+          },
+          "he": {
+            "q": "מה צבע הפרה המתוארת לצורך מי הטהרה?",
+            "a": "אדום."
+          },
+          "ref": "Numbers 19–22"
+        },
+        {
+          "en": {
+            "q": "Which sister of Moshe died in this parsha?",
+            "a": "Miriam."
+          },
+          "he": {
+            "q": "איזו אחות של משה נפטרה בפרשה?",
+            "a": "מרים."
+          },
+          "ref": "Numbers 19–22"
+        },
+        {
+          "en": {
+            "q": "What did Hashem tell Moshe to do to the rock?",
+            "a": "Speak to it."
+          },
+          "he": {
+            "q": "מה אמר ה׳ למשה לעשות לסלע?",
+            "a": "לדבר אליו."
+          },
+          "ref": "Numbers 19–22"
+        },
+        {
+          "en": {
+            "q": "Who became Kohen Gadol after Aharon?",
+            "a": "Elazar, his son."
+          },
+          "he": {
+            "q": "מי נעשה כהן גדול אחרי אהרן?",
+            "a": "אלעזר בנו."
+          },
+          "ref": "Numbers 19–22"
+        },
+        {
+          "en": {
+            "q": "What metal serpent did Moshe make as Hashem commanded?",
+            "a": "A copper serpent."
+          },
+          "he": {
+            "q": "איזה נחש עשה משה בציווי ה׳?",
+            "a": "נחש נחושת."
+          },
+          "ref": "Numbers 19–22"
+        }
+      ]
+    },
+    {
+      "id": "balak",
+      "en": "Balak",
+      "he": "בלק",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Who was the king of Moav?",
+            "a": "Balak."
+          },
+          "he": {
+            "q": "מי היה מלך מואב?",
+            "a": "בלק."
+          },
+          "ref": "Numbers 22–25"
+        },
+        {
+          "en": {
+            "q": "Whom did Balak hire to curse Bnei Yisrael?",
+            "a": "Bilam."
+          },
+          "he": {
+            "q": "את מי הזמין בלק לקלל את בני ישראל?",
+            "a": "את בלעם."
+          },
+          "ref": "Numbers 22–25"
+        },
+        {
+          "en": {
+            "q": "Which animal spoke to Bilam?",
+            "a": "His donkey."
+          },
+          "he": {
+            "q": "איזה בעל חיים דיבר אל בלעם?",
+            "a": "אתונו."
+          },
+          "ref": "Numbers 22–25"
+        },
+        {
+          "en": {
+            "q": "What did Bilam give instead of curses?",
+            "a": "Blessings, as Hashem placed in his mouth."
+          },
+          "he": {
+            "q": "מה יצא מפי בלעם במקום קללות?",
+            "a": "ברכות, כפי ששם ה׳ בפיו."
+          },
+          "ref": "Numbers 22–25"
+        },
+        {
+          "en": {
+            "q": "What did Bilam praise with the words “Mah tovu”?",
+            "a": "Yaakov’s tents and Israel’s dwelling places."
+          },
+          "he": {
+            "q": "מה שיבח בלעם במילים ״מה טובו״?",
+            "a": "את אוהלי יעקב ומשכנות ישראל."
+          },
+          "ref": "Numbers 22–25"
+        }
+      ]
+    },
+    {
+      "id": "pinchas",
+      "en": "Pinchas",
+      "he": "פינחס",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Who received a covenant of peace?",
+            "a": "Pinchas."
+          },
+          "he": {
+            "q": "מי קיבל ברית שלום?",
+            "a": "פינחס."
+          },
+          "ref": "Numbers 25–30"
+        },
+        {
+          "en": {
+            "q": "Whose daughters asked for an inheritance in the land?",
+            "a": "Tzelofchad’s daughters."
+          },
+          "he": {
+            "q": "בנותיו של מי ביקשו נחלה בארץ?",
+            "a": "בנות צלפחד."
+          },
+          "ref": "Numbers 25–30"
+        },
+        {
+          "en": {
+            "q": "How many daughters did Tzelofchad have?",
+            "a": "Five."
+          },
+          "he": {
+            "q": "כמה בנות היו לצלפחד?",
+            "a": "חמש."
+          },
+          "ref": "Numbers 25–30"
+        },
+        {
+          "en": {
+            "q": "Who was chosen to lead the people after Moshe?",
+            "a": "Yehoshua bin Nun."
+          },
+          "he": {
+            "q": "מי נבחר להנהיג את העם אחרי משה?",
+            "a": "יהושע בן נון."
+          },
+          "ref": "Numbers 25–30"
+        },
+        {
+          "en": {
+            "q": "What regular daily offering is described in this parsha?",
+            "a": "The korban tamid."
+          },
+          "he": {
+            "q": "איזה קורבן קבוע בכל יום מתואר בפרשה?",
+            "a": "קורבן התמיד."
+          },
+          "ref": "Numbers 25–30"
+        }
+      ]
+    },
+    {
+      "id": "matot",
+      "en": "Matot",
+      "he": "מטות",
+      "aliases": [
+        "Matos"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What does the Torah teach about a person’s vows?",
+            "a": "A person must keep the commitment made."
+          },
+          "he": {
+            "q": "מה מלמדת התורה על נדרי אדם?",
+            "a": "על האדם לקיים את התחייבותו."
+          },
+          "ref": "Numbers 30–32"
+        },
+        {
+          "en": {
+            "q": "Which two tribes first asked to settle east of the Jordan?",
+            "a": "Reuven and Gad."
+          },
+          "he": {
+            "q": "אילו שני שבטים ביקשו תחילה לשבת בעבר הירדן המזרחי?",
+            "a": "ראובן וגד."
+          },
+          "ref": "Numbers 30–32"
+        },
+        {
+          "en": {
+            "q": "Why did they want that land?",
+            "a": "It was suitable for their many animals."
+          },
+          "he": {
+            "q": "מדוע רצו בארץ הזאת?",
+            "a": "היא התאימה למקנה הרב שלהם."
+          },
+          "ref": "Numbers 30–32"
+        },
+        {
+          "en": {
+            "q": "What did they promise to do before settling peacefully?",
+            "a": "Help the other tribes in the conquest of the land."
+          },
+          "he": {
+            "q": "מה הבטיחו לעשות לפני שיישבו בנחת?",
+            "a": "לעזור לשאר השבטים בכיבוש הארץ."
+          },
+          "ref": "Numbers 30–32"
+        },
+        {
+          "en": {
+            "q": "Which other half-tribe also received land east of the Jordan?",
+            "a": "Half of Menashe."
+          },
+          "he": {
+            "q": "איזה חצי שבט קיבל גם הוא נחלה בעבר הירדן?",
+            "a": "חצי שבט מנשה."
+          },
+          "ref": "Numbers 30–32"
+        }
+      ]
+    },
+    {
+      "id": "masei",
+      "en": "Masei",
+      "he": "מסעי",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What journeys are listed at the start of the parsha?",
+            "a": "Bnei Yisrael’s journeys from Egypt through the wilderness."
+          },
+          "he": {
+            "q": "אילו מסעות נמנים בתחילת הפרשה?",
+            "a": "מסעות בני ישראל ממצרים במדבר."
+          },
+          "ref": "Numbers 33–36"
+        },
+        {
+          "en": {
+            "q": "What special cities offered refuge to someone who killed unintentionally?",
+            "a": "Cities of refuge."
+          },
+          "he": {
+            "q": "אילו ערים נועדו למי שהרג בשגגה?",
+            "a": "ערי מקלט."
+          },
+          "ref": "Numbers 33–36"
+        },
+        {
+          "en": {
+            "q": "How many cities of refuge were to be set aside altogether on both sides of the Jordan?",
+            "a": "Six."
+          },
+          "he": {
+            "q": "כמה ערי מקלט נצטוו להבדיל בשני עברי הירדן יחד?",
+            "a": "שש."
+          },
+          "ref": "Numbers 33–36"
+        },
+        {
+          "en": {
+            "q": "Which tribe received towns among the other tribes?",
+            "a": "Levi."
+          },
+          "he": {
+            "q": "איזה שבט קיבל ערים בתוך נחלות שאר השבטים?",
+            "a": "לוי."
+          },
+          "ref": "Numbers 33–36"
+        },
+        {
+          "en": {
+            "q": "What boundaries are described in this parsha?",
+            "a": "The boundaries of the land of Canaan."
+          },
+          "he": {
+            "q": "אילו גבולות מתוארים בפרשה?",
+            "a": "גבולות ארץ כנען."
+          },
+          "ref": "Numbers 33–36"
+        }
+      ]
+    },
+    {
+      "id": "devarim",
+      "en": "Devarim",
+      "he": "דברים",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Who speaks to Bnei Yisrael in this book?",
+            "a": "Moshe."
+          },
+          "he": {
+            "q": "מי מדבר אל בני ישראל בספר זה?",
+            "a": "משה."
+          },
+          "ref": "Deuteronomy 1–3"
+        },
+        {
+          "en": {
+            "q": "Which river were the people preparing to cross?",
+            "a": "The Jordan."
+          },
+          "he": {
+            "q": "איזה נהר התכונן העם לעבור?",
+            "a": "הירדן."
+          },
+          "ref": "Deuteronomy 1–3"
+        },
+        {
+          "en": {
+            "q": "What earlier journey does Moshe recall?",
+            "a": "The journey from Horev through the wilderness."
+          },
+          "he": {
+            "q": "איזה מסע קודם מזכיר משה?",
+            "a": "המסע מחורב דרך המדבר."
+          },
+          "ref": "Deuteronomy 1–3"
+        },
+        {
+          "en": {
+            "q": "What does Moshe tell judges about rich and poor, small and great?",
+            "a": "Hear everyone fairly without favoritism."
+          },
+          "he": {
+            "q": "מה אומר משה לשופטים על קטן וגדול?",
+            "a": "לשמוע את כולם בלי להכיר פנים."
+          },
+          "ref": "Deuteronomy 1–3"
+        },
+        {
+          "en": {
+            "q": "Which leader does Moshe encourage not to fear the kings ahead?",
+            "a": "Yehoshua."
+          },
+          "he": {
+            "q": "את איזה מנהיג מעודד משה שלא לפחד מהמלכים שלפניו?",
+            "a": "יהושע."
+          },
+          "ref": "Deuteronomy 1–3"
+        }
+      ]
+    },
+    {
+      "id": "vaetchanan",
+      "en": "Vaetchanan",
+      "he": "ואתחנן",
+      "aliases": [
+        "Vaeschanan"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What did Moshe ask Hashem to let him do?",
+            "a": "Cross over and see the good land."
+          },
+          "he": {
+            "q": "מה ביקש משה מה׳ לעשות?",
+            "a": "לעבור ולראות את הארץ הטובה."
+          },
+          "ref": "Deuteronomy 3–7"
+        },
+        {
+          "en": {
+            "q": "Which famous sentence begins “Shema Yisrael”?",
+            "a": "Hashem is our God; Hashem is One."
+          },
+          "he": {
+            "q": "מה נאמר בפסוק המתחיל ״שמע ישראל״?",
+            "a": "ה׳ אלוקינו ה׳ אחד."
+          },
+          "ref": "Deuteronomy 3–7"
+        },
+        {
+          "en": {
+            "q": "Where are we told to write these words at our homes?",
+            "a": "On the doorposts and gates."
+          },
+          "he": {
+            "q": "היכן נצטווינו לכתוב את הדברים בבתינו?",
+            "a": "על מזוזות הבית ובשערים."
+          },
+          "ref": "Deuteronomy 3–7"
+        },
+        {
+          "en": {
+            "q": "When should we teach Torah to our children, according to the parsha?",
+            "a": "At home, on the way, when lying down and when rising."
+          },
+          "he": {
+            "q": "מתי מלמדים את הדברים לבנים לפי הפרשה?",
+            "a": "בשבתנו בבית, בלכתנו בדרך, בשכבנו ובקומנו."
+          },
+          "ref": "Deuteronomy 3–7"
+        },
+        {
+          "en": {
+            "q": "Which set of commandments is repeated in this parsha?",
+            "a": "The Aseres Hadibros."
+          },
+          "he": {
+            "q": "איזו קבוצת מצוות חוזרת בפרשה?",
+            "a": "עשרת הדיברות."
+          },
+          "ref": "Deuteronomy 3–7"
+        }
+      ]
+    },
+    {
+      "id": "eikev",
+      "en": "Eikev",
+      "he": "עקב",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What should we do after eating and being satisfied?",
+            "a": "Bless Hashem."
+          },
+          "he": {
+            "q": "מה עושים אחרי שאוכלים ושבעים?",
+            "a": "מברכים את ה׳."
+          },
+          "ref": "Deuteronomy 7–11"
+        },
+        {
+          "en": {
+            "q": "What food did Hashem provide in the wilderness?",
+            "a": "Manna."
+          },
+          "he": {
+            "q": "איזה אוכל נתן ה׳ במדבר?",
+            "a": "מן."
+          },
+          "ref": "Deuteronomy 7–11"
+        },
+        {
+          "en": {
+            "q": "How many kinds of produce is Eretz Yisrael specially praised for here?",
+            "a": "Seven."
+          },
+          "he": {
+            "q": "בכמה מינים השתבחה הארץ כאן?",
+            "a": "בשבעה."
+          },
+          "ref": "Deuteronomy 7–11"
+        },
+        {
+          "en": {
+            "q": "Name two of the seven species.",
+            "a": "For example, wheat and barley."
+          },
+          "he": {
+            "q": "ציינו שניים משבעת המינים.",
+            "a": "למשל, חיטה ושעורה."
+          },
+          "ref": "Deuteronomy 7–11"
+        },
+        {
+          "en": {
+            "q": "What must we remember when we become successful?",
+            "a": "Hashem gives us the strength to achieve."
+          },
+          "he": {
+            "q": "מה צריך לזכור כשמצליחים?",
+            "a": "שה׳ נותן לנו כוח לעשות חיל."
+          },
+          "ref": "Deuteronomy 7–11"
+        }
+      ]
+    },
+    {
+      "id": "reeh",
+      "en": "Re’eh",
+      "he": "ראה",
+      "aliases": [
+        "Re'eh",
+        "Reeh"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What two choices does Moshe place before the people?",
+            "a": "A blessing and a curse."
+          },
+          "he": {
+            "q": "אילו שתי אפשרויות מציב משה לפני העם?",
+            "a": "ברכה וקללה."
+          },
+          "ref": "Deuteronomy 11–16"
+        },
+        {
+          "en": {
+            "q": "How should we treat a person in need?",
+            "a": "Open our hand and help generously."
+          },
+          "he": {
+            "q": "כיצד נוהגים באדם הזקוק לעזרה?",
+            "a": "פותחים את היד ועוזרים בנדיבות."
+          },
+          "ref": "Deuteronomy 11–16"
+        },
+        {
+          "en": {
+            "q": "Which three pilgrimage festivals are named here?",
+            "a": "Pesach, Shavuos and Sukkos."
+          },
+          "he": {
+            "q": "אילו שלושה רגלים נמנים כאן?",
+            "a": "פסח, שבועות וסוכות."
+          },
+          "ref": "Deuteronomy 11–16"
+        },
+        {
+          "en": {
+            "q": "What does the Torah call Bnei Yisrael in relation to Hashem?",
+            "a": "Children of Hashem."
+          },
+          "he": {
+            "q": "איך מכנה התורה את בני ישראל ביחס לה׳?",
+            "a": "״בנים אתם לה׳ אלוקיכם״."
+          },
+          "ref": "Deuteronomy 11–16"
+        },
+        {
+          "en": {
+            "q": "Who should share in our festival joy besides our own family?",
+            "a": "Including the Levi, stranger, orphan and widow."
+          },
+          "he": {
+            "q": "מי צריכים להשתתף בשמחת החג מלבד המשפחה?",
+            "a": "גם הלוי, הגר, היתום והאלמנה."
+          },
+          "ref": "Deuteronomy 11–16"
+        }
+      ]
+    },
+    {
+      "id": "shoftim",
+      "en": "Shoftim",
+      "he": "שופטים",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Whom should the people appoint in their towns?",
+            "a": "Judges and officers."
+          },
+          "he": {
+            "q": "את מי יש למנות בשערים?",
+            "a": "שופטים ושוטרים."
+          },
+          "ref": "Deuteronomy 16–21"
+        },
+        {
+          "en": {
+            "q": "What does “Tzedek, tzedek tirdof” mean?",
+            "a": "Justice, justice shall you pursue."
+          },
+          "he": {
+            "q": "מה פירוש ״צדק צדק תרדוף״?",
+            "a": "יש לרדוף אחר הצדק."
+          },
+          "ref": "Deuteronomy 16–21"
+        },
+        {
+          "en": {
+            "q": "What must a king write for himself?",
+            "a": "A copy of the Torah."
+          },
+          "he": {
+            "q": "מה צריך המלך לכתוב לעצמו?",
+            "a": "ספר תורה."
+          },
+          "ref": "Deuteronomy 16–21"
+        },
+        {
+          "en": {
+            "q": "What must judges not accept, because it can twist judgment?",
+            "a": "A bribe."
+          },
+          "he": {
+            "q": "מה אסור לשופטים לקחת מפני שהוא מטה משפט?",
+            "a": "שוחד."
+          },
+          "ref": "Deuteronomy 16–21"
+        },
+        {
+          "en": {
+            "q": "What kind of trees must not be destroyed when besieging a city for war?",
+            "a": "Fruit trees."
+          },
+          "he": {
+            "q": "אילו עצים אין להשחית כשצרים על עיר למלחמה?",
+            "a": "עצי מאכל."
+          },
+          "ref": "Deuteronomy 16–21"
+        }
+      ]
+    },
+    {
+      "id": "ki-teitzei",
+      "en": "Ki Teitzei",
+      "he": "כי תצא",
+      "aliases": [
+        "Ki Seitzei"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What should we do with someone’s lost object?",
+            "a": "Return it to its owner."
+          },
+          "he": {
+            "q": "מה עושים באבדה של אדם אחר?",
+            "a": "משיבים אותה לבעליה."
+          },
+          "ref": "Deuteronomy 21–25"
+        },
+        {
+          "en": {
+            "q": "What safety feature must be built around a roof that requires it?",
+            "a": "A parapet, a maakeh."
+          },
+          "he": {
+            "q": "איזה אמצעי בטיחות בונים בגג החייב בכך?",
+            "a": "מעקה."
+          },
+          "ref": "Deuteronomy 21–25"
+        },
+        {
+          "en": {
+            "q": "What must a worker receive on time?",
+            "a": "Their wages."
+          },
+          "he": {
+            "q": "מה צריך עובד לקבל בזמן?",
+            "a": "את שכרו."
+          },
+          "ref": "Deuteronomy 21–25"
+        },
+        {
+          "en": {
+            "q": "Which two different animals must not plow together?",
+            "a": "An ox and a donkey."
+          },
+          "he": {
+            "q": "אילו שני בעלי חיים אסור לחרוש בהם יחד?",
+            "a": "שור וחמור."
+          },
+          "ref": "Deuteronomy 21–25"
+        },
+        {
+          "en": {
+            "q": "What does the Torah say about keeping dishonest weights?",
+            "a": "Do not keep them; use honest weights."
+          },
+          "he": {
+            "q": "מה אומרת התורה על משקלות מרמה?",
+            "a": "לא להחזיקן; להשתמש במשקלות צדק."
+          },
+          "ref": "Deuteronomy 21–25"
+        }
+      ]
+    },
+    {
+      "id": "ki-tavo",
+      "en": "Ki Tavo",
+      "he": "כי תבוא",
+      "aliases": [
+        "Ki Savo"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What first produce was brought in a basket?",
+            "a": "Bikkurim, the first fruits."
+          },
+          "he": {
+            "q": "איזה יבול ראשון הביאו בטנא?",
+            "a": "ביכורים."
+          },
+          "ref": "Deuteronomy 26–29"
+        },
+        {
+          "en": {
+            "q": "To whom was the basket of bikkurim given?",
+            "a": "The kohen."
+          },
+          "he": {
+            "q": "למי נתנו את טנא הביכורים?",
+            "a": "לכהן."
+          },
+          "ref": "Deuteronomy 26–29"
+        },
+        {
+          "en": {
+            "q": "Which rescue from slavery is recalled when bringing bikkurim?",
+            "a": "Hashem taking us out of Egypt."
+          },
+          "he": {
+            "q": "איזו יציאה מעבדות מזכירים בהבאת ביכורים?",
+            "a": "את יציאת מצרים."
+          },
+          "ref": "Deuteronomy 26–29"
+        },
+        {
+          "en": {
+            "q": "What were the people to write on large plastered stones?",
+            "a": "The words of the Torah."
+          },
+          "he": {
+            "q": "מה נצטוו לכתוב על אבנים גדולות מסוידות?",
+            "a": "את דברי התורה."
+          },
+          "ref": "Deuteronomy 26–29"
+        },
+        {
+          "en": {
+            "q": "What response did the people give to the declarations spoken by the Leviim?",
+            "a": "Amen."
+          },
+          "he": {
+            "q": "מה ענה העם לדברים שאמרו הלויים?",
+            "a": "אמן."
+          },
+          "ref": "Deuteronomy 26–29"
+        }
+      ]
+    },
+    {
+      "id": "nitzavim",
+      "en": "Nitzavim",
+      "he": "נצבים",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Who stands together before Hashem at the start of the parsha?",
+            "a": "All of Bnei Yisrael, young and old."
+          },
+          "he": {
+            "q": "מי ניצבים יחד לפני ה׳ בתחילת הפרשה?",
+            "a": "כל ישראל, גדולים וקטנים."
+          },
+          "ref": "Deuteronomy 29–30"
+        },
+        {
+          "en": {
+            "q": "What does the Torah tell us to choose?",
+            "a": "Life."
+          },
+          "he": {
+            "q": "במה אומרת התורה לבחור?",
+            "a": "בחיים."
+          },
+          "ref": "Deuteronomy 29–30"
+        },
+        {
+          "en": {
+            "q": "Is the Torah described as impossibly far away?",
+            "a": "No; it is very near to us."
+          },
+          "he": {
+            "q": "האם התורה מתוארת כרחוקה מכדי להגיע אליה?",
+            "a": "לא; ״קרוב אליך הדבר מאוד״."
+          },
+          "ref": "Deuteronomy 29–30"
+        },
+        {
+          "en": {
+            "q": "Where does the parsha say the matter is near to us?",
+            "a": "In our mouth and heart, to do it."
+          },
+          "he": {
+            "q": "היכן קרוב אלינו הדבר, לפי הפרשה?",
+            "a": "בפינו ובלבבנו, לעשותו."
+          },
+          "ref": "Deuteronomy 29–30"
+        },
+        {
+          "en": {
+            "q": "What is returning to Hashem called?",
+            "a": "Teshuvah."
+          },
+          "he": {
+            "q": "איך נקראת החזרה אל ה׳?",
+            "a": "תשובה."
+          },
+          "ref": "Deuteronomy 29–30"
+        }
+      ]
+    },
+    {
+      "id": "vayeilech",
+      "en": "Vayeilech",
+      "he": "וילך",
+      "aliases": [
+        "Vayelech"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "How old was Moshe when he spoke in this parsha?",
+            "a": "One hundred and twenty."
+          },
+          "he": {
+            "q": "בן כמה היה משה כשדיבר בפרשה?",
+            "a": "בן מאה ועשרים שנה."
+          },
+          "ref": "Deuteronomy 31"
+        },
+        {
+          "en": {
+            "q": "Who would lead the people into the land?",
+            "a": "Yehoshua."
+          },
+          "he": {
+            "q": "מי ינהיג את העם בכניסה לארץ?",
+            "a": "יהושע."
+          },
+          "ref": "Deuteronomy 31"
+        },
+        {
+          "en": {
+            "q": "What words of encouragement did Moshe tell Yehoshua?",
+            "a": "Be strong and courageous."
+          },
+          "he": {
+            "q": "אילו מילות חיזוק אמר משה ליהושע?",
+            "a": "״חזק ואמץ״."
+          },
+          "ref": "Deuteronomy 31"
+        },
+        {
+          "en": {
+            "q": "What gathering for hearing the Torah is commanded every seven years?",
+            "a": "Hakhel."
+          },
+          "he": {
+            "q": "איזו התכנסות לשמיעת התורה נצטוו לקיים בכל שבע שנים?",
+            "a": "הקהל."
+          },
+          "ref": "Deuteronomy 31"
+        },
+        {
+          "en": {
+            "q": "Who was to gather for Hakhel?",
+            "a": "Men, women, children and the stranger within the gates."
+          },
+          "he": {
+            "q": "מי צריכים להתכנס להקהל?",
+            "a": "האנשים, הנשים, הטף והגר שבשערים."
+          },
+          "ref": "Deuteronomy 31"
+        }
+      ]
+    },
+    {
+      "id": "haazinu",
+      "en": "Ha’azinu",
+      "he": "האזינו",
+      "aliases": [
+        "Ha'azinu",
+        "Haazinu"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What two parts of creation are asked to listen at the start of the song?",
+            "a": "Heaven and earth."
+          },
+          "he": {
+            "q": "אילו שני חלקי הבריאה נקראים להאזין בתחילת השירה?",
+            "a": "השמים והארץ."
+          },
+          "ref": "Deuteronomy 32"
+        },
+        {
+          "en": {
+            "q": "To what gentle moisture is the teaching compared?",
+            "a": "Dew."
+          },
+          "he": {
+            "q": "לאיזו לחות עדינה נמשלה האמירה?",
+            "a": "לטל."
+          },
+          "ref": "Deuteronomy 32"
+        },
+        {
+          "en": {
+            "q": "Which bird is pictured caring for its young?",
+            "a": "An eagle."
+          },
+          "he": {
+            "q": "איזה עוף מתואר כדואג לגוזליו?",
+            "a": "נשר."
+          },
+          "ref": "Deuteronomy 32"
+        },
+        {
+          "en": {
+            "q": "Whom are we told to ask about earlier generations?",
+            "a": "Our father and elders."
+          },
+          "he": {
+            "q": "את מי מצווים לשאול על הדורות הקודמים?",
+            "a": "את אבינו ואת זקנינו."
+          },
+          "ref": "Deuteronomy 32"
+        },
+        {
+          "en": {
+            "q": "Which mountain was Moshe told to ascend at the end of the parsha?",
+            "a": "Mount Nevo."
+          },
+          "he": {
+            "q": "על איזה הר נצטווה משה לעלות בסוף הפרשה?",
+            "a": "הר נבו."
+          },
+          "ref": "Deuteronomy 32"
+        }
+      ]
+    },
+    {
+      "id": "vezot-haberakhah",
+      "en": "Vezot Haberakhah",
+      "he": "וזאת הברכה",
+      "aliases": [
+        "V'Zot HaBerachah",
+        "Vezos Haberachah",
+        "Vezot Haberacha"
+      ],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Who blessed the tribes before his death?",
+            "a": "Moshe."
+          },
+          "he": {
+            "q": "מי בירך את השבטים לפני פטירתו?",
+            "a": "משה."
+          },
+          "ref": "Deuteronomy 33–34"
+        },
+        {
+          "en": {
+            "q": "What did Hashem show Moshe from Mount Nevo?",
+            "a": "The land promised to the forefathers."
+          },
+          "he": {
+            "q": "מה הראה ה׳ למשה מהר נבו?",
+            "a": "את הארץ שהבטיח לאבות."
+          },
+          "ref": "Deuteronomy 33–34"
+        },
+        {
+          "en": {
+            "q": "Who succeeded Moshe as leader?",
+            "a": "Yehoshua bin Nun."
+          },
+          "he": {
+            "q": "מי המשיך להנהיג אחרי משה?",
+            "a": "יהושע בן נון."
+          },
+          "ref": "Deuteronomy 33–34"
+        },
+        {
+          "en": {
+            "q": "How many days did Bnei Yisrael mourn Moshe?",
+            "a": "Thirty days."
+          },
+          "he": {
+            "q": "כמה ימים בכו בני ישראל על משה?",
+            "a": "שלושים יום."
+          },
+          "ref": "Deuteronomy 33–34"
+        },
+        {
+          "en": {
+            "q": "Does the Torah tell us exactly where Moshe’s grave is?",
+            "a": "No; it says no one knows his burial place."
+          },
+          "he": {
+            "q": "האם התורה מגלה בדיוק היכן קבר משה?",
+            "a": "לא; נאמר שלא ידע איש את קבורתו."
+          },
+          "ref": "Deuteronomy 33–34"
+        }
+      ]
+    },
+    {
+      "id": "vayakhel-pekudei",
+      "en": "Vayakhel-Pekudei",
+      "he": "ויקהל־פקודי",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Which holy day did Moshe speak about before the Mishkan work?",
+            "a": "Shabbos."
+          },
+          "he": {
+            "q": "על איזה יום קדוש דיבר משה לפני מלאכת המשכן?",
+            "a": "שבת."
+          },
+          "ref": "Exodus 35–38"
+        },
+        {
+          "en": {
+            "q": "Who brought materials for the Mishkan?",
+            "a": "People whose hearts moved them to give."
+          },
+          "he": {
+            "q": "מי הביאו תרומות למשכן?",
+            "a": "כל נדיבי הלב."
+          },
+          "ref": "Exodus 35–38"
+        },
+        {
+          "en": {
+            "q": "Which two craftsmen led the work?",
+            "a": "Betzalel and Oholiav."
+          },
+          "he": {
+            "q": "אילו שני אומנים הובילו את העבודה?",
+            "a": "בצלאל ואהליאב."
+          },
+          "ref": "Exodus 35–38"
+        },
+        {
+          "en": {
+            "q": "What does the parsha count and report?",
+            "a": "The materials used for the Mishkan."
+          },
+          "he": {
+            "q": "מה מונים ומפרטים בפרשה?",
+            "a": "את החומרים ששימשו למשכן."
+          },
+          "ref": "Exodus 38–40"
+        },
+        {
+          "en": {
+            "q": "Who inspected the finished work and blessed the workers?",
+            "a": "Moshe."
+          },
+          "he": {
+            "q": "מי ראה את המלאכה המוכנה ובירך את העושים?",
+            "a": "משה."
+          },
+          "ref": "Exodus 38–40"
+        }
+      ]
+    },
+    {
+      "id": "tazria-metzora",
+      "en": "Tazria-Metzora",
+      "he": "תזריע־מצורע",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "On which day is a baby boy’s bris described in the Torah?",
+            "a": "The eighth day."
+          },
+          "he": {
+            "q": "באיזה יום מתוארת בתורה מילת בן?",
+            "a": "ביום השמיני."
+          },
+          "ref": "Leviticus 12–13"
+        },
+        {
+          "en": {
+            "q": "Who examines a suspected mark of tzaraas?",
+            "a": "A kohen."
+          },
+          "he": {
+            "q": "מי בודק נגע החשוד כצרעת?",
+            "a": "כהן."
+          },
+          "ref": "Leviticus 12–13"
+        },
+        {
+          "en": {
+            "q": "Can the person decide their own tzaraas status without the kohen?",
+            "a": "No; the Torah gives that decision to the kohen."
+          },
+          "he": {
+            "q": "האם האדם מחליט לבדו על דינו בנגע צרעת?",
+            "a": "לא; התורה נותנת את ההכרעה לכהן."
+          },
+          "ref": "Leviticus 12–13"
+        },
+        {
+          "en": {
+            "q": "Who goes outside the camp to examine the recovering metzora?",
+            "a": "The kohen."
+          },
+          "he": {
+            "q": "מי יוצא מחוץ למחנה לראות את המצורע שנרפא?",
+            "a": "הכהן."
+          },
+          "ref": "Leviticus 14–15"
+        },
+        {
+          "en": {
+            "q": "How many birds are brought at the start of the purification described here?",
+            "a": "Two."
+          },
+          "he": {
+            "q": "כמה ציפורים מביאים בתחילת הטהרה המתוארת?",
+            "a": "שתיים."
+          },
+          "ref": "Leviticus 14–15"
+        }
+      ]
+    },
+    {
+      "id": "achrei-mot-kedoshim",
+      "en": "Achrei Mot-Kedoshim",
+      "he": "אחרי מות־קדושים",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "On which holy day does the Kohen Gadol enter the Kodesh Hakodashim for its special service?",
+            "a": "Yom Kippur."
+          },
+          "he": {
+            "q": "באיזה יום נכנס הכהן הגדול לקודש הקודשים לעבודת היום?",
+            "a": "ביום הכיפורים."
+          },
+          "ref": "Leviticus 16–18"
+        },
+        {
+          "en": {
+            "q": "What color are the special linen garments worn for that service?",
+            "a": "White."
+          },
+          "he": {
+            "q": "מה צבעם של בגדי הבד המיוחדים לעבודה זו?",
+            "a": "לבן."
+          },
+          "ref": "Leviticus 16–18"
+        },
+        {
+          "en": {
+            "q": "How many goats were taken for the lots on Yom Kippur?",
+            "a": "Two."
+          },
+          "he": {
+            "q": "כמה שעירים הובאו להגרלה ביום הכיפורים?",
+            "a": "שניים."
+          },
+          "ref": "Leviticus 16–18"
+        },
+        {
+          "en": {
+            "q": "How does the Torah tell us to love our neighbor?",
+            "a": "As ourselves."
+          },
+          "he": {
+            "q": "כיצד מצווה התורה לאהוב את הרֵע?",
+            "a": "כמונו — ״ואהבת לרעך כמוך״."
+          },
+          "ref": "Leviticus 19–20"
+        },
+        {
+          "en": {
+            "q": "For whom should parts of the harvest be left?",
+            "a": "The poor and the stranger."
+          },
+          "he": {
+            "q": "למי משאירים חלקים מהיבול?",
+            "a": "לעני ולגר."
+          },
+          "ref": "Leviticus 19–20"
+        }
+      ]
+    },
+    {
+      "id": "behar-bechukotai",
+      "en": "Behar-Bechukotai",
+      "he": "בהר־בחוקותי",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What is the seventh year of rest for the land called?",
+            "a": "Shemitah."
+          },
+          "he": {
+            "q": "איך נקראת השנה השביעית שבה הארץ שובתת?",
+            "a": "שמיטה."
+          },
+          "ref": "Leviticus 25–26"
+        },
+        {
+          "en": {
+            "q": "How many years are counted before the fiftieth year, Yovel?",
+            "a": "Forty-nine years."
+          },
+          "he": {
+            "q": "כמה שנים סופרים לפני שנת היובל החמישים?",
+            "a": "ארבעים ותשע שנים."
+          },
+          "ref": "Leviticus 25–26"
+        },
+        {
+          "en": {
+            "q": "What instrument is sounded to announce Yovel?",
+            "a": "A shofar."
+          },
+          "he": {
+            "q": "באיזה כלי תוקעים להכרזת היובל?",
+            "a": "בשופר."
+          },
+          "ref": "Leviticus 25–26"
+        },
+        {
+          "en": {
+            "q": "What blessing for rain is promised when the people follow Hashem’s ways?",
+            "a": "Rain in its proper time."
+          },
+          "he": {
+            "q": "איזו ברכה על הגשם מובטחת כששומרים את מצוות ה׳?",
+            "a": "גשמים בעתם."
+          },
+          "ref": "Leviticus 26–27"
+        },
+        {
+          "en": {
+            "q": "What blessing about safety in the land is promised?",
+            "a": "Peace in the land."
+          },
+          "he": {
+            "q": "איזו ברכה על הביטחון בארץ מובטחת?",
+            "a": "שלום בארץ."
+          },
+          "ref": "Leviticus 26–27"
+        }
+      ]
+    },
+    {
+      "id": "chukat-balak",
+      "en": "Chukat-Balak",
+      "he": "חקת־בלק",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What color is the cow described for the purification water?",
+            "a": "Red."
+          },
+          "he": {
+            "q": "מה צבע הפרה המתוארת לצורך מי הטהרה?",
+            "a": "אדום."
+          },
+          "ref": "Numbers 19–22"
+        },
+        {
+          "en": {
+            "q": "Which sister of Moshe died in this parsha?",
+            "a": "Miriam."
+          },
+          "he": {
+            "q": "איזו אחות של משה נפטרה בפרשה?",
+            "a": "מרים."
+          },
+          "ref": "Numbers 19–22"
+        },
+        {
+          "en": {
+            "q": "What did Hashem tell Moshe to do to the rock?",
+            "a": "Speak to it."
+          },
+          "he": {
+            "q": "מה אמר ה׳ למשה לעשות לסלע?",
+            "a": "לדבר אליו."
+          },
+          "ref": "Numbers 19–22"
+        },
+        {
+          "en": {
+            "q": "Who was the king of Moav?",
+            "a": "Balak."
+          },
+          "he": {
+            "q": "מי היה מלך מואב?",
+            "a": "בלק."
+          },
+          "ref": "Numbers 22–25"
+        },
+        {
+          "en": {
+            "q": "Whom did Balak hire to curse Bnei Yisrael?",
+            "a": "Bilam."
+          },
+          "he": {
+            "q": "את מי הזמין בלק לקלל את בני ישראל?",
+            "a": "את בלעם."
+          },
+          "ref": "Numbers 22–25"
+        }
+      ]
+    },
+    {
+      "id": "matot-masei",
+      "en": "Matot-Masei",
+      "he": "מטות־מסעי",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "What does the Torah teach about a person’s vows?",
+            "a": "A person must keep the commitment made."
+          },
+          "he": {
+            "q": "מה מלמדת התורה על נדרי אדם?",
+            "a": "על האדם לקיים את התחייבותו."
+          },
+          "ref": "Numbers 30–32"
+        },
+        {
+          "en": {
+            "q": "Which two tribes first asked to settle east of the Jordan?",
+            "a": "Reuven and Gad."
+          },
+          "he": {
+            "q": "אילו שני שבטים ביקשו תחילה לשבת בעבר הירדן המזרחי?",
+            "a": "ראובן וגד."
+          },
+          "ref": "Numbers 30–32"
+        },
+        {
+          "en": {
+            "q": "Why did they want that land?",
+            "a": "It was suitable for their many animals."
+          },
+          "he": {
+            "q": "מדוע רצו בארץ הזאת?",
+            "a": "היא התאימה למקנה הרב שלהם."
+          },
+          "ref": "Numbers 30–32"
+        },
+        {
+          "en": {
+            "q": "What journeys are listed at the start of the parsha?",
+            "a": "Bnei Yisrael’s journeys from Egypt through the wilderness."
+          },
+          "he": {
+            "q": "אילו מסעות נמנים בתחילת הפרשה?",
+            "a": "מסעות בני ישראל ממצרים במדבר."
+          },
+          "ref": "Numbers 33–36"
+        },
+        {
+          "en": {
+            "q": "What special cities offered refuge to someone who killed unintentionally?",
+            "a": "Cities of refuge."
+          },
+          "he": {
+            "q": "אילו ערים נועדו למי שהרג בשגגה?",
+            "a": "ערי מקלט."
+          },
+          "ref": "Numbers 33–36"
+        }
+      ]
+    },
+    {
+      "id": "nitzavim-vayeilech",
+      "en": "Nitzavim-Vayeilech",
+      "he": "נצבים־וילך",
+      "aliases": [],
+      "reviewStatus": "DRAFT — RAV REVIEW REQUIRED",
+      "questions": [
+        {
+          "en": {
+            "q": "Who stands together before Hashem at the start of the parsha?",
+            "a": "All of Bnei Yisrael, young and old."
+          },
+          "he": {
+            "q": "מי ניצבים יחד לפני ה׳ בתחילת הפרשה?",
+            "a": "כל ישראל, גדולים וקטנים."
+          },
+          "ref": "Deuteronomy 29–30"
+        },
+        {
+          "en": {
+            "q": "What does the Torah tell us to choose?",
+            "a": "Life."
+          },
+          "he": {
+            "q": "במה אומרת התורה לבחור?",
+            "a": "בחיים."
+          },
+          "ref": "Deuteronomy 29–30"
+        },
+        {
+          "en": {
+            "q": "Is the Torah described as impossibly far away?",
+            "a": "No; it is very near to us."
+          },
+          "he": {
+            "q": "האם התורה מתוארת כרחוקה מכדי להגיע אליה?",
+            "a": "לא; ״קרוב אליך הדבר מאוד״."
+          },
+          "ref": "Deuteronomy 29–30"
+        },
+        {
+          "en": {
+            "q": "How old was Moshe when he spoke in this parsha?",
+            "a": "One hundred and twenty."
+          },
+          "he": {
+            "q": "בן כמה היה משה כשדיבר בפרשה?",
+            "a": "בן מאה ועשרים שנה."
+          },
+          "ref": "Deuteronomy 31"
+        },
+        {
+          "en": {
+            "q": "Who would lead the people into the land?",
+            "a": "Yehoshua."
+          },
+          "he": {
+            "q": "מי ינהיג את העם בכניסה לארץ?",
+            "a": "יהושע."
+          },
+          "ref": "Deuteronomy 31"
+        }
+      ]
+    }
+  ]
+}

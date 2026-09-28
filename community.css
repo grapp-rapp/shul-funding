@@ -1,0 +1,55 @@
+.community { padding-block:clamp(3rem,7vw,5rem); scroll-margin-top:110px; }
+.community-head { display:flex; align-items:end; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+.community-head p { max-width:52ch; margin:.6rem 0 0; color:var(--ink-mut); }
+.community-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; align-items:start; }
+.community-card { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:clamp(1.2rem,3vw,2rem); min-width:0; }
+.community-card h3 { font-size:1.6rem; margin-bottom:.7rem; }
+.community-card p { margin:.65rem 0; }
+.community-card a { color:var(--accent); text-underline-offset:3px; }
+.community-card label { display:block; margin:.65rem 0 .35rem; font-weight:600; }
+.community-card input:not([type=checkbox]), .community-card select { width:100%; min-height:48px; font:inherit; color:var(--ink); background:var(--ground); border:1px solid var(--line-strong); border-radius:7px; padding:.6rem; }
+.community-card .consent { display:flex; gap:.6rem; align-items:start; font-size:.85rem; font-weight:400; line-height:1.5; }
+.consent input { flex-shrink:0; width:20px; height:20px; margin-top:3px; }
+.community small,.community .fine { font-size:.82rem; color:var(--ink-mut); line-height:1.55; }
+.community .he-date { font-size:1.35rem; color:var(--accent); }
+.community .en-date { margin-top:0; }
+.zmanim { display:grid; grid-template-columns:1fr auto; margin:1rem 0; }
+.zmanim dt,.zmanim dd { padding:.45rem 0; margin:0; border-bottom:1px solid var(--line); }
+.zmanim dd { font-variant-numeric:tabular-nums; direction:ltr; padding-inline-start:1rem; }
+.holy-time { background:var(--accent-wash); border-inline-start:3px solid var(--accent); padding:.7rem 1rem; margin:.7rem 0; border-radius:5px; }
+.holy-time strong { display:block; }
+.learning-links { list-style:none; padding:0; margin:1rem 0; }
+.learning-links li { border-bottom:1px solid var(--line); padding:.6rem 0; }
+.learning-links a { display:block; }
+.tehillim-names { padding-inline-start:1.3rem; max-height:300px; overflow:auto; overflow-wrap:anywhere; }
+.tehillim-names li { padding:.35rem 0; }
+.community-card .btn { margin-top:.75rem; white-space:normal; }
+.community-status { min-height:1.6em; font-size:.9rem; }
+.trap { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+.quiz-questions { padding-inline-start:1.4rem; }
+.quiz-questions li { padding:.55rem 0; }
+.quiz-answer { color:var(--ink-mut); margin-top:.3rem; }
+.quiz-source { font-size:.75rem; }
+.community-actions { display:flex; gap:.65rem; flex-wrap:wrap; }
+.community-progress { width:100%; height:12px; accent-color:var(--accent); }
+.community-progress::-webkit-progress-bar { background:var(--surface-2); border-radius:10px; }
+.community-progress::-webkit-progress-value { background:var(--accent); border-radius:10px; }
+.community-progress::-moz-progress-bar { background:var(--accent); }
+.visits { text-align:center; font-size:.8rem; color:var(--ink-mut); margin-top:1.5rem; }
+.topbar-actions .learn-link { color:var(--ink-mut); font-size:.8rem; text-decoration:none; padding:.4rem; }
+.topbar-actions .learn-link:hover { color:var(--accent); text-decoration:underline; }
+.community-card :focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+.community-card button:disabled { opacity:.65; cursor:default; }
+.print-heading { display:none; }
+@media(max-width:680px) { .community-grid { grid-template-columns:1fr; } .topbar-actions .learn-link { font-size:.72rem; max-width:5.5rem; text-align:center; line-height:1.2; } }
+@media print {
+  body.print-quiz > :not(main), body.print-quiz main > :not(#community), body.print-quiz #community > :not(.community-grid), body.print-quiz .community-grid > :not(#quiz-card) { display:none !important; }
+  body.print-quiz, body.print-quiz main, body.print-quiz #community, body.print-quiz .community-grid { display:block; margin:0; padding:0; width:100%; max-width:none; background:white; }
+  body.print-quiz #quiz-card { width:100%; border:0; padding:12mm; background:white; color:black; font:12pt Georgia,serif; }
+  body.print-quiz #quiz-card button, body.print-quiz #quiz-card .no-print { display:none !important; }
+  body.print-quiz #quiz-card .print-heading { display:block; font-size:10pt; margin-bottom:8mm; }
+  body.print-quiz #quiz-card li { break-inside:avoid; margin-bottom:5mm; }
+  body.print-quiz #quiz-card h3 { font-size:22pt; }
+  body.print-quiz #quiz-card .quiz-answer { display:none; }
+  @page { size:A4; margin:0; }
+}
