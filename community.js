@@ -11,6 +11,9 @@
   Object.assign(words.en,{contactTitle:'Contact the program',contactIntro:'Have a question or want to help? Send a private message to the program admin.',contactName:'Your name',contactEmail:'Your email for a reply',contactMessage:'Your message',contactPrivacy:'Your name, email and message are visible only to the admin and are stored for up to 90 days. Please leave out sensitive personal information.',contactSend:'Send message',contactSent:'Thank you. Your message is in the admin inbox.',contactFail:'Your message was not saved. Please try later or email us below.',contactLimit:'Please wait before trying again, or email us below.',contactFallback:'Or email gershyrapp@gmail.com',contactUnavailable:'The contact form is unavailable right now. Please email us instead.'});
   Object.assign(words.he,{contactTitle:'יצירת קשר עם התוכנית',contactIntro:'יש שאלה או רוצים לעזור? שלחו הודעה פרטית למנהל התוכנית.',contactName:'השם שלכם',contactEmail:'אימייל לקבלת תשובה',contactMessage:'ההודעה שלכם',contactPrivacy:'השם, האימייל וההודעה גלויים רק למנהל ונשמרים עד 90 יום. אנא הימנעו ממידע אישי רגיש.',contactSend:'שליחת הודעה',contactSent:'תודה. ההודעה התקבלה בתיבת הפניות של המנהל.',contactFail:'ההודעה לא נשמרה. נסו מאוחר יותר או שלחו אימייל בקישור למטה.',contactLimit:'אנא המתינו לפני ניסיון נוסף, או שלחו אימייל בקישור למטה.',contactFallback:'אפשר גם לשלוח אימייל ל־gershyrapp@gmail.com',contactUnavailable:'טופס הפנייה אינו זמין כרגע. אפשר לפנות באימייל.'});
   const labels = [['alotHaShachar','Alos hashachar','עלות השחר'],['sunrise','Netz','הנץ החמה'],['sofZmanShmaMGA16Point1','Sof zman Shema · MGA 16.1°','סוף זמן ק״ש · מג״א 16.1°'],['sofZmanShma','Sof zman Shema · GRA','סוף זמן ק״ש · הגר״א'],['sofZmanTfilla','Sof zman tefilla · GRA','סוף זמן תפילה · הגר״א'],['chatzot','Chatzos','חצות'],['minchaGedola','Mincha gedola','מנחה גדולה'],['sunset','Shkiah','שקיעה'],['tzeit85deg','Tzeis · 8.5°','צאת הכוכבים · 8.5°']];
+  Object.assign(words.en,{tabToday:'Today',tabQuiz:'Parsha questions',tabTehillim:'Tehillim',tabContact:'Contact',quizLoading:'Finding this week’s questions…',quizPending:'This week’s questions are awaiting review. Please check back soon.',quizHoliday:'There is no regular weekly parsha quiz for this festival reading.',quizUnavailable:'Questions are unavailable right now. Please try again later.'});
+  Object.assign(words.he,{tabToday:'היום',tabQuiz:'שאלות לפרשה',tabTehillim:'תהילים',tabContact:'יצירת קשר',quizLoading:'מחפש את שאלות השבוע…',quizPending:'שאלות השבוע ממתינות לבדיקה. מוזמנים לחזור בקרוב.',quizHoliday:'אין שאלות לפרשה רגילה עבור קריאת החג השבוע.',quizUnavailable:'השאלות אינן זמינות כרגע. נסו שוב מאוחר יותר.'});
+  let quizState = 'quizLoading';
   const courses = [['Daf Yomi','Daf Yomi','דף יומי'],['Daily Mishnah','Mishna Yomis','משנה יומית'],['Halakhah Yomit','Halacha Yomis','הלכה יומית'],['Tanakh Yomi','Tanach Yomi','תנ״ך יומי']];
   let language = document.documentElement.lang === 'he' ? 'he' : 'en', dateData, nextDate, timesData, calendar, learning, quiz, community, afterSunset = false, quizShown = false, said = false, generation = 0, lastDay = '', lastSunset = false;
   const tr = key => words[language][key], index = () => language === 'he' ? 2 : 1;
@@ -31,10 +34,28 @@
     <article class="community-card" id="tehillim-card" hidden><h3 data-c="list"></h3><p data-c="listIntro"></p><ul class="tehillim-names" id="tehillim-names"></ul><p id="said-count"></p><button class="btn btn-solid" id="said-button" data-c="said"></button><p class="fine" data-c="reportNote"></p><p class="community-status" id="name-status" role="status"></p></article>
     <article class="community-card" id="community-fundraising" hidden><h3 data-c="progress"></h3><p id="fundraising-amount"></p><progress class="community-progress" id="community-progress" max="100" value="0"></progress><p id="donor-count" hidden></p><p class="fine" id="fundraising-updated"></p><button class="btn btn-solid" id="community-donate"></button></article>
   </div><p class="visits" id="weekly-visits" hidden></p>`;
+  const grid = host.querySelector('.community-grid');
+  const menu = node('nav',null,'community-menu');
+  const groups = [['Today',['date-card','daily-card']],['Quiz',['quiz-card']],['Tehillim',['tehillim-card','email-request']],['Contact',['contact-card']]];
+  function chooseGroup(key) {
+    for (const [name] of groups) {
+      $('community-group-'+name).hidden = name !== key;
+      $('community-nav-'+name).setAttribute('aria-pressed',String(name === key));
+    }
+  }
+  for (const [key,ids] of groups) {
+    const section = node('div',null,'community-group');section.id='community-group-'+key;
+    ids.forEach(id=>section.append($(id)));grid.append(section);
+    const button=node('button',null,'btn btn-ghost');button.id='community-nav-'+key;button.type='button';button.dataset.c='tab'+key;button.setAttribute('aria-controls',section.id);button.addEventListener('click',()=>chooseGroup(key));menu.append(button);
+  }
+  grid.before(menu);
+  $('community-summary').append($('community-fundraising'),$('weekly-visits'));
+  const quizStatus=node('p');quizStatus.id='quiz-status';quizStatus.setAttribute('role','status');$('quiz-title').after(quizStatus);
+  chooseGroup(location.hash === '#contact-card' ? 'Contact' : 'Today');
   function paintStatic() {
     language = document.documentElement.lang === 'he' ? 'he' : 'en';
     host.setAttribute('aria-label',tr('title'));
-    host.querySelectorAll('[data-c]').forEach(el => { el.textContent = tr(el.dataset.c); });
+    document.querySelectorAll('#community [data-c], #community-summary [data-c]').forEach(el => { el.textContent = tr(el.dataset.c); });
     $('request-email').href = 'mailto:gershyrapp@gmail.com?subject=' + encodeURIComponent(language === 'he' ? 'בקשת שם לתהילים — תורה באהבה' : 'Tehillim name request — Torah B’Ahava') + '&body=' + encodeURIComponent(language === 'he' ? 'שלום, אשמח לבקש הוספת שם לרשימת התהילים.\n\nהשם העברי ושם האם: \n\nהאם יש רשות לפרסם את השם ברשימה הציבורית? ' : 'Hello, I would like to request a name for the Tehillim list.\n\nHebrew name and mother’s name: \n\nDo you have permission for this name to appear on the public list? ');
     const selected = $('zmanim-city').value;
     $('zmanim-city').replaceChildren(new Option(tr('choose'),''), ...D.cities.map(c => new Option(c[index()],c[0])));
@@ -87,7 +108,13 @@
     $('daily-card').hidden = !ul.children.length && !monthly.children.length;
   }
   function renderQuiz() {
-    $('quiz-card').hidden = !quiz;
+    $('quiz-card').hidden = false;
+    $('quiz-status').hidden = !!quiz;
+    $('quiz-status').textContent = tr(quizState);
+    $('quiz-questions').hidden = !quiz;
+    $('quiz-card').querySelector('.community-actions').hidden = !quiz;
+    $('quiz-card').querySelector('.no-print').hidden = !quiz;
+    if (!quiz) $('quiz-title').textContent = '';
     if (!quiz) return;
     const r = reading(); $('quiz-title').textContent = quiz[language] + (r ? ' · ' + dayText(r.date) : '');
     $('quiz-questions').replaceChildren();
@@ -119,7 +146,7 @@
     const ticket = ++generation; lastDay = D.israelDay(); lastSunset = false;
     const date = lastDay, city = $('zmanim-city').value;
     timesData = null; calendar = null; dateData = null; nextDate = null; learning = null; quiz = null; quizShown = false;
-    renderDate();renderTimes();renderCalendar();renderLearning();renderQuiz();
+    quizState='quizLoading';renderDate();renderTimes();renderCalendar();renderLearning();renderQuiz();
     const apply = fn => data => { if (ticket === generation) { fn(data); } };
     const [year,month,day] = date.split('-');
     const saturday = D.addDays(date,(6-new Date(date+'T12:00:00Z').getUTCDay()+7)%7);
@@ -130,9 +157,9 @@
       // Festivals without a regular sedra do not silently use another week's quiz.
       const quizName = r?.category === 'parashat' ? r.title : (/^Deuteronomy 33:1-34:12/.test(r?.leyning?.torah || '') ? 'Vezot Haberakhah' : null);
       if (quizName) {
-        try { const result = await json('/api/community?quiz=' + encodeURIComponent(quizName)); if (ticket === generation) { quiz = result.quiz || null; renderQuiz(); } } catch { /* no reviewed quiz available */ }
-      }
-    })).catch(() => {});
+        try { const result = await json('/api/community?quiz=' + encodeURIComponent(quizName)); if (ticket === generation) { quiz = result.quiz || null; quizState='quizPending';renderQuiz(); } } catch { if(ticket===generation){quizState='quizUnavailable';renderQuiz();} }
+      } else { quizState='quizHoliday';renderQuiz(); }
+    })).catch(() => { if(ticket===generation){quizState='quizUnavailable';renderQuiz();} });
     const dailyTask = json(`https://www.sefaria.org/api/calendars?diaspora=0&year=${year}&month=${month}&day=${day}&timezone=Asia%2FJerusalem`).then(apply(data => { learning=data;renderLearning(); })).catch(() => {});
     let times;
     if (city) { try { times = await json(`https://www.hebcal.com/zmanim?cfg=json&geonameid=${city}&date=${date}`); if (times.location?.cc !== 'IL' || !times.times?.sunset) times=null; } catch {} }

@@ -1,7 +1,16 @@
-.community { padding-block:clamp(3rem,7vw,5rem); scroll-margin-top:110px; }
+.community { padding-block:1.5rem; scroll-margin-top:110px; }
+.community-dialog > .payover-bar { flex-shrink:0; justify-content:space-between; }
+.community-dialog > .community { overflow-y:auto; overscroll-behavior:contain; flex:1; min-height:0; width:100%; }
+.community-menu { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1.2rem; }
+.community-menu .btn { padding:.7rem 1rem; }
+.community-menu [aria-pressed=true] { background:var(--ink); color:var(--ground); border-color:var(--ink); }
+.community-group { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; align-items:start; }
+.community-group[hidden], .community-actions[hidden] { display:none; }
+#community-group-Quiz, #community-group-Contact { grid-template-columns:minmax(0,1fr); max-width:760px; width:100%; margin-inline:auto; }
+#community-summary .community-card { margin-block:1.5rem; }
 .community-head { display:flex; align-items:end; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom:1.5rem; }
 .community-head p { max-width:52ch; margin:.6rem 0 0; color:var(--ink-mut); }
-.community-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; align-items:start; }
+.community-grid { display:block; }
 .community-card { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:clamp(1.2rem,3vw,2rem); min-width:0; }
 .community-card h3 { font-size:1.6rem; margin-bottom:.7rem; }
 .community-card p { margin:.65rem 0; }
@@ -42,10 +51,11 @@
 .community-card button:disabled { opacity:.65; cursor:default; }
 .print-heading { display:none; }
 .community-card textarea { width:100%; min-height:130px; resize:vertical; font:inherit; color:var(--ink); background:var(--ground); border:1px solid var(--line-strong); border-radius:7px; padding:.6rem; }
-@media(max-width:680px) { .community-grid { grid-template-columns:1fr; } .topbar-actions .learn-link { font-size:.72rem; max-width:5.5rem; text-align:center; line-height:1.2; } }
+@media(max-width:680px) { .community-group { grid-template-columns:1fr; } .community-menu { display:grid;grid-template-columns:1fr 1fr; } .community-menu .btn { font-size:.85rem; } .topbar-actions .learn-link { font-size:.72rem; max-width:5.5rem; text-align:center; line-height:1.2; } }
 @media print {
-  body.print-quiz > :not(main), body.print-quiz main > :not(#community), body.print-quiz #community > :not(.community-grid), body.print-quiz .community-grid > :not(#quiz-card) { display:none !important; }
-  body.print-quiz, body.print-quiz main, body.print-quiz #community, body.print-quiz .community-grid { display:block; margin:0; padding:0; width:100%; max-width:none; background:white; }
+  body.print-quiz > :not(#communityover), body.print-quiz #communityover > :not(#community), body.print-quiz #community > :not(.community-grid), body.print-quiz .community-grid > :not(#community-group-Quiz) { display:none !important; }
+  body.print-quiz, body.print-quiz #communityover, body.print-quiz #community, body.print-quiz .community-grid, body.print-quiz #community-group-Quiz { display:block; position:static; overflow:visible; height:auto; max-height:none; margin:0; padding:0; width:100%; max-width:none; background:white; }
+  body.print-quiz #communityover::backdrop { display:none; }
   body.print-quiz #quiz-card { width:100%; border:0; padding:12mm; background:white; color:black; font:12pt Georgia,serif; }
   body.print-quiz #quiz-card button, body.print-quiz #quiz-card .no-print { display:none !important; }
   body.print-quiz #quiz-card .print-heading { display:block; font-size:10pt; margin-bottom:8mm; }

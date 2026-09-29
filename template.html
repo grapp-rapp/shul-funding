@@ -1004,7 +1004,7 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
     </form>
   </section>
 
-    <section id="community" class="community wrap" aria-label="Learn and daven"></section>
+    <section id="community-summary" class="wrap" aria-label="Community support"></section>
     <footer class="foot wrap">
     <div class="foot-lockup">
       <img src="__IMG_LOGO__" alt="" width="62" height="62" loading="lazy">
@@ -1042,6 +1042,13 @@ fieldset.field legend { width: 100%; margin-block-end: 0.15rem; }
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<dialog class="parsha-dialog community-dialog" id="communityover" aria-labelledby="community-title">
+  <div class="payover-bar">
+    <strong class="payover-title" id="community-title" data-t="learn_nav">Learn &amp; daven</strong>
+    <button class="payover-close" id="communityclose" type="button" aria-label="Close"><span class="close-icon" aria-hidden="true">&times;</span><span data-t="close_label">Close</span></button>
+  </div>
+  <section id="community" class="community wrap" aria-label="Learn and daven"><p>Loading… / טוען…</p></section>
+</dialog>
 <dialog class="parsha-dialog" id="parshaover" aria-labelledby="parsha-title">
   <div class="payover-bar">
     <div class="payover-titles">
@@ -1688,6 +1695,23 @@ document.querySelectorAll(".shot img, #clip").forEach(node => {
 // Native modal keeps focus inside the learning view and the page behind inert.
 // Load only on request; unloading on close also stops any lesson audio.
 const parshaDialog = document.getElementById("parshaover");
+const communityDialog = document.getElementById('communityover');
+let communityReturn = null, communityOverflow = '';
+function openCommunity() {
+  if (communityDialog.open) return;
+  communityReturn = document.activeElement;
+  communityOverflow = document.body.style.overflow;
+  communityDialog.showModal();
+  document.body.style.overflow = 'hidden';
+  document.getElementById('communityclose').focus();
+}
+document.querySelector('.learn-link').addEventListener('click', e => { e.preventDefault(); openCommunity(); });
+document.getElementById('communityclose').addEventListener('click', () => communityDialog.close());
+communityDialog.addEventListener('close', () => {
+  document.body.style.overflow = communityOverflow;
+  communityReturn?.focus();
+});
+if (['#community','#contact-card'].includes(location.hash)) openCommunity();
 let parshaReturn = null, parshaOverflow = "";
 document.getElementById("parsha").addEventListener("click", () => {
   parshaReturn = document.activeElement;
