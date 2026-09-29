@@ -9,10 +9,10 @@
     const r=await fetch('/api/admin',{method:data?'POST':'GET',headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{})},body:data?JSON.stringify(data):undefined,credentials:'omit',cache:'no-store',signal:AbortSignal.timeout(15000)});
     const value=await r.json(); if(!r.ok){if(r.status===401 && token)logout();throw new Error(value.error || 'Please try again.');}return value;
   }
-  function logout(){token='';state=null;$('panel').hidden=true;$('logout').hidden=true;$('login').hidden=false;$('password').value='';$('names').replaceChildren();$('quiz-review').replaceChildren();}
+  function logout(){token='';state=null;$('panel').hidden=true;$('logout').hidden=true;$('login').hidden=false;$('password').value='';$('names').replaceChildren();$('quiz-review').replaceChildren();$('contact-inbox').replaceChildren();}
   async function load(){state=await request();$('panel').hidden=false;$('login').hidden=true;$('logout').hidden=false;
     const f=state.fundraising;$('raised-admin').value=f?.raised??'';$('goal-admin').value=f?.goal??'';$('donors-admin').value=f?.donors??'';
-    renderNames();const old=$('quiz-select').value;$('quiz-select').replaceChildren(...state.quizzes.map(q=>new Option(`${q.approved?'✓':'Draft'} · ${q.en} / ${q.he}`,q.id)));if(old)$('quiz-select').value=old;renderQuiz();
+    renderContacts();renderNames();const old=$('quiz-select').value;$('quiz-select').replaceChildren(...state.quizzes.map(q=>new Option(`${q.approved?'✓':'Draft'} · ${q.en} / ${q.he}`,q.id)));if(old)$('quiz-select').value=old;renderQuiz();
   }
   async function action(data,success,button){if(button)button.disabled=true;try{await request(data);await load();message(success);}catch(e){message(e.message);}finally{if(button)button.disabled=false;}}
   $('login').addEventListener('submit',async e=>{e.preventDefault();const button=e.currentTarget.querySelector('button');button.disabled=true;try{const result=await request({action:'login',password:$('password').value});$('password').value='';token=result.token;await load();message('Signed in.');}catch(error){message(error.message);}finally{button.disabled=false;}});
@@ -37,6 +37,16 @@
     const label=node('label'),check=node('input');check.type='checkbox';label.append(check,document.createTextNode('A rav has reviewed and approved this exact set in both languages.'));box.append(label);
     const publish=node('button','Approve this parsha');publish.disabled=true;check.addEventListener('change',()=>publish.disabled=!check.checked);publish.addEventListener('click',()=>action({action:'quiz',id:q.id,digest:q.digest,approved:true,ravReviewed:check.checked},'This question set is approved.',publish));box.append(publish);
     if(q.approved){const hide=node('button','Unpublish','secondary');hide.addEventListener('click',()=>action({action:'quiz',id:q.id,digest:q.digest,approved:false},'Questions hidden from the site.',hide));box.append(hide);}
+  }
+  $('refresh-inbox').addEventListener('click',()=>load().then(()=>message('Inbox refreshed.')).catch(e=>message(e.message)));
+  function renderContacts(){
+    const box=$('contact-inbox'),rows=state.contacts||[];box.replaceChildren();$('inbox-heading').textContent='Contact inbox / פניות ('+rows.filter(r=>r.status==='new').length+' new / חדשות)';
+    if(!rows.length){box.append(node('p','No messages yet. / אין עדיין פניות.'));return;}
+    for(const row of rows){const card=node('article',null,'name-row');card.append(node('strong',row.name),node('p',row.status==='new'?'New / חדשה':'Handled / טופלה',row.status==='new'?'pending':'approved'),node('p',new Date(row.createdAt).toLocaleString('en-GB',{timeZone:'Asia/Jerusalem'}),'fine'));
+      const email=node('p',row.email);email.dir='ltr';const text=node('p',row.message,'contact-message');text.dir='auto';card.append(email,text);
+      const actions=node('div',null,'actions'),reply=node('a','Reply by email / תשובה באימייל');reply.href='mailto:'+encodeURIComponent(row.email)+'?subject='+encodeURIComponent('Re: Torah B’Ahava contact request');actions.append(reply);
+      for(const [operation,label] of [[row.status==='new'?'done':'new',row.status==='new'?'Mark handled / סומן כטופל':'Reopen / פתיחה מחדש'],['remove','Delete / מחיקה']]){const button=node('button',label,'secondary');button.addEventListener('click',()=>{if(operation==='remove'&&!confirm('Delete this private message permanently? / למחוק את הפנייה לצמיתות?'))return;action({action:'contact',id:row.id,operation},'Inbox updated.',button);});actions.append(button);}card.append(actions);box.append(card);
+    }
   }
   $('quiz-select').addEventListener('change',renderQuiz);
 })();

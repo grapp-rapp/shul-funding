@@ -10,6 +10,8 @@ Learning and city-selected zmanim work without a database. The email-request but
 
 ## Storage and privacy
 
+- **Contact inbox:** Visitors can send a name, reply email and message through the bilingual Contact the program form. These messages are private to signed-in admins, expire after 90 days, and can be marked handled, reopened or deleted. Reply opens an email draft; it does not send automatically. The inbox holds at most 100 current messages, with three submission attempts per address per day and a honeypot. If storage is unavailable, the form is replaced by the existing Gmail contact link. Check Admin → Contact inbox for new messages; there are no automatic email notifications. Tehillim name requests still use the separate Gmail button.
+
 - Visitors send requests to gershyrapp@gmail.com using their email app. The website does not automatically send email or save public submissions. After review, the admin adds a name directly to the public list. Older pending requests remain private until approved. Names expire 30 days after addition or renewal.
 - Counts represent page loads and voluntary Tehillim reports, not unique people. Weeks reset Sunday at midnight in Israel; weekly records expire after eight days.
 - No raw IPs are written to this database. Login/Tehillim abuse limits use keyed, daily-changing hashes, expiring within 24 hours (login: 15 minutes). These are temporary anti-spam identifiers; hosting providers may retain operational logs.

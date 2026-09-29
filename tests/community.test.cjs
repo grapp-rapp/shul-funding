@@ -12,7 +12,9 @@ beforeEach(()=>{store=new Map();global.fetch=async(url,options)=>{assert.equal(u
   else if(op==='EVAL'){
     const [script,n,...args]=a,keys=args.slice(0,n),v=args.slice(n);
     if(script.includes("local n=redis.call('INCR'")){result=(store.get(keys[0])||0)+1;store.set(keys[0],result);}
-    else if(script.includes('local ids=')){result=[...store.entries()].filter(([k])=>k.startsWith(s.PREFIX+'name:')).map(([,v])=>v);}
+    else if(script.includes('local ids=')){result=[...store.entries()].filter(([k])=>k.startsWith(v[1])).map(([,v])=>v);}
+    else if(script.includes("'ZCARD',KEYS[1])>=100")){if([...store.keys()].filter(k=>k.startsWith(s.PREFIX+'contact:')).length>=100)result=0;else{store.set(keys[1],v[1]);result=1;}}
+    else if(script.includes("'KEEPTTL'")){if(store.get(keys[0])!==v[0])result=0;else{store.set(keys[0],v[1]);result=1;}}
     else if(script.includes("ARGV[5]=='new'")){store.set(keys[1],v[2]);result=1;}
     else if(script.includes("redis.call('DEL'")){store.delete(keys[0]);result=1;}
     else throw Error('Unexpected Lua command');
@@ -29,6 +31,31 @@ test('cross-site mutations are rejected',async()=>{assert.equal((await call(publ
 test('public submissions are disabled and cannot save names',async()=>{const result=await call(publicApi,{action:'submit',name:'Test ben Test',consent:true});assert.equal(result.code,400);assert.equal(store.size,0);});
 test('legacy pending requests remain private until approved',async()=>{const row={id:'00000000-0000-0000-0000-000000000001',name:'Legacy Test',status:'pending',expiresAt:Date.now()+86400000};store.set(s.PREFIX+'name:'+row.id,JSON.stringify(row));assert.equal((await call(publicApi)).data.names.length,0);await call(adminApi,{action:'name',id:row.id,operation:'approve'},s.issueToken());assert.equal((await call(publicApi)).data.names[0].name,'Legacy Test');});
 test('expired names never leak even before Redis cleans up',async()=>{store.set(s.PREFIX+'name:expired',JSON.stringify({name:'Expired',status:'approved',expiresAt:Date.now()-1}));assert.equal((await call(publicApi)).data.names.length,0);});
+test('contact messages are private, expire after 90 days and can be handled or deleted by admin',async()=>{
+  const b={action:'contact',name:'Example Sender',email:'sender@example.com',message:'A private question about the program.'};
+  assert.equal((await call(publicApi,b)).code,200);
+  const row=JSON.parse([...store.entries()].find(([k])=>k.startsWith(s.PREFIX+'contact:'))[1]);
+  assert(Math.abs(row.expiresAt-Date.now()-90*86400000)<1000);
+  assert(!JSON.stringify((await call(publicApi)).data).includes(b.message));
+  assert.equal((await call(adminApi,{action:'contact',id:row.id,operation:'done'})).code,401);
+  const token=s.issueToken();assert.equal((await call(adminApi,null,token)).data.contacts[0].message,b.message);
+  await call(adminApi,{action:'contact',id:row.id,operation:'done'},token);assert.equal((await call(adminApi,null,token)).data.contacts[0].status,'done');
+  await call(adminApi,{action:'contact',id:row.id,operation:'new'},token);assert.equal((await call(adminApi,null,token)).data.contacts[0].status,'new');
+  await call(adminApi,{action:'contact',id:row.id,operation:'remove'},token);assert.equal((await call(adminApi,null,token)).data.contacts.length,0);
+});
+test('contact validation, honeypot and rate limit block spam',async()=>{
+  const b={action:'contact',name:'Example Sender',email:'sender@example.com',message:'A private question about the program.'};
+  assert.equal((await call(publicApi,{...b,website:'spam'})).code,200);assert.equal(store.size,0);
+  assert.equal((await call(publicApi,{...b,email:'bad-address'})).code,400);
+  assert.equal((await call(publicApi,{...b,message:'x'.repeat(1501)})).code,400);
+  assert.equal((await call(publicApi,b)).code,200);assert.equal((await call(publicApi,b)).code,429);
+});
+test('expired contact messages are filtered and full inbox fails without saving',async()=>{
+  for(let i=0;i<100;i++)store.set(s.PREFIX+'contact:'+i,JSON.stringify({id:String(i),expiresAt:Date.now()-1}));
+  assert.equal((await call(adminApi,null,s.issueToken())).data.contacts.length,0);
+  store.clear();for(let i=0;i<100;i++)store.set(s.PREFIX+'contact:'+i,JSON.stringify({id:String(i),expiresAt:Date.now()+86400000}));
+  assert.equal((await call(publicApi,{action:'contact',name:'Test Sender',email:'test@example.com',message:'Another program question.'})).code,429);
+});
 test('only a signed-in admin can add a name directly to the public list',async()=>{assert.equal((await call(adminApi,{action:'addName',name:'Test ben Test'})).code,401);assert.equal(store.size,0);const token=s.issueToken();assert.equal((await call(adminApi,{action:'addName',name:'Test ben Test'},token)).code,200);assert.equal((await call(publicApi)).data.names[0].name,'Test ben Test');assert.equal((await call(adminApi,{action:'addName',name:'a'.repeat(101)},token)).code,400);});
 test('quiz is not public until exact content is approved, and can be unpublished',async()=>{const q=s.questions.parshas[0];assert.equal(await s.publicQuiz(q.id),null);const t=s.issueToken();assert.equal((await call(adminApi,{action:'quiz',id:q.id,digest:s.quizHash(q),approved:true},t)).code,400);await call(adminApi,{action:'quiz',id:q.id,digest:s.quizHash(q),approved:true,ravReviewed:true},t);assert.equal((await s.publicQuiz(q.id)).id,q.id);store.set(s.PREFIX+'quiz:'+q.id,'old-version');assert.equal(await s.publicQuiz(q.id),null);});
 test('manual figures validate missing, negative and malformed amounts and preserve known zero',()=>{for(const b of [{raised:-1,goal:100,donors:null},{raised:'10',goal:100,donors:null},{raised:5,goal:0,donors:null},{raised:0,goal:100,donors:1.5}])assert.throws(()=>s.goalData(b));assert.equal(s.goalData({raised:0,goal:100,donors:null}).raised,0);assert.equal(s.goalData({hide:true}),null);});

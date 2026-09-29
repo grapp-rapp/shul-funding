@@ -17,4 +17,6 @@ button.secondary { color:var(--ink); background:transparent; } button:disabled {
 #status { padding:10px; background:#f3eada; } #status:empty { display:none; }
 .question { border-bottom:1px solid #d6ddd8; padding:12px 0; } .question p { margin:5px 0; }
 .fine { font-size:.85rem;color:#4c6068; }
+.contact-message { white-space:pre-wrap; overflow-wrap:anywhere; }
+#contact-inbox .name-row { overflow-wrap:anywhere; }
 @media(max-width:550px) { main { padding:14px; } section,#login { padding:18px; } button { flex-grow:1; } }

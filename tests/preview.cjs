@@ -16,7 +16,9 @@ global.fetch=async(url,options)=>{
   else if(op==='EVAL'){
     const [script,n,...args]=a,keys=args.slice(0,n),v=args.slice(n);
     if(script.includes("local n=redis.call('INCR'")){result=(store.get(keys[0])||0)+1;store.set(keys[0],result);}
-    else if(script.includes('local ids='))result=[...store.entries()].filter(([k])=>k.startsWith(s.PREFIX+'name:')).map(([,v])=>v);
+    else if(script.includes('local ids='))result=[...store.entries()].filter(([k])=>k.startsWith(v[1])).map(([,v])=>v);
+    else if(script.includes("'ZCARD',KEYS[1])>=100")){if([...store.keys()].filter(k=>k.startsWith(s.PREFIX+'contact:')).length>=100)result=0;else{store.set(keys[1],v[1]);result=1;}}
+    else if(script.includes("'KEEPTTL'")){if(store.get(keys[0])!==v[0])result=0;else{store.set(keys[0],v[1]);result=1;}}
     else if(script.includes("ARGV[5]=='new'")){store.set(keys[1],v[2]);result=1;}
     else if(script.includes("redis.call('DEL'")){store.delete(keys[0]);result=1;}
     else throw Error('Unknown fixture command');
