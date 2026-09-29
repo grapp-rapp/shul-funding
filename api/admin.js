@@ -10,6 +10,11 @@ module.exports = async function(req, res) {
       return res.status(200).json({ token: s.issueToken() });
     }
     s.requireAdmin(req);
+    if (b.action === 'addName') {
+      const now = Date.now();
+      await s.saveName({ id: require('node:crypto').randomUUID(), name: s.cleanName(b.name), status: 'approved', createdAt: now, expiresAt: now + s.LIFE * 1000 }, true);
+      return res.status(200).json({ ok: true });
+    }
     if (req.method === 'GET') {
       const [names, counts, approved] = await Promise.all([s.list(true), s.counts(), s.redis('MGET', ...s.questions.parshas.map(q => s.PREFIX + 'quiz:' + q.id))]);
       return res.status(200).json({ names, ...counts, quizzes: s.questions.parshas.map((q, i) => ({ ...q, digest: s.quizHash(q), approved: approved[i] === s.quizHash(q) })) });
